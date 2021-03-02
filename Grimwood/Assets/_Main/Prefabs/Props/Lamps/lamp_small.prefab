@@ -11,13 +11,15 @@ GameObject:
   - component: {fileID: 2143659389134026415}
   - component: {fileID: 7235028569597679730}
   - component: {fileID: 6126814598700299179}
+  - component: {fileID: 6601833291192635930}
+  - component: {fileID: 5114479877399187012}
   m_Layer: 0
   m_Name: Spotlight and Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
 --- !u!4 &2143659389134026415
 Transform:
   m_ObjectHideFlags: 0
@@ -44,10 +46,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5.49
+  m_Intensity: 15
   m_Range: 4.93
-  m_SpotAngle: 118.34725
-  m_InnerSpotAngle: 24.572851
+  m_SpotAngle: 84.23447
+  m_InnerSpotAngle: 35.63646
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -83,13 +85,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4e-45, z: 1.3476e-41, w: 1.04e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -139,9 +141,9 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.44
-  intensityOutside: 0.44
-  blendingMode: 0
+  intensityInside: 0.05
+  intensityOutside: 0.05
+  blendingMode: 1
   spotAngleFromLight: 0
   spotAngle: 63.192444
   coneRadiusStart: 0.1
@@ -176,6 +178,32 @@ MonoBehaviour:
   _SortingOrder: 0
   _FadeOutBegin: -150
   _FadeOutEnd: -200
+--- !u!114 &6601833291192635930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905553245597382953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067f7cfff40794b46ac236699c56044a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5114479877399187012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905553245597382953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_uniqueId: _f7626325-c119-4256-bd6b-657954541a70
+  m_searchTags: []
 --- !u!1 &9117720857253493140
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +218,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9124192034579458354
 Transform:
@@ -227,7 +255,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9115366870169207484
 Transform:
@@ -323,7 +351,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9115345576113842998
 Transform:
@@ -419,7 +447,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9115646273326701860
 Transform:
