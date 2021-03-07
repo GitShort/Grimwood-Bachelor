@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983794805011524293}
   - component: {fileID: 983794805011524292}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Volumetric Light Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 983794805165363932}
   - component: {fileID: 983794805165364002}
   - component: {fileID: 983794805165364003}
+  - component: {fileID: 4712784434085068950}
   m_Layer: 0
   m_Name: Light trigger
   m_TagString: Untagged
@@ -266,6 +267,22 @@ MonoBehaviour:
   _lightObjects:
   - {fileID: 9023087381073093828}
   - {fileID: 6355355702251299730}
+--- !u!114 &4712784434085068950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983794805165363933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 1
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1932533808907859855
 GameObject:
   m_ObjectHideFlags: 0

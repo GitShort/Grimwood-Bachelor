@@ -4422,6 +4422,7 @@ GameObject:
   - component: {fileID: 33558682333378666}
   - component: {fileID: 23654384021179856}
   - component: {fileID: 64168778864604644}
+  - component: {fileID: 5453529334080773904}
   m_Layer: 0
   m_Name: FOB_S_0
   m_TagString: Untagged
@@ -4506,6 +4507,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 9c16c2b0ef8205a45823521d6ed61d12, type: 3}
+--- !u!114 &5453529334080773904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612260768448550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1618745620990418
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,6 +4649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509714503879870}
   - component: {fileID: 205426451550688270}
+  - component: {fileID: 9183663737200853958}
   m_Layer: 0
   m_Name: FOB_LOD
   m_TagString: Untagged
@@ -4692,6 +4710,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23668315018771218}
   m_Enabled: 1
+--- !u!114 &9183663737200853958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643115053077468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4.8483276, y: 0.6025238, z: 5.6076355}
+  m_Center: {x: 0.42416382, y: 16.130592, z: -4.450302}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1646274975865230
 GameObject:
   m_ObjectHideFlags: 0

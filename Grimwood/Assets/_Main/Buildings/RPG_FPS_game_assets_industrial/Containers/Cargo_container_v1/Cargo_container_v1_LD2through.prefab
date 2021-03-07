@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 33000012234758372}
   - component: {fileID: 23000013125963308}
   - component: {fileID: 64000011579675622}
+  - component: {fileID: 1231092970}
   m_Layer: 0
   m_Name: Cargo_container_v1_LD2through
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4000010202300486
 Transform:
@@ -96,3 +97,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300024, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!114 &1231092970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013482175582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 7.690282, y: 0.62501526, z: 2.85}
+  m_Center: {x: -0.6734443, y: 1.7602525, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

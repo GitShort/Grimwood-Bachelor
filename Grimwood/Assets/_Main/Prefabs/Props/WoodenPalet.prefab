@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 4503780883013883602}
   - component: {fileID: 4503780883012883474}
   - component: {fileID: 4667794704617794207}
+  - component: {fileID: 2232477438124042151}
   m_Layer: 0
   m_Name: WoodenPalet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4503780883010459376
 Transform:
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4503780883010882256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.58798665, y: -0.5350896, z: -2.1142564}
-  m_LocalScale: {x: 0.39370078, y: 0.39370078, z: 0.39370078}
+  m_LocalScale: {x: 0.3937008, y: 0.39370078, z: 0.3937008}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,3 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.587325, y: 0.48057696, z: 4.8057694}
   m_Center: {x: 0.29447624, y: 0.043688808, z: 0.058556195}
+--- !u!114 &2232477438124042151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4503780883010882256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

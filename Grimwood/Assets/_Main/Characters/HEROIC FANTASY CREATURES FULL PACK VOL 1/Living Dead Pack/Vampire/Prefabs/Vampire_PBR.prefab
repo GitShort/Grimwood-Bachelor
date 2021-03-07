@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269664}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269662}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.8435202, y: -6.236562, z: -71.70063}
 --- !u!1 &7446984632696909890
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269666}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ Transform:
   - {fileID: 7446984632697269674}
   m_Father: {fileID: 7446984632697269632}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.837253, y: -30.373617, z: -35.919174}
 --- !u!1 &7446984632696909892
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269668}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ Transform:
   - {fileID: 7446984632697269670}
   m_Father: {fileID: 7446984632697269676}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000020752648, y: 0.0000009889841, z: 47.281845}
 --- !u!1 &7446984632696909894
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269670}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ Transform:
   - {fileID: 7446984632697269660}
   m_Father: {fileID: 7446984632697269668}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 79.922325, y: -10.591851, z: -31.54365}
 --- !u!1 &7446984632696909896
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ Transform:
   - {fileID: 7446984632697269632}
   m_Father: {fileID: 7446984632697269756}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.128391, y: -163.49548, z: -17.289639}
 --- !u!1 &7446984632696909898
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269674}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269666}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.9553454, y: -20.442366, z: -122.641594}
 --- !u!1 &7446984632696909900
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269676}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ Transform:
   - {fileID: 7446984632697269668}
   m_Father: {fileID: 7446984632697269634}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.8819065, y: 43.330727, z: 27.871826}
 --- !u!1 &7446984632696909902
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ Transform:
   - {fileID: 7446984632697269680}
   m_Father: {fileID: 7446984632697269756}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.012689, y: 3.9320235, z: -17.57781}
 --- !u!1 &7446984632696909904
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ Transform:
   - {fileID: 7446984632697269634}
   m_Father: {fileID: 7446984632697269678}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.378326, y: -2.6653097, z: -32.44716}
 --- !u!1 &7446984632696909906
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7446984632697269682}
   - component: {fileID: 7446984632691703010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SK_Vampire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ Transform:
   - {fileID: 7446984632697269730}
   m_Father: {fileID: 7446984632697269744}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.045407526, y: 5.6030464, z: -28.475634}
 --- !u!1 &7446984632696910210
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269730}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ Transform:
   - {fileID: 7446984632697269732}
   m_Father: {fileID: 7446984632697269728}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000003012595, y: -0.0000005675543, z: -20.406973}
 --- !u!1 &7446984632696910212
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269730}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.00000017054214, y: 0.0000003449363, z: -30.001347}
 --- !u!1 &7446984632696910214
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ Transform:
   - {fileID: 7446984632697269736}
   m_Father: {fileID: 7446984632697269744}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.7930403, y: 18.940495, z: -48.818066}
 --- !u!1 &7446984632696910216
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269736}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ Transform:
   - {fileID: 7446984632697269738}
   m_Father: {fileID: 7446984632697269734}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.32715103, y: 3.1274223, z: -25.432991}
 --- !u!1 &7446984632696910218
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269738}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269736}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.8435202, y: 6.236564, z: -43.882957}
 --- !u!1 &7446984632696910220
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269740}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ Transform:
   - {fileID: 7446984632697269748}
   m_Father: {fileID: 7446984632697269706}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.029294, y: 9.309645, z: -9.352026}
 --- !u!1 &7446984632696910222
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269742}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ Transform:
   - {fileID: 7446984632697269744}
   m_Father: {fileID: 7446984632697269750}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000000055682904, y: 0.00000085196086, z: 86.26017}
 --- !u!1 &7446984632696910224
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ Transform:
   - {fileID: 7446984632697269734}
   m_Father: {fileID: 7446984632697269742}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -83.8186, y: 106.38098, z: -106.27638}
 --- !u!1 &7446984632696910226
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ Transform:
   - {fileID: 7446984632697269706}
   m_Father: {fileID: 7446984632697269756}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.39535284, y: 172.62209, z: -85.05936}
 --- !u!1 &7446984632696910228
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269748}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269740}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000051041527, y: 0.000079187404, z: -90.00014}
 --- !u!1 &7446984632696910230
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +791,7 @@ Transform:
   - {fileID: 7446984632697269742}
   m_Father: {fileID: 7446984632697269708}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -25.634785, y: -45.526173, z: -5.59679}
 --- !u!1 &7446984632696910232
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269752}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ Transform:
   - {fileID: 7446984632697269754}
   m_Father: {fileID: 7446984632697269680}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.20627442, y: -6.570222, z: -26.658617}
 --- !u!1 &7446984632696910234
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269754}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Neck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ Transform:
   - {fileID: 7446984632697269704}
   m_Father: {fileID: 7446984632697269752}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.20627534, y: -6.5702224, z: -26.658617}
 --- !u!1 &7446984632696910236
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269756}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +886,7 @@ Transform:
   - {fileID: 7446984632697269678}
   m_Father: {fileID: 7446984632697269702}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -76.13841, y: 77.41285, z: 20.339588}
 --- !u!1 &7446984632696910238
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269758}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Ponytail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,8 +915,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7446984632697269704}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0.00020964962, y: 0.00014920843, z: -109.76305}
 --- !u!1 &7446984632696910240
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269632}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ Transform:
   - {fileID: 7446984632697269666}
   m_Father: {fileID: 7446984632697269672}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000004148368, y: -0.00000010072881, z: 76.35146}
 --- !u!1 &7446984632696910242
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ Transform:
   - {fileID: 7446984632697269676}
   m_Father: {fileID: 7446984632697269680}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.146059, y: 84.11861, z: -159.6306}
 --- !u!1 &7446984632696910244
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,7 +1009,7 @@ Transform:
   - {fileID: 7446984632697269638}
   m_Father: {fileID: 7446984632697269670}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -53.253193, y: 141.00658, z: -108.186775}
 --- !u!1 &7446984632696910246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ Transform:
   - {fileID: 7446984632697269640}
   m_Father: {fileID: 7446984632697269636}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.00000033173546, y: 0.00000026867792, z: -39.004955}
 --- !u!1 &7446984632696910248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269640}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269638}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000018983798, y: 0.00000020208381, z: -57.35867}
 --- !u!1 &7446984632696910250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269642}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,7 +1101,7 @@ Transform:
   - {fileID: 7446984632697269644}
   m_Father: {fileID: 7446984632697269670}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.045370333, y: 6.0557647, z: -5.877744}
 --- !u!1 &7446984632696910252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269644}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ Transform:
   - {fileID: 7446984632697269646}
   m_Father: {fileID: 7446984632697269642}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0000014841647, y: -0.000003075753, z: -25.75903}
 --- !u!1 &7446984632696910254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1162,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269644}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.00000029044787, y: 0.0000018868785, z: -72.18584}
 --- !u!1 &7446984632696910256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1193,7 +1193,7 @@ Transform:
   - {fileID: 7446984632697269650}
   m_Father: {fileID: 7446984632697269670}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.04562371, y: -0.0000009596673, z: -10.701643}
 --- !u!1 &7446984632696910258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269650}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ Transform:
   - {fileID: 7446984632697269652}
   m_Father: {fileID: 7446984632697269648}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0000005008783, y: 0.0000018422277, z: -48.224636}
 --- !u!1 &7446984632696910260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269652}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269650}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000019082256, y: -0.0000000580294, z: -65.17674}
 --- !u!1 &7446984632696910262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269654}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1285,7 @@ Transform:
   - {fileID: 7446984632697269656}
   m_Father: {fileID: 7446984632697269670}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.045406032, y: -5.6030445, z: -56.293297}
 --- !u!1 &7446984632696910264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269656}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1316,7 +1316,7 @@ Transform:
   - {fileID: 7446984632697269658}
   m_Father: {fileID: 7446984632697269654}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.00000006791967, y: 0.0000012055143, z: -48.224636}
 --- !u!1 &7446984632696910266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269656}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0000012504762, y: 0.0000019871839, z: -57.819016}
 --- !u!1 &7446984632696910268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269660}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ Transform:
   - {fileID: 7446984632697269662}
   m_Father: {fileID: 7446984632697269670}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.793035, y: -18.94049, z: -76.63575}
 --- !u!1 &7446984632696910270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269662}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ R Finger41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1408,7 @@ Transform:
   - {fileID: 7446984632697269664}
   m_Father: {fileID: 7446984632697269660}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.32715362, y: -3.127422, z: -53.25066}
 --- !u!1 &7446984632696910304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269696}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,7 +1439,7 @@ Transform:
   - {fileID: 7446984632697269702}
   m_Father: {fileID: 7446984632697269698}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &7446984632696910306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,7 +1450,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7446984632697269698}
   - component: {fileID: 7446984632687411744}
-  m_Layer: 0
+  - component: {fileID: 182643840}
+  - component: {fileID: 182643838}
+  - component: {fileID: 182643839}
+  m_Layer: 11
   m_Name: Vampire_PBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,6 +1495,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &182643840
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446984632696910306}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &182643838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446984632696910306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3a4e884cb09bd4ab87963aa997a9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _attackDistance: 2.6
+--- !u!195 &182643839
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446984632696910306}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 160
+  m_StoppingDistance: 2.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: -0.03
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7446984632696910310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269702}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1577,7 @@ Transform:
   - {fileID: 7446984632697269756}
   m_Father: {fileID: 7446984632697269696}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.121973, y: -11.962382, z: 71.739685}
 --- !u!1 &7446984632696910312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269704}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,10 +1605,12 @@ Transform:
   m_LocalPosition: {x: -0.1541796, y: -0.00000015258789, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Children:
+  - {fileID: 6521018332026384876}
+  - {fileID: 2703788125276317334}
   - {fileID: 7446984632697269758}
   m_Father: {fileID: 7446984632697269754}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.7885268, y: 16.324396, z: 31.960804}
 --- !u!1 &7446984632696910314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269706}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1584,7 +1641,7 @@ Transform:
   - {fileID: 7446984632697269740}
   m_Father: {fileID: 7446984632697269746}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000035555777, y: 0.00000308394, z: 73.906296}
 --- !u!1 &7446984632696910316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,7 +1651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269708}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1672,7 @@ Transform:
   - {fileID: 7446984632697269750}
   m_Father: {fileID: 7446984632697269680}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.73319227, y: -82.30042, z: 174.93074}
 --- !u!1 &7446984632696910318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269710}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1646,7 +1703,7 @@ Transform:
   - {fileID: 7446984632697269712}
   m_Father: {fileID: 7446984632697269744}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 53.253193, y: -141.00658, z: -80.36911}
 --- !u!1 &7446984632696910320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,7 +1713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269712}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1734,7 @@ Transform:
   - {fileID: 7446984632697269714}
   m_Father: {fileID: 7446984632697269710}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000005062632, y: -0.0000018407566, z: -11.187298}
 --- !u!1 &7446984632696910322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,7 +1744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269714}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1764,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269712}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0000021355215, y: 0.0000012102373, z: -29.540998}
 --- !u!1 &7446984632696910324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,7 +1774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269716}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1795,7 @@ Transform:
   - {fileID: 7446984632697269718}
   m_Father: {fileID: 7446984632697269744}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.045372415, y: -6.055765, z: 21.939919}
 --- !u!1 &7446984632696910326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1769,7 +1826,7 @@ Transform:
   - {fileID: 7446984632697269720}
   m_Father: {fileID: 7446984632697269716}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.00000041511294, y: 0.0000003352956, z: 2.0586452}
 --- !u!1 &7446984632696910328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269720}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1799,7 +1856,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269718}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000000006656961, y: -0.0000006036761, z: -44.368145}
 --- !u!1 &7446984632696910330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1887,7 @@ Transform:
   - {fileID: 7446984632697269724}
   m_Father: {fileID: 7446984632697269744}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.045625962, y: 0.000000030015666, z: 17.116026}
 --- !u!1 &7446984632696910332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269724}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,7 +1918,7 @@ Transform:
   - {fileID: 7446984632697269726}
   m_Father: {fileID: 7446984632697269722}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.00000013723707, y: 0.00000006281154, z: -20.406973}
 --- !u!1 &7446984632696910334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7446984632697269726}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VAMPIRE_ L Finger22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1891,4 +1948,194 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7446984632697269724}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000007422409, y: 0.000000056665186, z: -37.35906}
+--- !u!1 &8140128398374435521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2703788125276317334}
+  - component: {fileID: 5721163530739001268}
+  - component: {fileID: 4924665022014997940}
+  - component: {fileID: 4091093646774585556}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2703788125276317334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140128398374435521}
+  m_LocalRotation: {x: 0.65051657, y: -0.27717844, z: -0.65051603, w: -0.27718082}
+  m_LocalPosition: {x: -0.15226328, y: 0.19767326, z: -0.06310166}
+  m_LocalScale: {x: 0.01604541, y: 0.016045412, z: 0.016045414}
+  m_Children: []
+  m_Father: {fileID: 7446984632697269704}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5721163530739001268
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140128398374435521}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4924665022014997940
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140128398374435521}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fb114e620bede1b42a8e48e2f11b4bb1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &4091093646774585556
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8140128398374435521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &9012378701059182558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6521018332026384876}
+  - component: {fileID: 7527494683847276903}
+  - component: {fileID: 8644667887845308902}
+  - component: {fileID: 5790945367814543820}
+  m_Layer: 0
+  m_Name: Sphere (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6521018332026384876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012378701059182558}
+  m_LocalRotation: {x: 0.65051657, y: -0.27717844, z: -0.65051603, w: -0.27718082}
+  m_LocalPosition: {x: -0.15226348, y: 0.1976728, z: 0.062098324}
+  m_LocalScale: {x: 0.01604541, y: 0.016045412, z: 0.016045414}
+  m_Children: []
+  m_Father: {fileID: 7446984632697269704}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7527494683847276903
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012378701059182558}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &8644667887845308902
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012378701059182558}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fb114e620bede1b42a8e48e2f11b4bb1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5790945367814543820
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012378701059182558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

@@ -18,10 +18,10 @@ TagManager:
   - IgnoreHands
   - Hands
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Obstacle
+  - LightBeam
+  - IgnoreNavMesh
   - 
   - 
   - 

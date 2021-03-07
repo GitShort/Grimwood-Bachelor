@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6126814598700299179}
   - component: {fileID: 6601833291192635930}
   - component: {fileID: 5114479877399187012}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Spotlight and Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _f7626325-c119-4256-bd6b-657954541a70
+  m_uniqueId: _d743ea53-dc57-4a30-aa34-36a02e648ced
   m_searchTags: []
 --- !u!1 &9117720857253493140
 GameObject:

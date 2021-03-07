@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2327552}
   - component: {fileID: 20593064}
   - component: {fileID: 6548004}
+  - component: {fileID: 2727419233926111037}
   m_Layer: 0
   m_Name: lamppost
   m_TagString: Untagged
@@ -203,6 +204,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.32712057, z: 3.8810778}
   m_Center: {x: 0, y: 0, z: 1.9369748}
+--- !u!114 &2727419233926111037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1598843639419032230
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _60264476-2042-45ab-a37b-9ccb0e088829
+  m_uniqueId: _ba58a7b5-8169-418a-8ca7-e5b72909ccfd
   m_searchTags: []
 --- !u!1 &1939145479853329008
 GameObject:
@@ -275,7 +292,7 @@ GameObject:
   - component: {fileID: 203954171815212432}
   - component: {fileID: 5363612610049513399}
   - component: {fileID: 7531580074478803225}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Volumetric Light Beam (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +458,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4185279815585676667}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -519,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _ad75d4a6-5254-4a16-9093-ff3a8a131b31
+  m_uniqueId: _e2433463-4701-4e8c-a69d-98b89418980d
   m_searchTags: []
 --- !u!1 &8759343545620275520
 GameObject:
@@ -532,7 +549,8 @@ GameObject:
   - component: {fileID: 6530235201991884516}
   - component: {fileID: 5256567214856005879}
   - component: {fileID: 5907804957312689291}
-  m_Layer: 0
+  - component: {fileID: 8781312572374430030}
+  m_Layer: 13
   m_Name: Volumetric Light Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,6 +676,22 @@ MonoBehaviour:
   spawnMaxDistance: 0.7
   cullingEnabled: 1
   cullingMaxDistance: 10
+--- !u!114 &8781312572374430030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759343545620275520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8825307368583866160
 GameObject:
   m_ObjectHideFlags: 0
