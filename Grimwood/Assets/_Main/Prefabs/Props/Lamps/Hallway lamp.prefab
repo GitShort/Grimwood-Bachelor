@@ -88,7 +88,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.67e-43, y: 7.1e-44, z: 0, w: -0.000000027644617}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -267,6 +267,9 @@ MonoBehaviour:
   _lightObjects:
   - {fileID: 9023087381073093828}
   - {fileID: 6355355702251299730}
+  _volumetricBeam: {fileID: 983794805011524294}
+  hoverButton: {fileID: 0}
+  _rend: {fileID: 7981919947720101017}
 --- !u!114 &4712784434085068950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +597,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211895102612334242}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014007092}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -0.0059895515, y: 2.3178463, z: -1.152008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -608,7 +611,7 @@ Transform:
   - {fileID: 983794805165363932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &6339254054931200441
 GameObject:
   m_ObjectHideFlags: 0
