@@ -19,9 +19,15 @@ public class LightManager : MonoBehaviour
         hoverButton.onButtonDown.AddListener(OnButtonDown);
     }
 
+    private void Update()
+    {
+        if (!GameManager.IsGeneratorOn)
+            TurnOffLight();
+    }
+
     void OnButtonDown(Hand hand)
     {
-        if (!isLightOn)
+        if (!isLightOn && GameManager.IsGeneratorOn)
             TurnOnLight();
         else
             TurnOffLight();
@@ -40,7 +46,7 @@ public class LightManager : MonoBehaviour
         if (other.gameObject.layer.Equals(10) && !isLightOn)
         {
             TurnOffLight();
-            Debug.Log("Light out of range and turned off");
+            //Debug.Log("Light out of range and turned off");
         }
         else if (other.gameObject.layer.Equals(10) && isLightOn)
         {
@@ -50,7 +56,7 @@ public class LightManager : MonoBehaviour
             }
             _volumetricBeam.SetActive(true);
             _rend.material.EnableKeyword("_EMISSION");
-            Debug.Log("Light out of range and turned on");
+            //Debug.Log("Light out of range and turned on");
         }
     }
     void TurnOnLight()
@@ -62,7 +68,7 @@ public class LightManager : MonoBehaviour
         }
         _volumetricBeam.SetActive(true);
         _rend.material.EnableKeyword("_EMISSION");
-        Debug.Log("Turned on the light");
+        //Debug.Log("Turned on the light");
     }
 
     void TurnOffLight()
@@ -74,7 +80,7 @@ public class LightManager : MonoBehaviour
         }
         _volumetricBeam.SetActive(false);
         _rend.material.DisableKeyword("_EMISSION");
-        Debug.Log("Turned off the light");
+        //Debug.Log("Turned off the light");
     }
 
 }

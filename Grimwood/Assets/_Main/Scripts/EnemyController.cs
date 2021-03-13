@@ -22,10 +22,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         _agent.SetDestination(_player.position);
-        Debug.Log(_agent.remainingDistance);
+        //Debug.Log(_agent.remainingDistance);
         if (_agent.remainingDistance < _attackDistance)
         {
-            Debug.Log("CloseEnoughToAttack");
+            //Debug.Log("CloseEnoughToAttack");
             _anim.SetBool("isAttacking", true);
         }
         else
