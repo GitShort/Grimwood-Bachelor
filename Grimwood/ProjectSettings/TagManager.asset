@@ -6,6 +6,7 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - Generator
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - LightBeam
   - IgnoreNavMesh
   - DoorHandle
-  - 
+  - Terrain
   - 
   - 
   - 

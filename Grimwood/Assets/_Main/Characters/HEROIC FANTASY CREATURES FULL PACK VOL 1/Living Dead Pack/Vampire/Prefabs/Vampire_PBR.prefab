@@ -1525,6 +1525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   _attackDistance: 2.6
+  _energyGenerator: {fileID: 0}
+  _renderer: {fileID: 7446984632691703010}
 --- !u!195 &182643839
 NavMeshAgent:
   m_ObjectHideFlags: 0
