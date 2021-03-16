@@ -5,17 +5,17 @@ using UnityEngine;
 public class DoorHandleFollowPhysics : MonoBehaviour
 {
     public Transform target;
-    Rigidbody rb;
+    Rigidbody _rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(target.transform.position);
+        _rb.MovePosition(target.transform.position);
     }
 }

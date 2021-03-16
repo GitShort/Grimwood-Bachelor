@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1647734968027583177}
   - component: {fileID: 1647734967399124425}
   - component: {fileID: 1678542833386632072}
-  - component: {fileID: 6349792658186225263}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -175,19 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0eafb4579a0a61459a10e70bfcb7dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6349792658186225263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678542833386632075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a5a33f5df68ec48bf3b61cc731e884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lampMesh: {fileID: 8893469645307634328}
 --- !u!1 &1678542835691931669
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,9 +539,12 @@ GameObject:
   - component: {fileID: 5946659133143151988}
   - component: {fileID: 3133264443967341546}
   - component: {fileID: 6808768098034081589}
+  - component: {fileID: 8893469644155893227}
+  - component: {fileID: 8893469644155893219}
+  - component: {fileID: 8893469644155893221}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Generator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -623,6 +612,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8893469644155893227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706145612216286110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8929658, y: 1.2333996, z: 2.260417}
+  m_Center: {x: 0, y: 0.045242608, z: 0}
+--- !u!114 &8893469644155893219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706145612216286110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_uniqueId: _e190fb26-6b9f-4e33-ae5d-32c21075ba5d
+  m_searchTags: []
+--- !u!114 &8893469644155893221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706145612216286110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a5a33f5df68ec48bf3b61cc731e884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hoverButton: {fileID: 1647734967399124425}
+  _lampMesh: {fileID: 8893469645307634328}
 --- !u!1 &7907389414938588331
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +664,7 @@ GameObject:
   - component: {fileID: 7419504925952536081}
   m_Layer: 0
   m_Name: ElectricityGenerator
-  m_TagString: Untagged
+  m_TagString: Generator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,6 +698,7 @@ GameObject:
   - component: {fileID: 8893469645307634327}
   - component: {fileID: 8893469645307634328}
   - component: {fileID: 8893469645307634329}
+  - component: {fileID: 8893469644155893218}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -751,3 +782,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8893469644155893218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893469645307634331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_uniqueId: _7a67156f-a925-4e98-87f2-056d01c7bfe3
+  m_searchTags: []

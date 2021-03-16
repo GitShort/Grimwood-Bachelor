@@ -316,6 +316,12 @@ MonoBehaviour:
     actionPath: /actions/default/in/TriggerToggle
     needsReinit: 0
   _lightObjs: {fileID: 4180458181597487871}
+  _lightRange: 7
+  _lightBeam: {fileID: 5986333023483151135}
+  _lightSource: {fileID: 322067906760294264}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 104449
 --- !u!1 &4180458181597487871
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,9 +446,9 @@ GameObject:
   - component: {fileID: 2173193657562660712}
   - component: {fileID: 322067906760294264}
   - component: {fileID: 5986333023483151135}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Spotlight and Beam
-  m_TagString: Untagged
+  m_TagString: Flashlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,7 +480,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3
-  m_Range: 10
+  m_Range: 7
   m_SpotAngle: 27.226234
   m_InnerSpotAngle: 19.02832
   m_CookieSize: 10
@@ -568,8 +574,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.01
-  intensityOutside: 0.01
+  intensityInside: 0.07
+  intensityOutside: 0.07
   blendingMode: 0
   spotAngleFromLight: 0
   spotAngle: 15
@@ -585,7 +591,7 @@ MonoBehaviour:
   attenuationEquation: 1
   attenuationCustomBlending: 0.5
   fallOffStart: 0
-  fallOffEnd: 7.02
+  fallOffEnd: 10
   depthBlendDistance: 2
   cameraClippingDistance: 0.5
   glareFrontal: 0
@@ -600,7 +606,7 @@ MonoBehaviour:
   dimensions: 0
   tiltFactor: {x: 0, y: 0}
   pluginVersion: 1900
-  _TrackChangesDuringPlaytime: 0
+  _TrackChangesDuringPlaytime: 1
   _SortingLayerID: 0
   _SortingOrder: 0
   _FadeOutBegin: 150

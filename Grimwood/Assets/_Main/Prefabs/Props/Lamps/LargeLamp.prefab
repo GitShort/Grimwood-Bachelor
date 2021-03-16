@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1156404481}
   - component: {fileID: 1156404480}
   - component: {fileID: 6154815509216954842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

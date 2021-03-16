@@ -5,18 +5,27 @@ using LSS;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool IsGeneratorOn;
-    public static bool IsMonsterHittingGenerator;
+    static bool IsGeneratorOn;
+
 
     // Start is called before the first frame update
     void Start()
     {
         IsGeneratorOn = false;
-        IsMonsterHittingGenerator = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public static bool GetIsGeneratorOn()
+    {
+        return IsGeneratorOn;
+    }
+
+    public static void SetIsGeneratorOn(bool value)
+    {
+        IsGeneratorOn = value;
     }
 }

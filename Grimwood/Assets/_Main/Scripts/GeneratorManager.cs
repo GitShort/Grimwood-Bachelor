@@ -6,20 +6,21 @@ using LSS;
 
 public class GeneratorManager : MonoBehaviour
 {
-    HoverButton _hoverbutton;
+    [SerializeField] HoverButton _hoverButton;
     private LSS_FrontEnd _localLevelLightmapData;
     [SerializeField] MeshRenderer _lampMesh;
 
+    bool IsEnemyHittingGenerator = false;
+
     void Start()
     {
-        _hoverbutton = GetComponent<HoverButton>();
-        _hoverbutton.onButtonDown.AddListener(OnButtonDown);
+        _hoverButton.onButtonDown.AddListener(OnButtonDown);
         _localLevelLightmapData = FindObjectOfType<LSS_FrontEnd>();
     }
 
     private void Update()
     {
-        if (GameManager.IsMonsterHittingGenerator)
+        if (IsEnemyHittingGenerator)
         {
             GeneratorOff();
         }
@@ -27,7 +28,7 @@ public class GeneratorManager : MonoBehaviour
 
     void OnButtonDown(Hand hand)
     {
-        if (GameManager.IsGeneratorOn)
+        if (GameManager.GetIsGeneratorOn())
         {
             GeneratorOff();
         }
@@ -41,17 +42,27 @@ public class GeneratorManager : MonoBehaviour
     void GeneratorOff()
     {
         _localLevelLightmapData.Load("Generator_Off");
-        GameManager.IsGeneratorOn = false;
+        GameManager.SetIsGeneratorOn(false);
         _lampMesh.material.SetColor("_EmissionColor", Color.red);
         //Debug.Log("clicked OFF");
-        GameManager.IsMonsterHittingGenerator = false;
+        IsEnemyHittingGenerator = false;
     }
 
     void GeneratorOn()
     {
         _localLevelLightmapData.Load("Generator_On");
-        GameManager.IsGeneratorOn = true;
+        GameManager.SetIsGeneratorOn(true);
         _lampMesh.material.SetColor("_EmissionColor", Color.green);
         //Debug.Log("clicked ON");
+    }
+
+    public bool GetIsEnemyHittingGenerator()
+    {
+        return IsEnemyHittingGenerator;
+    }
+
+    public void SetIsEnemyHittingGenerator(bool value)
+    {
+        IsEnemyHittingGenerator = value;
     }
 }

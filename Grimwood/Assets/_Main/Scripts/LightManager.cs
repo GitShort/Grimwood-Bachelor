@@ -11,7 +11,7 @@ public class LightManager : MonoBehaviour
     [SerializeField] HoverButton hoverButton;
     [SerializeField] MeshRenderer _rend;
 
-    bool isLightOn = false;
+    bool _isLightOn = false;
 
     void Start()
     {
@@ -21,13 +21,13 @@ public class LightManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.IsGeneratorOn)
+        if (!GameManager.GetIsGeneratorOn())
             TurnOffLight();
     }
 
     void OnButtonDown(Hand hand)
     {
-        if (!isLightOn && GameManager.IsGeneratorOn)
+        if (!_isLightOn && GameManager.GetIsGeneratorOn())
             TurnOnLight();
         else
             TurnOffLight();
@@ -35,7 +35,7 @@ public class LightManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(10) && isLightOn)
+        if (other.gameObject.layer.Equals(10) && _isLightOn)
         {
             TurnOnLight();
         }
@@ -43,12 +43,12 @@ public class LightManager : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer.Equals(10) && !isLightOn)
+        if (other.gameObject.layer.Equals(10) && !_isLightOn)
         {
             TurnOffLight();
             //Debug.Log("Light out of range and turned off");
         }
-        else if (other.gameObject.layer.Equals(10) && isLightOn)
+        else if (other.gameObject.layer.Equals(10) && _isLightOn)
         {
             foreach (Light light in _lightObjects)
             {
@@ -61,7 +61,7 @@ public class LightManager : MonoBehaviour
     }
     void TurnOnLight()
     {
-        isLightOn = true;
+        _isLightOn = true;
         foreach (Light light in _lightObjects)
         {
             light.enabled = true;
@@ -73,7 +73,7 @@ public class LightManager : MonoBehaviour
 
     void TurnOffLight()
     {
-        isLightOn = false;
+        _isLightOn = false;
         foreach (Light light in _lightObjects)
         {
             light.enabled = false;

@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 983794805165364002}
   - component: {fileID: 983794805165364003}
   - component: {fileID: 4712784434085068950}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
