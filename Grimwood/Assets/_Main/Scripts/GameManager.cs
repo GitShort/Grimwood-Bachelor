@@ -7,14 +7,11 @@ public class GameManager : MonoBehaviour
 {
     static bool IsGeneratorOn;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         IsGeneratorOn = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
     }

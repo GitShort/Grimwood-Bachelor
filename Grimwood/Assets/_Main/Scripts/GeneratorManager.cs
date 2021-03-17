@@ -24,6 +24,9 @@ public class GeneratorManager : MonoBehaviour
         {
             GeneratorOff();
         }
+
+        //TEST
+        GeneratorDebugging();
     }
 
     void OnButtonDown(Hand hand)
@@ -64,5 +67,20 @@ public class GeneratorManager : MonoBehaviour
     public void SetIsEnemyHittingGenerator(bool value)
     {
         IsEnemyHittingGenerator = value;
+    }
+
+    /// <summary>
+    /// FOR TESTING PURPOSES
+    /// </summary>
+    public void GeneratorDebugging()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GeneratorOn();
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            GeneratorOff();
+        }
     }
 }
