@@ -62,11 +62,13 @@ public class LightManager : MonoBehaviour
                         {
                             light.intensity = 0;
                             _volumetricBeam.SetActive(false);
+                            _rend.material.DisableKeyword("_EMISSION");
                         }
                         else if (light.intensity == 0)
                         {
                             light.intensity = _lightsOriginalIntensity[i];
                             _volumetricBeam.SetActive(true);
+                            _rend.material.EnableKeyword("_EMISSION");
                         }
                     }
                 }
@@ -125,6 +127,7 @@ public class LightManager : MonoBehaviour
                     light.intensity = _lightsOriginalIntensity[i];
                     if (!_volumetricBeam.activeInHierarchy)
                         _volumetricBeam.SetActive(true);
+                    _rend.material.EnableKeyword("_EMISSION");
                 }
                 _index++;
             }

@@ -9,6 +9,7 @@ TagManager:
   - Generator
   - Flashlight
   - Enemy
+  - PhotoCamera
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - DoorHandle
   - Terrain
   - Flashlight
-  - 
+  - PhotoCamera
   - 
   - 
   - 

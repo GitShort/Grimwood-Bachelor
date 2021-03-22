@@ -318,7 +318,6 @@ MonoBehaviour:
   _lightObjs: {fileID: 4180458181597487871}
   _lightRange: 7
   _lightBeam: {fileID: 5986333023483151135}
-  _lightSource: {fileID: 322067906760294264}
   _layerMask:
     serializedVersion: 2
     m_Bits: 104449
@@ -485,7 +484,7 @@ Light:
   m_InnerSpotAngle: 19.02832
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -574,8 +573,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.07
-  intensityOutside: 0.07
+  intensityInside: 0.03
+  intensityOutside: 0.03
   blendingMode: 0
   spotAngleFromLight: 0
   spotAngle: 15

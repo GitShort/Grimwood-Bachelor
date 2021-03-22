@@ -15,12 +15,10 @@ public class FlashlightManager : MonoBehaviour
     [SerializeField] GameObject _lightObjs;
     [SerializeField] float _lightRange = 6f;
     [SerializeField] VolumetricLightBeam _lightBeam;
-    [SerializeField] Light _lightSource;
     [SerializeField] LayerMask _layerMask;
     RaycastHit hit;
     Ray ray;
 
-    // Start is called before the first frame update
     void Start()
     {
         _interactable = GetComponent<Interactable>();
@@ -46,25 +44,23 @@ public class FlashlightManager : MonoBehaviour
             ray = new Ray(transform.position, transform.forward);
             if (Physics.Raycast(ray, out hit, _lightRange, _layerMask))
             {
-
                 _lightBeam.fallOffEnd = hit.distance;
-                //_lightSource.range = hit.distance;
                 _lightBeam.UpdateAfterManualPropertyChange();
 
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
                     _enemy = hit.collider.GetComponent<EnemyController>();
-                    _enemy.SetIsEnemyCollidingWithFlashlight(true);
+                    _enemy.SetIsCollidingWithFlashlight(true); // perdaryti i interface 
                 }
                 else if (!hit.collider.gameObject.CompareTag("Enemy") && _enemy != null)
                 {
-                    _enemy.SetIsEnemyCollidingWithFlashlight(false);
+                    _enemy.SetIsCollidingWithFlashlight(false);
                 }
             }
-            else if (_enemy != null && _enemy.GetIsEnemyCollidingWithFlashlight())
-                _enemy.SetIsEnemyCollidingWithFlashlight(false);
+            else if (_enemy != null && _enemy.GetIsCollidingWithFlashlight())
+                _enemy.SetIsCollidingWithFlashlight(false);
         }
         else if (_enemy != null)
-            _enemy.SetIsEnemyCollidingWithFlashlight(false);
+            _enemy.SetIsCollidingWithFlashlight(false);
     }
 }

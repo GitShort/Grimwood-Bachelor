@@ -5,13 +5,17 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] Transform _player;
+    [SerializeField] Transform _playerHead;
     [SerializeField] float _attackDistance = 2f;
     [SerializeField] Transform _energyGenPos;
+    [SerializeField] Transform _photoCamera;
     GeneratorManager _energyGen;
 
     NavMeshAgent _agent;
     Animator _anim;
+    PlayerManager _playerManage;
+
+    [SerializeField] float _defaultMoveSpeed = 3f;
 
     [SerializeField] float _castsHeightOffset = 0.75f;
     [SerializeField] LayerMask _includedLayers;
@@ -20,12 +24,16 @@ public class EnemyController : MonoBehaviour
     RaycastHit hit;
 
     // For flashlight detection raycasts
-    [SerializeField] float _lightDetectionDistance = 10f;
-    [SerializeField] LayerMask _lightDetectionLayers;
+    [SerializeField] float _flashlightMoveSpeed = 3f;
     bool isLitUp = false;
     //
 
-    bool IsEnemyCollidingWithFlashlight = false;
+    // Frost atmosphere emittion 
+    [SerializeField] LayerMask _includedLayersFrost;
+    [SerializeField] float _FrostDistance = 8f;
+
+    bool _isCollidingWithFlashlight = false;
+    bool _isCollidingWithCamera = false;
 
 
     void Start()
@@ -38,7 +46,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!GameManager.GetIsGeneratorOn()) 
         {
-            _agent.SetDestination(_player.position); // move towards player
+            _agent.SetDestination(_playerHead.position); // move towards player
         }
         else if (GameManager.GetIsGeneratorOn()) // TODO -> only switch movement to light generator if the monster is afraid of light
         {
@@ -53,6 +61,17 @@ public class EnemyController : MonoBehaviour
         PlayAnimations();
         //IsEnemyVisible();
         CollisionWithFlashlight();
+        IsEnemyVisibleCamera();
+
+        
+        //EmitAtmosphere(0); // freezing
+        EmitAtmosphere(1); // fog
+
+        //debugging purposes for collision with photo camera
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _isCollidingWithCamera = false;
+        }
     }
 
     void PlayAnimations()
@@ -76,7 +95,7 @@ public class EnemyController : MonoBehaviour
     // function that checks if enemy is 'seen' by the player's camera
     void IsEnemyVisible()
     {
-        if (Physics.Linecast(castsPosition, _player.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
+        if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
         {
             //Debug.Log(hit.collider.name);
             //Debug.DrawLine(castsPosition, _player.position);
@@ -89,9 +108,34 @@ public class EnemyController : MonoBehaviour
             else
             {
                 //Debug.Log("Hidden");
-                _agent.speed = 3f;
+                _agent.speed = _defaultMoveSpeed;
             }
                 
+        }
+    }
+
+    // function that checks if enemy is 'seen' by the photo camera
+    void IsEnemyVisibleCamera()
+    {
+        if (Physics.Linecast(castsPosition, _photoCamera.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
+        {
+            //Debug.Log(hit.collider.name);
+            //Debug.DrawLine(castsPosition, _player.position);
+
+            if (_renderer.isVisible && hit.collider.gameObject.CompareTag("PhotoCamera"))
+            {
+                CollisionWithCamera();
+                Debug.Log("Visible");
+            }
+        }
+    }
+
+    void CollisionWithCamera()
+    {
+        if (_isCollidingWithCamera)
+        {
+            Debug.Log("Took a picture");
+            _isCollidingWithCamera = false;
         }
     }
 
@@ -118,19 +162,20 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Monster has hit the generator!");
     }
 
+    // Flashlight behavior
     void CollisionWithFlashlight()
     {
-        if (IsEnemyCollidingWithFlashlight && !isLitUp)
+        if (_isCollidingWithFlashlight && !isLitUp)
         {
             _anim.Play("GetHitLight1");
-            _agent.speed = 0f;
+            _agent.speed = _flashlightMoveSpeed;
             //_anim.SetBool("isNearFlashlight", true);
             Debug.Log("Hit by flashlight");
             isLitUp = true;
         }
-        else if (!IsEnemyCollidingWithFlashlight && isLitUp)
+        else if (!_isCollidingWithFlashlight && isLitUp)
         {
-            _agent.speed = 2f;
+            _agent.speed = _defaultMoveSpeed;
             //_anim.SetBool("isNearFlashlight", false);
             Debug.Log("No longer hit by flashlight");
             isLitUp = false;
@@ -138,13 +183,64 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public bool GetIsEnemyCollidingWithFlashlight()
+    /// <summary>
+    /// Frost atmosphere/ Thicker fog atmosphere behavior function
+    /// </summary>
+    /// <param name="state"> 0 is freezing, 1 is fog </param>
+    void EmitAtmosphere(int state)
     {
-        return IsEnemyCollidingWithFlashlight;
+        if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayersFrost, QueryTriggerInteraction.Ignore))
+        {
+            _playerManage = hit.collider.GetComponentInParent<PlayerManager>();
+            if (hit.distance <= _FrostDistance)
+            {
+                if (state == 0)
+                {
+                    _playerManage.SetIsFreezing(true);
+                    Debug.Log("Player has entered FROST aura");
+                }
+                else if (state == 1)
+                {
+                    _playerManage.SetIsBlinded(true);
+                    Debug.Log("BLINDED");
+                }
+            }
+            else
+            {
+                if (state == 0)
+                {
+                    _playerManage.SetIsFreezing(false);
+                    Debug.Log("Player has left FROST aura");
+                }
+                else if (state == 1)
+                {
+                    _playerManage.SetIsBlinded(false);
+                    Debug.Log("NOT BLINDED");
+                }
+
+            }
+        }
     }
 
-    public void SetIsEnemyCollidingWithFlashlight(bool value)
+
+    // 
+    public bool GetIsCollidingWithFlashlight()
     {
-        IsEnemyCollidingWithFlashlight = value;
+        return _isCollidingWithFlashlight;
+    }
+
+    public void SetIsCollidingWithFlashlight(bool value)
+    {
+        _isCollidingWithFlashlight = value;
+    }
+
+    public bool GetIsCollidingWithCamera()
+    {
+        return _isCollidingWithCamera;
+    }
+
+    public void SetIsCollidingWithCamera(bool value)
+    {
+        _isCollidingWithCamera = value;
     }
 }

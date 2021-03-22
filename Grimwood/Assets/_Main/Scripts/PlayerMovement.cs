@@ -4,17 +4,17 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class VRSlidingMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float Gravity = 60f;
-    public float RotateIncrement = 90;
+    [SerializeField] float _gravity = 120f;
+    [SerializeField] float _rotateIncrement = 30f;
 
-    public float Sensitivity = 0.1f;
-    public float MaxSpeed = 1f;
+    [SerializeField] float _sensitivity = 0.1f;
+    [SerializeField] float _maxSpeed = 4f;
 
-    public SteamVR_Action_Boolean SnapLeftAction = SteamVR_Input.GetBooleanAction("SnapTurnLeft");
-    public SteamVR_Action_Boolean SnapRightAction = SteamVR_Input.GetBooleanAction("SnapTurnRight");
-    public SteamVR_Action_Vector2 MoveValue = SteamVR_Input.GetVector2Action("TouchpadPosition");
+    [SerializeField] SteamVR_Action_Boolean SnapLeftAction = SteamVR_Input.GetBooleanAction("SnapTurnLeft");
+    [SerializeField] SteamVR_Action_Boolean SnapRightAction = SteamVR_Input.GetBooleanAction("SnapTurnRight");
+    [SerializeField] SteamVR_Action_Vector2 MoveValue = SteamVR_Input.GetVector2Action("TouchpadPosition");
 
     float _speed = 0f;
 
@@ -37,13 +37,6 @@ public class VRSlidingMovement : MonoBehaviour
         CalculateMovement();
         SnapRotation();
     }
-
-    //void SnapCharacterController()
-    //{
-    //    float distanceFromFloor = Vector3.Dot(_head.localPosition, Vector3.up);
-    //    _charController.height = Mathf.Max(_charController.radius, distanceFromFloor);
-    //    _charController.center = _head.localPosition - 0.5f * distanceFromFloor * Vector3.up;
-    //}
 
     void HandleHeight()
     {
@@ -77,14 +70,14 @@ public class VRSlidingMovement : MonoBehaviour
         }
 
         // Add, clamp
-        _speed += MoveValue.axis.magnitude * Sensitivity;
-        _speed = Mathf.Clamp(_speed, -MaxSpeed, MaxSpeed);
+        _speed += MoveValue.axis.magnitude * _sensitivity;
+        _speed = Mathf.Clamp(_speed, -_maxSpeed, _maxSpeed);
 
         // Orientation
         _movement += _orientation * (_speed * Vector3.forward);
 
         // Gravity
-        _movement.y -= Gravity * Time.deltaTime;
+        _movement.y -= _gravity * Time.deltaTime;
 
         // Apply
         _charController.Move(_movement * Time.deltaTime);
@@ -105,11 +98,21 @@ public class VRSlidingMovement : MonoBehaviour
         float _snapValue = 0f;
 
         if (SnapLeftAction.GetStateDown(SteamVR_Input_Sources.RightHand))
-            _snapValue = -Mathf.Abs(RotateIncrement);
+            _snapValue = -Mathf.Abs(_rotateIncrement);
 
         if (SnapRightAction.GetStateDown(SteamVR_Input_Sources.RightHand))
-            _snapValue = Mathf.Abs(RotateIncrement);
+            _snapValue = Mathf.Abs(_rotateIncrement);
 
         transform.RotateAround(this.gameObject.transform.position, Vector3.up, _snapValue); // adjust to RotateAround(_head.position) later
+    }
+
+    public float GetMaxSpeed()
+    {
+        return _maxSpeed;
+    }
+
+    public void SetMaxSpeed(float value)
+    {
+        _maxSpeed = value;
     }
 }
