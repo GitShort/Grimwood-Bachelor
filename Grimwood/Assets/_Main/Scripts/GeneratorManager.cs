@@ -31,7 +31,7 @@ public class GeneratorManager : MonoBehaviour
 
     void OnButtonDown(Hand hand)
     {
-        if (GameManager.GetIsGeneratorOn())
+        if (GameManager.instance.GetIsGeneratorOn())
         {
             GeneratorOff();
         }
@@ -45,7 +45,7 @@ public class GeneratorManager : MonoBehaviour
     void GeneratorOff()
     {
         _localLevelLightmapData.Load("Generator_Off");
-        GameManager.SetIsGeneratorOn(false);
+        GameManager.instance.SetIsGeneratorOn(false);
         _lampMesh.material.SetColor("_EmissionColor", Color.red);
         //Debug.Log("clicked OFF");
         IsEnemyHittingGenerator = false;
@@ -54,7 +54,7 @@ public class GeneratorManager : MonoBehaviour
     void GeneratorOn()
     {
         _localLevelLightmapData.Load("Generator_On");
-        GameManager.SetIsGeneratorOn(true);
+        GameManager.instance.SetIsGeneratorOn(true);
         _lampMesh.material.SetColor("_EmissionColor", Color.green);
         //Debug.Log("clicked ON");
     }

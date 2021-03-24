@@ -28,9 +28,9 @@ public class EnemyController : MonoBehaviour
     bool isLitUp = false;
     //
 
-    // Frost atmosphere emittion 
-    [SerializeField] LayerMask _includedLayersFrost;
-    [SerializeField] float _FrostDistance = 8f;
+    // Frost / blind atmosphere values 
+    [SerializeField] LayerMask _includedLayersAtmosphere;
+    [SerializeField] float _atmosphereDistance = 8f;
 
     bool _isCollidingWithFlashlight = false;
     bool _isCollidingWithCamera = false;
@@ -44,11 +44,11 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.GetIsGeneratorOn()) 
+        if (!GameManager.instance.GetIsGeneratorOn()) 
         {
             _agent.SetDestination(_playerHead.position); // move towards player
         }
-        else if (GameManager.GetIsGeneratorOn()) // TODO -> only switch movement to light generator if the monster is afraid of light
+        else if (GameManager.instance.GetIsGeneratorOn()) // TODO -> only switch movement to light generator if the monster is afraid of light
         {
             _agent.SetDestination(_energyGenPos.position); // if the lights are on move towards generator
             EnergyGeneratorAction();
@@ -64,8 +64,8 @@ public class EnemyController : MonoBehaviour
         IsEnemyVisibleCamera();
 
         
-        //EmitAtmosphere(0); // freezing
-        EmitAtmosphere(1); // fog
+        EmitAtmosphere(1); // freezing
+        //EmitAtmosphere(0); // fog
 
         //debugging purposes for collision with photo camera
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -189,10 +189,10 @@ public class EnemyController : MonoBehaviour
     /// <param name="state"> 0 is freezing, 1 is fog </param>
     void EmitAtmosphere(int state)
     {
-        if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayersFrost, QueryTriggerInteraction.Ignore))
+        if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayersAtmosphere, QueryTriggerInteraction.Ignore))
         {
             _playerManage = hit.collider.GetComponentInParent<PlayerManager>();
-            if (hit.distance <= _FrostDistance)
+            if (hit.distance <= _atmosphereDistance)
             {
                 if (state == 0)
                 {
@@ -221,7 +221,6 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
 
     // 
     public bool GetIsCollidingWithFlashlight()

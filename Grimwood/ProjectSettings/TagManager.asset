@@ -10,6 +10,7 @@ TagManager:
   - Flashlight
   - Enemy
   - PhotoCamera
+  - Snappable
   layers:
   - Default
   - TransparentFX

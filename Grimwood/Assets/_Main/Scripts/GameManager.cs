@@ -5,7 +5,15 @@ using LSS;
 
 public class GameManager : MonoBehaviour
 {
-    static bool IsGeneratorOn;
+    bool IsGeneratorOn;
+
+    public static GameManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 
     void Start()
     {
@@ -14,14 +22,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        
     }
 
-    public static bool GetIsGeneratorOn()
+    public bool GetIsGeneratorOn()
     {
         return IsGeneratorOn;
     }
 
-    public static void SetIsGeneratorOn(bool value)
+    public void SetIsGeneratorOn(bool value)
     {
         IsGeneratorOn = value;
     }

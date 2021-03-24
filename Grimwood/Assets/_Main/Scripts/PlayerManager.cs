@@ -42,7 +42,6 @@ public class PlayerManager : MonoBehaviour
     float _saturationValueCurrent;
     Color _colorFilterValueCurrent;
 
-
     float _timer = 0f;
     bool _isTimerStarted;
     bool _isTimerFinished = false;

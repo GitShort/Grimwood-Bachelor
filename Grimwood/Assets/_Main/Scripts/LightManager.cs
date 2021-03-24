@@ -44,7 +44,7 @@ public class LightManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.GetIsGeneratorOn())
+        if (!GameManager.instance.GetIsGeneratorOn())
             TurnOffLight();
 
         if (_isFlickering)
@@ -79,7 +79,7 @@ public class LightManager : MonoBehaviour
 
     void OnButtonDown(Hand hand)
     {
-        if (!_isLightOn && GameManager.GetIsGeneratorOn())
+        if (!_isLightOn && GameManager.instance.GetIsGeneratorOn())
             TurnOnLight();
         else
             TurnOffLight();
