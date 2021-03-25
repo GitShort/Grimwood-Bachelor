@@ -19,13 +19,40 @@ public class FlashlightManager : MonoBehaviour
     RaycastHit hit;
     Ray ray;
 
+    [SerializeField] float _batteryConsumptionRate = 0.1f;
+    [SerializeField] Renderer[] _BatteryIndicators;
+    float[] _batteryIndicatorsValue;
+    [SerializeField] float _maxBatteryLevel = 4f;
+    float _currentBatteryLevel;
+    [SerializeField] float _batteryRestoreValue = 2f;
+
+
     void Start()
     {
         _interactable = GetComponent<Interactable>();
         _lightObjs.SetActive(false);
+        _currentBatteryLevel = _maxBatteryLevel;
+
+        _batteryIndicatorsValue = new float[_BatteryIndicators.Length];
+        for (int i = 0; i < _batteryIndicatorsValue.Length; i++)
+        {
+            _batteryIndicatorsValue[i] = i + 1;
+        }
     }
 
     void Update()
+    {
+        FlashlightTriggerAction();
+        if (_currentBatteryLevel < 0)
+        {
+            _currentBatteryLevel = 0;
+            if(_lightObjs.activeInHierarchy)
+                _lightObjs.SetActive(false);
+        }
+            
+    }
+
+    void FlashlightTriggerAction()
     {
         if (_interactable.attachedToHand)
         {
@@ -33,14 +60,20 @@ public class FlashlightManager : MonoBehaviour
 
             if (ActionToggle.GetStateDown(hand))
             {
-                if (_lightObjs.activeInHierarchy)
-                    _lightObjs.SetActive(false);
-                else
+                if (!_lightObjs.activeInHierarchy && _currentBatteryLevel > 0)
                     _lightObjs.SetActive(true);
+                else
+                    _lightObjs.SetActive(false);
             }
         }
-        if (_lightObjs.activeInHierarchy)
+        FlashlightBeam();
+    }
+
+    void FlashlightBeam()
+    {
+        if (_lightObjs.activeInHierarchy && _currentBatteryLevel >= 0)
         {
+            BatteryLevel();
             ray = new Ray(transform.position, transform.forward);
             if (Physics.Raycast(ray, out hit, _lightRange, _layerMask))
             {
@@ -61,6 +94,54 @@ public class FlashlightManager : MonoBehaviour
                 _enemy.SetIsCollidingWithFlashlight(false);
         }
         else if (_enemy != null)
-            _enemy.SetIsCollidingWithFlashlight(false);
+            _enemy.SetIsCollidingWithFlashlight(false);    }
+
+    void BatteryLevel()
+    {
+        _currentBatteryLevel -= Time.deltaTime * _batteryConsumptionRate;
+        for (int i = 0; i < _batteryIndicatorsValue.Length; i++)
+        {
+            if (_currentBatteryLevel < _batteryIndicatorsValue[i] && _BatteryIndicators[i].material.IsKeywordEnabled("_EMISSION"))
+            {
+                Debug.Log(_batteryIndicatorsValue[i].ToString() + " used");
+                _BatteryIndicators[i].material.DisableKeyword("_EMISSION");
+            }
+            else if (_currentBatteryLevel > _batteryIndicatorsValue[i] && !_BatteryIndicators[i].material.IsKeywordEnabled("_EMISSION"))  
+            {
+                Debug.Log(_batteryIndicatorsValue[i].ToString() + " restored");
+                _BatteryIndicators[i].material.EnableKeyword("_EMISSION");
+            }
+        }
+        //Debug.Log("Battery Level: " + _currentBatteryLevel.ToString());
+    }
+
+    public void SetCurrentBatteryLevel(float value)
+    {
+        if ((_currentBatteryLevel > _maxBatteryLevel-2f && _currentBatteryLevel < _maxBatteryLevel-1f) || _currentBatteryLevel >= _maxBatteryLevel)
+        {
+            _currentBatteryLevel = _maxBatteryLevel;
+        }
+        else
+            _currentBatteryLevel += value;
+
+        for (int i = 0; i < _batteryIndicatorsValue.Length; i++)
+        {
+            Debug.Log("FOR");
+            if (_currentBatteryLevel >= _batteryIndicatorsValue[i] && !_BatteryIndicators[i].material.IsKeywordEnabled("_EMISSION"))
+            {
+                _BatteryIndicators[i].material.EnableKeyword("_EMISSION");
+                Debug.Log(_batteryIndicatorsValue[i].ToString() + " restored");
+            }
+        }
+    }
+
+    public float GetCurrentBatteryLevel()
+    {
+        return _currentBatteryLevel;
+    }
+
+    public float GetBatteryRestoreValue()
+    {
+        return _batteryRestoreValue;
     }
 }

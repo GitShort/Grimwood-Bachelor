@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - PhotoCamera
   - Snappable
+  - Battery
   layers:
   - Default
   - TransparentFX
