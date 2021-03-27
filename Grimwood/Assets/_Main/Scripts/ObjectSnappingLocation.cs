@@ -7,6 +7,7 @@ public class ObjectSnappingLocation : MonoBehaviour
 {
     Rigidbody _rb;
     Interactable _interactable;
+    ApplyOutline _outline;
 
     bool _isSnapped = false;
     string _objectNameEnter = "";
@@ -19,6 +20,7 @@ public class ObjectSnappingLocation : MonoBehaviour
             Debug.Log("NEAR");
             if (!_interactable.attachedToHand && _objectNameEnter.Equals(""))
             {
+                _outline = other.gameObject.GetComponent<ApplyOutline>();
                 _rb = other.gameObject.GetComponent<Rigidbody>();
                 _rb.useGravity = false;
                 _rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -26,6 +28,7 @@ public class ObjectSnappingLocation : MonoBehaviour
                 ChangeToParent(this.gameObject.transform, other.gameObject);
                 _objectNameEnter = other.gameObject.name;
                 _isSnapped = true;
+                _outline.SetIsObjectSnapped(true);
             }
         }
     }
@@ -37,12 +40,14 @@ public class ObjectSnappingLocation : MonoBehaviour
             if (_objectNameEnter.Equals(other.gameObject.name) && _isSnapped)
             {
                 ChangeToWorld();
+                _outline = other.gameObject.GetComponent<ApplyOutline>();
                 _rb = other.gameObject.GetComponent<Rigidbody>();
                 _rb.useGravity = true;
                 _rb.constraints = RigidbodyConstraints.None;
                 Debug.Log("removed");
                 _objectNameEnter = "";
                 _isSnapped = false;
+                _outline.SetIsObjectSnapped(false);
             }
         }
     }

@@ -35,6 +35,12 @@ public class EnemyController : MonoBehaviour
     bool _isCollidingWithFlashlight = false;
     bool _isCollidingWithCamera = false;
 
+    Dictionary<string, IEnemyBehavior> enemyBehaviors;
+
+    private void Awake()
+    {
+        enemyBehaviors = new Dictionary<string, IEnemyBehavior>();
+    }
 
     void Start()
     {
@@ -64,14 +70,26 @@ public class EnemyController : MonoBehaviour
         IsEnemyVisibleCamera();
 
         
-        EmitAtmosphere(1); // freezing
+        //EmitAtmosphere(1); // freezing
         //EmitAtmosphere(0); // fog
+
+        foreach (string key in enemyBehaviors.Keys)
+        {
+            enemyBehaviors[key].CallBehavior();
+            enemyBehaviors[key].Behavior();
+        }
 
         //debugging purposes for collision with photo camera
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _isCollidingWithCamera = false;
         }
+    }
+
+    public void AddBehavior(IEnemyBehavior behavior, string key)
+    {
+        enemyBehaviors.Add(key, behavior);
+        behavior.DebugFunction();
     }
 
     void PlayAnimations()
@@ -163,6 +181,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Flashlight behavior
+    // states
     void CollisionWithFlashlight()
     {
         if (_isCollidingWithFlashlight && !isLitUp)
@@ -180,7 +199,6 @@ public class EnemyController : MonoBehaviour
             Debug.Log("No longer hit by flashlight");
             isLitUp = false;
         }
-
     }
 
     /// <summary>

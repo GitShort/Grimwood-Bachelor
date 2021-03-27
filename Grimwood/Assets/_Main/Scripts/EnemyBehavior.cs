@@ -1,44 +1,49 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class EnemyBehavior
 {
-    public string behaviorTheme;
+    public IEnemyBehavior _behaviorReference;
 
-    [SerializeField] int _childStatesCount;
-    int _parentState; // Behavior that is chosen
-    int[] _ChildState; // Behaviors to choose from
+    int _behaviorIndex; // Behavior that is chosen
+    //int[] _ChildState; // Behaviors to choose from
+    public UnityEngine.Object[] _ChildState;
 
     static readonly System.Random rnd = new System.Random();
+    string key;
 
-    [SerializeField] IBehavior[] behavior;
+    //[SerializeField] IBehavior[] behavior;
 
-    public void GenerateBehaviorStates()
+    public void GenerateBehaviorStates(BehaviorAttributes attributes)
     {
-        _ChildState = new int[_childStatesCount];
-        for (int i = 0; i < _ChildState.Length; i++)
-        {
-            _ChildState[i] = i;
-        }
-
+        
         // Get a random Parent state for each children pair
-        _parentState = rnd.Next(_childStatesCount);
+        _behaviorIndex = rnd.Next(_ChildState.Length);
+        
+        _behaviorReference = (IEnemyBehavior)GetInstance(_ChildState[_behaviorIndex].name, attributes);
     }
 
-    public void GenerateBehaviorStates2()
+    public IEnemyBehavior GetBehaviorReference()
     {
-
+        return _behaviorReference;
     }
 
-    public int GetParentState()
+    public string GetKey()
     {
-        return _parentState;
+        return key;
     }
 
-    public void SetParentState(int value)
+    // class name is key
+    public object GetInstance(string strFullyQualifiedName, BehaviorAttributes attributes)
     {
-        _parentState = value;
-    }
+        Type t = Type.GetType(strFullyQualifiedName);
+        System.Object[] args = { attributes };
+        key = strFullyQualifiedName;
+        return Activator.CreateInstance(t, args);
+    } 
 }

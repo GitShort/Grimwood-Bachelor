@@ -94,7 +94,8 @@ public class FlashlightManager : MonoBehaviour
                 _enemy.SetIsCollidingWithFlashlight(false);
         }
         else if (_enemy != null)
-            _enemy.SetIsCollidingWithFlashlight(false);    }
+            _enemy.SetIsCollidingWithFlashlight(false);    
+    }
 
     void BatteryLevel()
     {
@@ -112,7 +113,7 @@ public class FlashlightManager : MonoBehaviour
                 _BatteryIndicators[i].material.EnableKeyword("_EMISSION");
             }
         }
-        //Debug.Log("Battery Level: " + _currentBatteryLevel.ToString());
+        Debug.Log("Battery Level: " + _currentBatteryLevel.ToString());
     }
 
     public void SetCurrentBatteryLevel(float value)

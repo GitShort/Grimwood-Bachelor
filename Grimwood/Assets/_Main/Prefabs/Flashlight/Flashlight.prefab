@@ -128,6 +128,8 @@ GameObject:
   - component: {fileID: 2358943103236136548}
   - component: {fileID: 1024605737}
   - component: {fileID: 743501384}
+  - component: {fileID: 1236092253}
+  - component: {fileID: 1236092254}
   m_Layer: 9
   m_Name: Flashlight
   m_TagString: Snappable
@@ -323,13 +325,14 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 104449
-  _batteryConsumptionRate: 1
+  _batteryConsumptionRate: 0.015
   _BatteryIndicators:
   - {fileID: 5047559147041228817}
   - {fileID: 7637266907491375153}
   - {fileID: 2917443107265677440}
   - {fileID: 131609397677466850}
   _maxBatteryLevel: 5
+  _batteryRestoreValue: 2
 --- !u!114 &743501384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +360,36 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &1236092253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2389768350867316620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1236092254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2389768350867316620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d6824da436187439131d5bdee3fc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2609943349218516787
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4683147076006690918}
   m_LocalRotation: {x: -2.5642593e-23, y: -0.7071066, z: -8.65956e-17, w: 0.707107}
-  m_LocalPosition: {x: 0.20093, y: -0.00709, z: 0.00015988946}
+  m_LocalPosition: {x: 0.1848, y: -0.0071, z: 0.0002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4749038183248543333}
@@ -527,7 +560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3391956c64ac1547ac75bb3ca015f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _batteryRestoreValue: 2
 --- !u!1 &4710647301690968824
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,8 +1017,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3
   m_Range: 7
-  m_SpotAngle: 27.226234
-  m_InnerSpotAngle: 19.02832
+  m_SpotAngle: 34.77464
+  m_InnerSpotAngle: 25.96765
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2

@@ -81,6 +81,10 @@ public class PlayerManager : MonoBehaviour
             _isBlinded = true;
         if (Input.GetKeyDown(KeyCode.Alpha7))
             _isBlinded = false;
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+            _isFreezing = true;
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+            _isFreezing = false;
     }
 
     void FreezingBehavior()
@@ -89,7 +93,7 @@ public class PlayerManager : MonoBehaviour
         {
             _playerMove.SetMaxSpeed(_frozenMoveSpeed);
             _freezingParticles.SetActive(true);
-            Debug.Log("TurnedON");
+            //Debug.Log("TurnedON");
             _isUnfreezing = false;
             _isTimerStarted = false;
             _isTimerFinished = false;
@@ -99,7 +103,7 @@ public class PlayerManager : MonoBehaviour
         {
             _playerMove.SetMaxSpeed(_defaultMoveSpeed);
             _freezingParticles.SetActive(false);
-            Debug.Log("TurnedOFF");
+            //Debug.Log("TurnedOFF");
             _isTimerStarted = false;
             _isUnfreezing = true;
             _isTimerFinished = false;
@@ -128,7 +132,7 @@ public class PlayerManager : MonoBehaviour
             if (_changeDurationFreeze <= _timer)
             {
                 _isTimerFinished = true;
-                Debug.Log("Stopped");
+                //Debug.Log("Stopped");
             }
         }
     }
@@ -171,11 +175,11 @@ public class PlayerManager : MonoBehaviour
         {
             _timer += Time.deltaTime / _simulationSpeedBlind;
             RenderSettings.fogDensity = Mathf.SmoothStep(_fogDensityCurrent, densityValue, _timer);
-            Debug.Log(_timer);
+            //Debug.Log(_timer);
             if (_changeDurationFog <= _timer)
             {
                 _isTimerFinished = true;
-                Debug.Log("Stopped");
+                //Debug.Log("Stopped");
             }
         }
     }
