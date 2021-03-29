@@ -21,6 +21,8 @@ public class PhotoCameraManager : MonoBehaviour
     bool _isTakingPicture = false;
     float _timer;
 
+    bool _enemyIsInPicture = false;
+
     void Start()
     {
         _renderCamera.enabled = false;
@@ -83,5 +85,15 @@ public class PhotoCameraManager : MonoBehaviour
             }
         }
         
+    }
+
+    public void SetEnemyIsInPicture(bool value)
+    {
+        _enemyIsInPicture = value;
+    }
+
+    public bool GetEnemyIsInPicture()
+    {
+        return _enemyIsInPicture;
     }
 }

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+
+        RenderSettings.fog = true;
     }
 
     void Start()

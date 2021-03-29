@@ -5,29 +5,35 @@ using UnityEngine.AI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class AtmosphereBehavior : IEnemyBehavior
+public class BehaviorFreeze : IEnemyBehavior
 {
     PlayerMovement _playerMove;
     Transform _playerHead;
 
+    /// Post processing attributes
     // Default post processing values
     float _saturationValueDefault;
     Color _colorFilterValueDefault;
 
     // Freezing post processing values
-    float _saturationValueFreeze = -80f;//
-    Color _colorFilterValueFreeze;//
+    float _saturationValueFreeze = -80f;
+    Color _colorFilterValueFreeze;
+
+    // General simulation values
+    float _saturationValueCurrent;
+    Color _colorFilterValueCurrent;
 
     // Frost atmosphere values
     bool _isFreezing;
     bool _isUnfreezing;
     float _simulationSpeedFreeze = 250f;
 
-    float _frozenMoveSpeed = 2f;
+
     GameObject _freezingParticles;
     float _changeDurationFreeze;
 
-    float _defaultMoveSpeed = 3f;
+    float _defaultPlayerMoveSpeed = 3f;
+    float _frozenMoveSpeed = 2f;
 
     float _timer = 0f;
     bool _isTimerStarted;
@@ -35,10 +41,6 @@ public class AtmosphereBehavior : IEnemyBehavior
 
     Volume _ppVolume;
     ColorAdjustments _colAdj;
-
-    // General simulation values
-    float _saturationValueCurrent;
-    Color _colorFilterValueCurrent;
 
     Vector3 castsPosition;
     RaycastHit hit;
@@ -49,7 +51,7 @@ public class AtmosphereBehavior : IEnemyBehavior
 
     float _castsHeightOffset = 0.75f;
 
-    public AtmosphereBehavior(BehaviorAttributes attributes)
+    public BehaviorFreeze(AttributeStorage attributes)
     {
         _isFreezing = false;
         _isUnfreezing = false;
@@ -57,10 +59,10 @@ public class AtmosphereBehavior : IEnemyBehavior
 
         _saturationValueFreeze = attributes.GetSaturationValueFreeze();
         _colorFilterValueFreeze = attributes.GetColorFilterValueFreeze();
-        _frozenMoveSpeed = attributes.GetFrozenMoveSpeed();
+        _frozenMoveSpeed = attributes.GetFrozenPlayerMoveSpeed();
         _freezingParticles = attributes.GetFreezingParticles();
         _changeDurationFreeze = attributes.GetChangeDurationFreeze();
-        _defaultMoveSpeed = attributes.GetDefaultMoveSpeed();
+        _defaultPlayerMoveSpeed = attributes.GetDefaultPlayerMoveSpeed();
         _ppVolume = attributes.GetPPVolume();
         _playerHead = attributes.GetPlayerHead();
         _includedLayersAtmosphere = attributes.GetIncludedLayersAtmosphere();
@@ -68,6 +70,7 @@ public class AtmosphereBehavior : IEnemyBehavior
         _playerMove = attributes.GetPlayerMove();
         _enemy = attributes.GetEnemyController();
         _freezingParticles.SetActive(false);
+        _castsHeightOffset = attributes.GetCastsHeightOffset();
 
         _ppVolume.profile.TryGet<ColorAdjustments>(out _colAdj);
         _saturationValueDefault = _colAdj.saturation.value;
@@ -76,7 +79,7 @@ public class AtmosphereBehavior : IEnemyBehavior
 
     public void DebugFunction()
     {
-        Debug.Log("WORKS");
+        Debug.Log("Freeze behavior works");
     }
 
     public bool CheckState()
@@ -121,7 +124,7 @@ public class AtmosphereBehavior : IEnemyBehavior
         }
         else if (!_isFreezing && _freezingParticles.activeInHierarchy)
         {
-            _playerMove.SetMaxSpeed(_defaultMoveSpeed);
+            _playerMove.SetMaxSpeed(_defaultPlayerMoveSpeed);
             _freezingParticles.SetActive(false);
             //Debug.Log("TurnedOFF");
             _isTimerStarted = false;
@@ -136,8 +139,6 @@ public class AtmosphereBehavior : IEnemyBehavior
         _saturationValueCurrent = _colAdj.saturation.value;
         _colorFilterValueCurrent = _colAdj.colorFilter.value;
     }
-
-
 
     void FreezingPostProcessingEffect(float saturationValue, Color colorFilterValue)
     {

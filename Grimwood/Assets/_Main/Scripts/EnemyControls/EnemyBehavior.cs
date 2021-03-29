@@ -11,15 +11,12 @@ public class EnemyBehavior
     public IEnemyBehavior _behaviorReference;
 
     int _behaviorIndex; // Behavior that is chosen
-    //int[] _ChildState; // Behaviors to choose from
     public UnityEngine.Object[] _ChildState;
 
     static readonly System.Random rnd = new System.Random();
     string key;
 
-    //[SerializeField] IBehavior[] behavior;
-
-    public void GenerateBehaviorStates(BehaviorAttributes attributes)
+    public void GenerateBehaviorStates(AttributeStorage attributes)
     {
         
         // Get a random Parent state for each children pair
@@ -39,7 +36,7 @@ public class EnemyBehavior
     }
 
     // class name is key
-    public object GetInstance(string strFullyQualifiedName, BehaviorAttributes attributes)
+    public object GetInstance(string strFullyQualifiedName, AttributeStorage attributes)
     {
         Type t = Type.GetType(strFullyQualifiedName);
         System.Object[] args = { attributes };

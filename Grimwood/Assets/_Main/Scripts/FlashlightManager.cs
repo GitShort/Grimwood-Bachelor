@@ -26,6 +26,8 @@ public class FlashlightManager : MonoBehaviour
     float _currentBatteryLevel;
     [SerializeField] float _batteryRestoreValue = 2f;
 
+    bool _isCollidingWithEnemy = false;
+
 
     void Start()
     {
@@ -83,18 +85,18 @@ public class FlashlightManager : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
                     _enemy = hit.collider.GetComponent<EnemyController>();
-                    _enemy.SetIsCollidingWithFlashlight(true); // perdaryti i interface 
+                    _isCollidingWithEnemy = true;
                 }
                 else if (!hit.collider.gameObject.CompareTag("Enemy") && _enemy != null)
                 {
-                    _enemy.SetIsCollidingWithFlashlight(false);
+                    _isCollidingWithEnemy = false;
                 }
             }
-            else if (_enemy != null && _enemy.GetIsCollidingWithFlashlight())
-                _enemy.SetIsCollidingWithFlashlight(false);
+            else if (_enemy != null && _isCollidingWithEnemy)
+                _isCollidingWithEnemy = false;
         }
         else if (_enemy != null)
-            _enemy.SetIsCollidingWithFlashlight(false);    
+            _isCollidingWithEnemy = false;
     }
 
     void BatteryLevel()
@@ -113,7 +115,7 @@ public class FlashlightManager : MonoBehaviour
                 _BatteryIndicators[i].material.EnableKeyword("_EMISSION");
             }
         }
-        Debug.Log("Battery Level: " + _currentBatteryLevel.ToString());
+        //Debug.Log("Battery Level: " + _currentBatteryLevel.ToString());
     }
 
     public void SetCurrentBatteryLevel(float value)
@@ -127,7 +129,7 @@ public class FlashlightManager : MonoBehaviour
 
         for (int i = 0; i < _batteryIndicatorsValue.Length; i++)
         {
-            Debug.Log("FOR");
+            //Debug.Log("FOR");
             if (_currentBatteryLevel >= _batteryIndicatorsValue[i] && !_BatteryIndicators[i].material.IsKeywordEnabled("_EMISSION"))
             {
                 _BatteryIndicators[i].material.EnableKeyword("_EMISSION");
@@ -144,5 +146,10 @@ public class FlashlightManager : MonoBehaviour
     public float GetBatteryRestoreValue()
     {
         return _batteryRestoreValue;
+    }
+
+    public bool GetIsCollidingWithEnemy()
+    {
+        return _isCollidingWithEnemy;
     }
 }
