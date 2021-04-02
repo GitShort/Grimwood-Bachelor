@@ -91,14 +91,14 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
 
     public void CallBehavior()
     {
-        if (_enemy.GetIsEnemyVisibleToPlayer() && !_isSeen)
-        {
-            _isSeen = true;
-        }
-        else if (!_enemy.GetIsEnemyVisibleToPlayer() && _isSeen)
-        {
-            _isSeen = false;
-        }
+        //if (_enemy.GetIsEnemyVisibleToPlayer() && !_isSeen)
+        //{
+        //    _isSeen = true;
+        //}
+        //else if (!_enemy.GetIsEnemyVisibleToPlayer() && _isSeen)
+        //{
+        //    _isSeen = false;
+        //}
 
         if (Input.GetKeyDown(KeyCode.Alpha6))
             _isSeen = true;
