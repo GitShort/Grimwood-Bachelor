@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _ba58a7b5-8169-418a-8ca7-e5b72909ccfd
+  m_uniqueId: _2130f6c5-d302-4f69-9290-ccc4b09e13d3
   m_searchTags: []
 --- !u!1 &1939145479853329008
 GameObject:
@@ -186,6 +186,8 @@ GameObject:
   - component: {fileID: 203954171815212432}
   - component: {fileID: 5363612610049513399}
   - component: {fileID: 7531580074478803225}
+  - component: {fileID: 577913654791204186}
+  - component: {fileID: 2577237462885657021}
   m_Layer: 13
   m_Name: Volumetric Light Beam (1)
   m_TagString: Untagged
@@ -312,6 +314,32 @@ MonoBehaviour:
   spawnMaxDistance: 0.7
   cullingEnabled: 1
   cullingMaxDistance: 10
+--- !u!114 &577913654791204186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939145479853329008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401182db4fce0c546a3e8912658ad10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2577237462885657021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939145479853329008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5217c9f8723a447824a7530d14c03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setIsTrigger: 1
+  rangeMultiplier: 1
 --- !u!1 &4185279815585676667
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _902df7c9-f52f-4044-a6f1-c78491b5faea
+  m_uniqueId: _6a1a3a93-52b2-457f-8cf1-20e58f0cd682
   m_searchTags: []
 --- !u!1 &8759343545620275520
 GameObject:

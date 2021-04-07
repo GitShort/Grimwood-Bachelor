@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 [System.Serializable]
 public class AttributeStorage
 {
-    //[SerializeField] EnemyController _enemyContr;
     #region General attributes
     [field: Header("General attributes")]
     [SerializeField] float _defaultPlayerMoveSpeed = 3f;
@@ -38,7 +37,10 @@ public class AttributeStorage
 
     [field: Header("Light behavior attributes")]
     [SerializeField] FlashlightManager _flashlightManager;
-    [SerializeField] float _flashlightEnemyMoveSpeed = 0.5f;
+    [SerializeField] float _flashlightEnemyMoveSpeedWeak = 0f;
+    [SerializeField] float _lampEnemyMoveSpeedWeak = 0.5f;
+    [SerializeField] float _flashlightEnemyMoveSpeedStrong = 1.5f;
+    [SerializeField] float _lampEnemyMoveSpeedStrong = 1.75f;
 
     [field: Header("Camera flash behavior attributes")]
     [SerializeField] PhotoCameraManager _photoCamera;
@@ -155,9 +157,24 @@ public class AttributeStorage
         return _flashlightManager;
     }
 
-    public float GetFlashlightEnemyMoveSpeed()
+    public float GetFlashlightEnemyMoveSpeedWeak()
     {
-        return _flashlightEnemyMoveSpeed;
+        return _flashlightEnemyMoveSpeedWeak;
+    }
+
+    public float GetFlashlightEnemyMoveSpeedStrong()
+    {
+        return _flashlightEnemyMoveSpeedStrong;
+    }
+
+    public float GetLampEnemyMoveSpeedWeak()
+    {
+        return _lampEnemyMoveSpeedWeak;
+    }
+
+    public float GetLampEnemyMoveSpeedStrong()
+    {
+        return _lampEnemyMoveSpeedStrong;
     }
 
     #endregion

@@ -5,9 +5,11 @@ using LSS;
 
 public class GameManager : MonoBehaviour
 {
-    bool IsGeneratorOn;
+    bool _isGeneratorOn;
 
     public static GameManager instance;
+
+    int collectiblesCount; // think of a new name for collectibe hints
 
     private void Awake()
     {
@@ -19,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        IsGeneratorOn = false;
+        collectiblesCount = 0;
+        _isGeneratorOn = false;
     }
 
     void Update()
@@ -29,11 +32,13 @@ public class GameManager : MonoBehaviour
 
     public bool GetIsGeneratorOn()
     {
-        return IsGeneratorOn;
+        return _isGeneratorOn;
     }
 
     public void SetIsGeneratorOn(bool value)
     {
-        IsGeneratorOn = value;
+        _isGeneratorOn = value;
     }
+
+
 }

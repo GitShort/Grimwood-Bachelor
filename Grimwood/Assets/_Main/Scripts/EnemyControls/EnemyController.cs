@@ -17,12 +17,21 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _castsHeightOffset = 0.75f;
     [SerializeField] LayerMask _includedLayers;
     [SerializeField] Renderer _renderer;
+    [SerializeField] float _seenByPlayerDistance = 15f;
     Vector3 castsPosition;
     RaycastHit hit;
 
     bool _isEnemyVisibleToPlayer = false;
 
+    bool _shouldDisappear = false;
+
     Dictionary<string, IEnemyBehavior> enemyBehaviors;
+
+    // For detection if enemy has entered bounds of a light source
+    bool _nearLightSource = false;
+
+    // for debugging lights
+    [SerializeField] GameObject debugCube;
 
     private void Awake()
     {
@@ -62,6 +71,16 @@ public class EnemyController : MonoBehaviour
             enemyBehaviors[key].Behavior();
         }
 
+        // for light debugging
+        if (_nearLightSource)
+        {
+            debugCube.SetActive(true);
+        }
+        else if (!_nearLightSource)
+        {
+            debugCube.SetActive(false);
+        }
+
     }
 
     public void AddBehavior(IEnemyBehavior behavior, string key)
@@ -96,9 +115,9 @@ public class EnemyController : MonoBehaviour
             //Debug.Log(hit.collider.name);
             //Debug.DrawLine(castsPosition, _player.position);
 
-            if (_renderer.isVisible && hit.collider.gameObject.CompareTag("Player"))
+            if (_renderer.isVisible && hit.collider.gameObject.CompareTag("Player") && hit.distance < _seenByPlayerDistance)
             {
-                //Debug.Log("Visible");
+                Debug.Log("Visible");
                 _isEnemyVisibleToPlayer = true;
             }
             else
@@ -135,8 +154,42 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Monster has hit the generator!");
     }
 
+    private void OnDisable()
+    {
+        _nearLightSource = false;
+    }
+
+    private void OnEnable()
+    {
+    }
+
     public bool GetIsEnemyVisibleToPlayer()
     {
         return _isEnemyVisibleToPlayer;
+    }
+
+    public void SetShouldDisappear(bool value)
+    {
+        _shouldDisappear = value;
+    }
+
+    public bool GetShouldDisappear()
+    {
+        return _shouldDisappear;
+    }
+
+    //public bool GetStopFlickering()
+    //{
+    //    return _stopFlickering;
+    //}
+
+    public bool GetNearLightSource()
+    {
+        return _nearLightSource;
+    }
+
+    public void SetNearLightSource(bool value)
+    {
+        _nearLightSource = value;
     }
 }

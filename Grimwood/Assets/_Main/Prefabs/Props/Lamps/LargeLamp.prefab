@@ -64,7 +64,6 @@ MonoBehaviour:
   _volumetricBeam: {fileID: 1572531429}
   hoverButton: {fileID: 0}
   _rend: {fileID: 7161389500916746938}
-  _flickerDelay: 1
 --- !u!114 &6154815509216954842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +91,7 @@ GameObject:
   - component: {fileID: 1572531430}
   - component: {fileID: 1572531431}
   - component: {fileID: 3136779181968114871}
+  - component: {fileID: 3479031256408374954}
   m_Layer: 13
   m_Name: Volumetric Light Beam
   m_TagString: Untagged
@@ -210,6 +210,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setIsTrigger: 1
   rangeMultiplier: 1
+--- !u!114 &3479031256408374954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572531429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c9ba9408a83c34da29855a16713d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lightObjects:
+  - {fileID: 8115299626024116967}
+  - {fileID: 6167088698910172593}
+  _rend: {fileID: 7161389500916746938}
+  _lightManager: {fileID: 1156404480}
+  _flickerDelay: 1
 --- !u!1 &1036668756675140922
 GameObject:
   m_ObjectHideFlags: 0

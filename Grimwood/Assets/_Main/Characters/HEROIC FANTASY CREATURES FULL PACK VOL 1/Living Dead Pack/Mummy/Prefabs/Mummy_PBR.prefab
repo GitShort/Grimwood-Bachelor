@@ -1178,17 +1178,12 @@ MonoBehaviour:
   _attackDistance: 1.1
   _energyGenPos: {fileID: 0}
   _photoCamera: {fileID: 0}
-  _defaultMoveSpeed: 3
   _castsHeightOffset: 0.75
   _includedLayers:
     serializedVersion: 2
     m_Bits: 263169
   _renderer: {fileID: 2285651312246694555}
-  _flashlightMoveSpeed: 0
-  _includedLayersAtmosphere:
-    serializedVersion: 2
-    m_Bits: 1024
-  _atmosphereDistance: 8
+  _seenByPlayerDistance: 20
 --- !u!195 &2975819592450277804
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1199,7 +1194,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.4
-  m_Speed: 2
+  m_Speed: 0
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -1263,10 +1258,25 @@ MonoBehaviour:
     _flashlightManager: {fileID: 0}
     _flashlightEnemyMoveSpeed: 0
     _photoCamera: {fileID: 0}
+    _seenByPlayerEnemyMoveSpeed: 2
+    _unseenByPlayerEnemyMoveSpeed: 2
+    _changeDurationSeenDmg: 150
+    _vignetteValueSeenDmg: 1
+    _colorFilterValueSeenDmg: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
   _enemyContr: {fileID: 5614948020234357523}
   Behaviors:
   - _ChildState:
+    - {fileID: 11500000, guid: f62565304ee98094f8fb16b4d648c771, type: 3}
+    - {fileID: 11500000, guid: 27923b2dbbb65df4d81d1c806e394699, type: 3}
+  - _ChildState:
+    - {fileID: 11500000, guid: 02688bbd0a8de2441b3e7f93d00b7713, type: 3}
+  - _ChildState:
+    - {fileID: 11500000, guid: 0dcdd9bc7d7bc1e42bacfe076aaf9ab9, type: 3}
+    - {fileID: 11500000, guid: a81358edbf9663d4eb5897000d638d16, type: 3}
+    - {fileID: 11500000, guid: a65f2622aee065d448dd5a2b0b704ca2, type: 3}
+  - _ChildState:
     - {fileID: 11500000, guid: d4c145352f4e07f458f7c88ad2f3207a, type: 3}
+    - {fileID: 11500000, guid: 1aeba2f26680869419fcec8d6522c242, type: 3}
 --- !u!1 &2285651312233033323
 GameObject:
   m_ObjectHideFlags: 0

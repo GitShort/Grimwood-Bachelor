@@ -6,19 +6,24 @@ using UnityEngine.AI;
 public class BehaviorLightWeak : IEnemyBehavior
 {
     // Called attributes
-    float _flashlightMoveSpeed = 3f;
+    float _flashlightMoveSpeed;
+    float _lampMoveSpeed;
     float _defaultMoveSpeed;
     Animator _anim;
     NavMeshAgent _agent;
     FlashlightManager _flashlight;
+    EnemyController _enemyController;
 
     // Local attributes
     bool _isLitUp = false;
     bool _isNearGenerator = false;
+    bool _isLitUpLamp = false;
 
     public BehaviorLightWeak(AttributeStorage attributes)
     {
-        _flashlightMoveSpeed = attributes.GetFlashlightEnemyMoveSpeed();
+        _enemyController = attributes.GetEnemyController();
+        _flashlightMoveSpeed = attributes.GetFlashlightEnemyMoveSpeedWeak();
+        _lampMoveSpeed = attributes.GetLampEnemyMoveSpeedWeak();
         _defaultMoveSpeed = attributes.GetDefaultEnemyMoveSpeed();
         _anim = attributes.GetEnemyController().GetComponent<Animator>();
         _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();
@@ -28,6 +33,7 @@ public class BehaviorLightWeak : IEnemyBehavior
     public void Behavior()
     {
         FlashlightBehavior();
+        LampBehavior();
     }
 
     public void CallBehavior()
@@ -66,6 +72,20 @@ public class BehaviorLightWeak : IEnemyBehavior
             //_anim.SetBool("isNearFlashlight", false);
             Debug.Log("No longer hit by flashlight");
             _isLitUp = false;
+        }
+    }
+
+    void LampBehavior()
+    {
+        if (_enemyController.GetNearLightSource() && !_isLitUpLamp)
+        {
+            _agent.speed = _lampMoveSpeed;
+            _isLitUpLamp = true;
+        }
+        else if (!_enemyController.GetNearLightSource() && _isLitUpLamp)
+        {
+            _agent.speed = _defaultMoveSpeed;
+            _isLitUpLamp = false;
         }
     }
 

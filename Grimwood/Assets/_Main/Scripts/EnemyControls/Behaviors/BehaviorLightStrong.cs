@@ -18,7 +18,7 @@ public class BehaviorLightStrong : IEnemyBehavior
 
     public BehaviorLightStrong(AttributeStorage attributes)
     {
-        _flashlightMoveSpeed = attributes.GetFlashlightEnemyMoveSpeed();
+        _flashlightMoveSpeed = attributes.GetFlashlightEnemyMoveSpeedWeak();
         _defaultMoveSpeed = attributes.GetDefaultEnemyMoveSpeed();
         _anim = attributes.GetEnemyController().GetComponent<Animator>();
         _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();

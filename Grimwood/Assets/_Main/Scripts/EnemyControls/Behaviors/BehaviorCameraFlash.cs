@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BehaviorCameraFlash : IEnemyBehavior
 {
@@ -8,9 +9,11 @@ public class BehaviorCameraFlash : IEnemyBehavior
     PhotoCameraManager _photoCamera;
     Renderer _enemyRenderer;
     LayerMask _enemyDetectsObj;
-    EnemyController _enemy;
+    EnemyController _enemyController;
     float _castsHeightOffset = 0.75f;
-
+    Animator _anim;
+    NavMeshAgent _agent;
+    float _defaultMoveSpeed;
 
     // Local attributes
     bool _isCollidingWithCamera = false;
@@ -23,8 +26,11 @@ public class BehaviorCameraFlash : IEnemyBehavior
         _photoCamera = attributes.GetPhotoCameraManager();
         _enemyRenderer = attributes.GetEnemyObjectRenderer();
         _enemyDetectsObj = attributes.GetEnemyDetectsObj();
-        _enemy = attributes.GetEnemyController();
+        _enemyController = attributes.GetEnemyController();
         _castsHeightOffset = attributes.GetCastsHeightOffset();
+        _defaultMoveSpeed = attributes.GetDefaultEnemyMoveSpeed();
+        _anim = _enemyController.GetComponent<Animator>();
+        _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();
     }
 
     public void Behavior()
@@ -34,17 +40,22 @@ public class BehaviorCameraFlash : IEnemyBehavior
         {
             Debug.Log("Took a picture");
             _isEnemyPictured = true;
+            _enemyController.SetShouldDisappear(true);
+            _anim.Play("GetHitLight1");
+            _agent.speed = 0f;
         }
         else if (_isEnemyPictured && !_photoCamera.GetEnemyIsInPicture())
         {
             //Debug.Log("YES");
             _isEnemyPictured = false;
+            _agent.speed = _defaultMoveSpeed;
+            //_enemyController.SetShouldDisappear(false);
         }
     }
 
     public void CallBehavior()
     {
-        castsPosition = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + _castsHeightOffset, _enemy.transform.position.z);
+        castsPosition = new Vector3(_enemyController.transform.position.x, _enemyController.transform.position.y + _castsHeightOffset, _enemyController.transform.position.z);
         if (Physics.Linecast(castsPosition, _photoCamera.transform.position, out hit, _enemyDetectsObj, QueryTriggerInteraction.Ignore))
         {
             //Debug.Log(hit.collider.name);

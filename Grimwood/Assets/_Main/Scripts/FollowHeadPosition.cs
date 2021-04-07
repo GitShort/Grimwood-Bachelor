@@ -8,9 +8,11 @@ public class FollowHeadPosition : MonoBehaviour
     [SerializeField] Transform _playerHead;
     //[SerializeField] Transform _playerBody;
     [SerializeField] float _moveStep = 0.1f;
+    [SerializeField] float _rotationDamping = 3f;
 
-    Vector3 MovePos;
-    Quaternion MoveRotation;
+    Vector3 _movePos;
+    Quaternion _moveRotation;
+    Vector3 _lookPos;
 
     void Start()
     {
@@ -19,15 +21,16 @@ public class FollowHeadPosition : MonoBehaviour
 
     void Update()
     {
-        MovePos = new Vector3(_playerHead.position.x, this.gameObject.transform.position.y, _playerHead.position.z);
-        //MoveRotation = new Quaternion(this.gameObject.transform.rotation.x, -_playerHead.rotation.y, this.gameObject.transform.rotation.z, 1);
 
-        MoveRotation = Quaternion.LookRotation(_playerHead.forward);
+        _movePos = new Vector3(_playerHead.position.x, _playerHead.position.y - 0.5f, _playerHead.position.z);
 
-        // look rotation
+        _lookPos = _playerHead.forward;
+        _lookPos.y = 0;
 
-        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, MovePos, _moveStep);
-        //this.gameObject.transform.localRotation = _playerBody.rotation;
+        _moveRotation = Quaternion.LookRotation(_lookPos);
+        this.gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, _moveRotation, Time.deltaTime * _rotationDamping);
+
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, _movePos, _moveStep);
 
     }
 }
