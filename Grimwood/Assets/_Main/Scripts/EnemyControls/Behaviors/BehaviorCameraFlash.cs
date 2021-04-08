@@ -35,7 +35,7 @@ public class BehaviorCameraFlash : IEnemyBehavior
 
     public void Behavior()
     {
-        Debug.Log(_photoCamera.GetEnemyIsInPicture());
+        //Debug.Log(_photoCamera.GetEnemyIsInPicture());
         if (_isCollidingWithCamera && _photoCamera.GetEnemyIsInPicture() && !_isEnemyPictured)
         {
             Debug.Log("Took a picture");
@@ -64,18 +64,18 @@ public class BehaviorCameraFlash : IEnemyBehavior
             if (_enemyRenderer.isVisible && hit.collider.gameObject.name.Equals("PhotoCamera"))
             {
                 _isCollidingWithCamera = true;
-                Debug.Log("Visible");
+                //Debug.Log("Visible");
             }
             else
             {
                 _isCollidingWithCamera = false;
-                Debug.Log("NonVisible");
+                //Debug.Log("NonVisible");
             }
         }
         else
         {
             _isCollidingWithCamera = false;
-            Debug.Log("NonVisible");
+            //Debug.Log("NonVisible");
         }
     }
 

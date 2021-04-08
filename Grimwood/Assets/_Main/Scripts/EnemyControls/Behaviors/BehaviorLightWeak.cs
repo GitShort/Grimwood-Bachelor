@@ -16,8 +16,9 @@ public class BehaviorLightWeak : IEnemyBehavior
 
     // Local attributes
     bool _isLitUp = false;
-    bool _isNearGenerator = false;
     bool _isLitUpLamp = false;
+
+    bool _sentGeneratorSignal = false;
 
     public BehaviorLightWeak(AttributeStorage attributes)
     {
@@ -38,7 +39,16 @@ public class BehaviorLightWeak : IEnemyBehavior
 
     public void CallBehavior()
     {
-
+        if (GameManager.instance.GetIsGeneratorOn() && !_sentGeneratorSignal)
+        {
+            _sentGeneratorSignal = true;
+            _enemyController.SetGoToGenerator(true);
+        }
+        else if (!GameManager.instance.GetIsGeneratorOn() && _sentGeneratorSignal)
+        {
+            _sentGeneratorSignal = false;
+            _enemyController.SetGoToGenerator(false);
+        }
     }
 
     public bool CheckState()
@@ -88,27 +98,4 @@ public class BehaviorLightWeak : IEnemyBehavior
             _isLitUpLamp = false;
         }
     }
-
-    // checks if monster is near the energy generator
-    //void EnergyGeneratorAction()
-    //{
-    //    if (Physics.Linecast(castsPosition, _energyGenPos.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
-    //    {
-    //        //Debug.Log(hit.collider.name);
-    //        //Debug.DrawLine(castsPosition, _player.position);
-
-    //        if (hit.collider.gameObject.CompareTag("Generator"))
-    //        {
-    //            _energyGen = hit.collider.GetComponent<GeneratorManager>();
-    //            //hit.collider.gameObject.GetComponent<GeneratorManager>();
-    //            Invoke("HitEnergyGenerator", 1.5f);
-    //        }
-    //    }
-    //}
-
-    //void HitEnergyGenerator()
-    //{
-    //    _energyGen.SetIsEnemyHittingGenerator(true);
-    //    Debug.Log("Monster has hit the generator!");
-    //}
 }

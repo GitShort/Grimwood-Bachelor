@@ -26,6 +26,7 @@ public class AttributeStorage
     [SerializeField] float _frozenPlayerMoveSpeed = 2f;
     [SerializeField] GameObject _freezingParticles;
     [SerializeField] float _changeDurationFreeze;
+    [SerializeField] GeneratorManager _energyGen;
 
     [field: Header("Freeze and Blind attributes")]
     [SerializeField] LayerMask _includedLayersAtmosphere;
@@ -99,6 +100,11 @@ public class AttributeStorage
     public float GetDefaultEnemyMoveSpeed()
     {
         return _defaultEnemyMoveSpeed;
+    }
+
+    public GeneratorManager GetGeneratorManager()
+    {
+        return _energyGen;
     }
 
     #endregion

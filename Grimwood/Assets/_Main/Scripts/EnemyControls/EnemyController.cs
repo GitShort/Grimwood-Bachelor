@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour
 
     Dictionary<string, IEnemyBehavior> enemyBehaviors;
 
+    bool _goToGenerator = false;
     // For detection if enemy has entered bounds of a light source
     bool _nearLightSource = false;
 
@@ -46,16 +47,16 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        _agent.SetDestination(_playerHead.position);
-        //if (!GameManager.instance.GetIsGeneratorOn()) 
-        //{
-        //    _agent.SetDestination(_playerHead.position); // move towards player
-        //}
-        //else if (GameManager.instance.GetIsGeneratorOn()) // TODO -> only switch movement to light generator if the monster is afraid of light
-        //{
-        //    _agent.SetDestination(_energyGenPos.position); // if the lights are on move towards generator
-        //    EnergyGeneratorAction();
-        //}
+        //_agent.SetDestination(_playerHead.position);
+        if (!GameManager.instance.GetIsGeneratorOn() && !_goToGenerator)
+        {
+            _agent.SetDestination(_playerHead.position); // move towards player
+        }
+        else if (GameManager.instance.GetIsGeneratorOn() && _goToGenerator)
+        {
+            _agent.SetDestination(_energyGenPos.position); // if the lights are on move towards generator
+            EnergyGeneratorAction();
+        }
 
         //_agent.SetDestination(_player.position);
         //Debug.DrawLine(_agent.destination, new Vector3(_agent.destination.x, _agent.destination.y + 1f, _agent.destination.z), Color.red);
@@ -178,11 +179,6 @@ public class EnemyController : MonoBehaviour
         return _shouldDisappear;
     }
 
-    //public bool GetStopFlickering()
-    //{
-    //    return _stopFlickering;
-    //}
-
     public bool GetNearLightSource()
     {
         return _nearLightSource;
@@ -191,5 +187,10 @@ public class EnemyController : MonoBehaviour
     public void SetNearLightSource(bool value)
     {
         _nearLightSource = value;
+    }
+
+    public void SetGoToGenerator(bool value)
+    {
+        _goToGenerator = value;
     }
 }
