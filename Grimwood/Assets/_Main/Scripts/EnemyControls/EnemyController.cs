@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     bool _isEnemyVisibleToPlayer = false;
 
     bool _shouldDisappear = false;
+    bool _didAttack = false;
 
     Dictionary<string, IEnemyBehavior> enemyBehaviors;
 
@@ -99,6 +100,12 @@ public class EnemyController : MonoBehaviour
         {
             //Debug.Log("CloseEnoughToAttack");
             _anim.SetBool("isAttacking", true);
+            if (!_didAttack)
+            {
+                _didAttack = true;
+                AudioManager.instance.Play("EnemyAttack", this.gameObject);
+                Invoke("AttackSound", 1f);
+            }
         }
         else
             _anim.SetBool("isAttacking", false);
@@ -109,6 +116,12 @@ public class EnemyController : MonoBehaviour
         }
         else
             _anim.SetBool("isRunning", false);
+    }
+
+    void AttackSound()
+    {
+        
+        _didAttack = false;
     }
 
     // function that checks if enemy is 'seen' by the player's camera

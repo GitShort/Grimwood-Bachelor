@@ -9,6 +9,7 @@ public class LightSwitch : MonoBehaviour
     public void OnButtonDown(Hand fromHand)
     {
         fromHand.TriggerHapticPulse(500);
+        AudioManager.instance.Play("ButtonToggle", this.gameObject);
     }
 
     public void OnButtonUp(Hand fromHand)

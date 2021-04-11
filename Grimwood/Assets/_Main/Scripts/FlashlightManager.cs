@@ -63,9 +63,15 @@ public class FlashlightManager : MonoBehaviour
             if (ActionToggle.GetStateDown(hand))
             {
                 if (!_lightObjs.activeInHierarchy && _currentBatteryLevel > 0)
+                {
                     _lightObjs.SetActive(true);
+                    AudioManager.instance.Play("FlashlightToggle", this.gameObject);
+                }
                 else
+                {
                     _lightObjs.SetActive(false);
+                    AudioManager.instance.Play("FlashlightToggle", this.gameObject);
+                }
             }
         }
         FlashlightBeam();

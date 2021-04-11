@@ -10,7 +10,8 @@ public class GeneratorManager : MonoBehaviour
     private LSS_FrontEnd _localLevelLightmapData;
     [SerializeField] MeshRenderer _lampMesh;
 
-    bool IsEnemyHittingGenerator = false;
+    bool _isEnemyHittingGenerator = false;
+    bool _generatorhit = false;
 
     void Start()
     {
@@ -20,8 +21,10 @@ public class GeneratorManager : MonoBehaviour
 
     private void Update()
     {
-        if (IsEnemyHittingGenerator)
+        if (_isEnemyHittingGenerator && !_generatorhit)
         {
+            _generatorhit = true;
+            AudioManager.instance.Play("GeneratorOffEnemy", this.gameObject);
             GeneratorOff();
         }
 
@@ -44,15 +47,19 @@ public class GeneratorManager : MonoBehaviour
 
     void GeneratorOff()
     {
+        if (!_isEnemyHittingGenerator)
+            AudioManager.instance.Play("Generator", this.gameObject);
+
         _localLevelLightmapData.Load("Generator_Off");
         GameManager.instance.SetIsGeneratorOn(false);
         _lampMesh.material.SetColor("_EmissionColor", Color.red);
         //Debug.Log("clicked OFF");
-        IsEnemyHittingGenerator = false;
+        _isEnemyHittingGenerator = false;
     }
 
     void GeneratorOn()
     {
+        AudioManager.instance.Play("Generator", this.gameObject);
         _localLevelLightmapData.Load("Generator_On");
         GameManager.instance.SetIsGeneratorOn(true);
         _lampMesh.material.SetColor("_EmissionColor", Color.green);
@@ -61,12 +68,12 @@ public class GeneratorManager : MonoBehaviour
 
     public bool GetIsEnemyHittingGenerator()
     {
-        return IsEnemyHittingGenerator;
+        return _isEnemyHittingGenerator;
     }
 
     public void SetIsEnemyHittingGenerator(bool value)
     {
-        IsEnemyHittingGenerator = value;
+        _isEnemyHittingGenerator = value;
     }
 
     /// <summary>

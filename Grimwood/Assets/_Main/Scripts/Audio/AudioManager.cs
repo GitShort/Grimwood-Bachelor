@@ -63,6 +63,8 @@ public class AudioManager : MonoBehaviour
             source.pitch = s.GetPitch();
             source.loop = s.GetLoop();
             source.spatialBlend = s.GetSpatialBlend();
+            source.maxDistance = s.GetMaxSoundDistance();
+            source.rolloffMode = s.GetAudioRolloffMode();
             source.Play();
         }
     }

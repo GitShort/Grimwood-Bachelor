@@ -19,6 +19,9 @@ public class Sound
     [Range(0f, 1f)]
     [SerializeField] float _spatialBlend = 1f;
 
+    [SerializeField] float _maxSoundDistance = 150f;
+    [SerializeField] AudioRolloffMode _rollOffMode = AudioRolloffMode.Custom;
+
     [HideInInspector]
     public AudioSource source;
 
@@ -51,5 +54,15 @@ public class Sound
     public float GetSpatialBlend()
     {
         return _spatialBlend;
+    }
+
+    public float GetMaxSoundDistance()
+    {
+        return _maxSoundDistance;
+    }
+
+    public AudioRolloffMode GetAudioRolloffMode()
+    {
+        return _rollOffMode;
     }
 }

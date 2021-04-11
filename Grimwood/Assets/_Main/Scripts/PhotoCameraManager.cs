@@ -66,6 +66,7 @@ public class PhotoCameraManager : MonoBehaviour
                 }
                 _renderCamera.enabled = true;
                 _flashTriggerZone.SetActive(true);
+                AudioManager.instance.Play("CameraFlash", this.gameObject);
                 _flashLampRend.material.EnableKeyword("_EMISSION");
             }
             else if (_timer > _flashDuration)
