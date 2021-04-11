@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    bool _isPlayerAlive;
     int collectiblesCount; // think of a new name for collectibe hints
 
     private void Awake()
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     {
         collectiblesCount = 0;
         _isGeneratorOn = false;
+        _isPlayerAlive = false;
+        AudioManager.instance.Play("Environment", this.gameObject);
     }
 
     void Update()
@@ -40,5 +43,13 @@ public class GameManager : MonoBehaviour
         _isGeneratorOn = value;
     }
 
+    public bool GetIsPlayerAlive()
+    {
+        return _isPlayerAlive;
+    }
 
+    public void SetIsPlayerAlive(bool value)
+    {
+        _isPlayerAlive = value;
+    }
 }

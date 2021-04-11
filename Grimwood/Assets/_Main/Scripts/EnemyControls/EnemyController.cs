@@ -31,6 +31,9 @@ public class EnemyController : MonoBehaviour
     // For detection if enemy has entered bounds of a light source
     bool _nearLightSource = false;
 
+
+    [SerializeField] Camera _playerCamera;
+
     // for debugging lights
     [SerializeField] GameObject debugCube;
 
@@ -48,7 +51,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //_agent.SetDestination(_playerHead.position);
-        if (!GameManager.instance.GetIsGeneratorOn() && !_goToGenerator)
+        if (!_goToGenerator)
         {
             _agent.SetDestination(_playerHead.position); // move towards player
         }
@@ -109,7 +112,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // function that checks if enemy is 'seen' by the player's camera
-    void IsEnemyVisible()
+    public bool IsEnemyVisible()
     {
         if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
         {
@@ -118,18 +121,49 @@ public class EnemyController : MonoBehaviour
 
             if (_renderer.isVisible && hit.collider.gameObject.CompareTag("Player") && hit.distance < _seenByPlayerDistance)
             {
-                Debug.Log("Visible");
-                _isEnemyVisibleToPlayer = true;
+                //Debug.Log("Visible");
+                return _isEnemyVisibleToPlayer = true;
             }
             else
             {
                 //Debug.Log("Hidden");
-                _isEnemyVisibleToPlayer = false;
+                return _isEnemyVisibleToPlayer = false;
             }
 
         }
         else
-            _isEnemyVisibleToPlayer = false;
+            return _isEnemyVisibleToPlayer = false;
+    }
+
+    public bool IsSpawningEnemyVisible()
+    {
+        castsPosition = new Vector3(transform.position.x, transform.position.y + _castsHeightOffset, transform.position.z);
+        if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
+        {
+            //Debug.Log(hit.collider.name);
+            Debug.DrawLine(castsPosition, _playerCamera.transform.position);
+            Vector3 screenPoint = _playerCamera.WorldToViewportPoint(this.gameObject.transform.position);
+            if (screenPoint.z > -1f && screenPoint.x > -1f && screenPoint.x < 2.5f && screenPoint.y > -1f && screenPoint.y < 2.5f && hit.collider.gameObject.CompareTag("Player"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            Vector3 screenPoint = _playerCamera.WorldToViewportPoint(this.gameObject.transform.position);
+            if (screenPoint.z > -1f && screenPoint.x > -1f && screenPoint.x < 2.5f && screenPoint.y > -1f && screenPoint.y < 2.5f)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     // checks if monster is near the energy generator
@@ -158,10 +192,6 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         _nearLightSource = false;
-    }
-
-    private void OnEnable()
-    {
     }
 
     public bool GetIsEnemyVisibleToPlayer()

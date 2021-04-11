@@ -13,12 +13,20 @@ public class BehaviorLightWeak : IEnemyBehavior
     NavMeshAgent _agent;
     FlashlightManager _flashlight;
     EnemyController _enemyController;
+    GeneratorManager _energyGen;
 
     // Local attributes
     bool _isLitUp = false;
     bool _isLitUpLamp = false;
 
     bool _sentGeneratorSignal = false;
+
+    static readonly System.Random rnd = new System.Random();
+    float _chanceToFollowGenerator;
+    int _followGeneratorValue = 10;
+    bool _randomValueGenerated = false;
+
+    bool _check = false;
 
     public BehaviorLightWeak(AttributeStorage attributes)
     {
@@ -29,6 +37,7 @@ public class BehaviorLightWeak : IEnemyBehavior
         _anim = attributes.GetEnemyController().GetComponent<Animator>();
         _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();
         _flashlight = attributes.GetFlashlightManager();
+        _energyGen = attributes.GetGeneratorManager();
     }
 
     public void Behavior()
@@ -39,16 +48,33 @@ public class BehaviorLightWeak : IEnemyBehavior
 
     public void CallBehavior()
     {
-        if (GameManager.instance.GetIsGeneratorOn() && !_sentGeneratorSignal)
+        // used to check if a random chance to change target from player to generator is selected
+        if (GameManager.instance.GetIsGeneratorOn() && !_randomValueGenerated && !_enemyController.GetShouldDisappear())
+        {
+            _chanceToFollowGenerator = rnd.Next(_followGeneratorValue);
+            _randomValueGenerated = true;
+            Debug.Log(_chanceToFollowGenerator);
+        }
+        else if (_randomValueGenerated && _enemyController.GetShouldDisappear())
+        {
+            _randomValueGenerated = false;
+            Debug.Log("Removed");
+        }
+
+
+        if (GameManager.instance.GetIsGeneratorOn() && !_sentGeneratorSignal && _chanceToFollowGenerator < _followGeneratorValue - 5 && _randomValueGenerated)
         {
             _sentGeneratorSignal = true;
             _enemyController.SetGoToGenerator(true);
         }
-        else if (!GameManager.instance.GetIsGeneratorOn() && _sentGeneratorSignal)
+        else if ((_chanceToFollowGenerator > _followGeneratorValue - 5 && _sentGeneratorSignal) || (!GameManager.instance.GetIsGeneratorOn() && _sentGeneratorSignal))
         {
             _sentGeneratorSignal = false;
             _enemyController.SetGoToGenerator(false);
+            Debug.Log("Reached");
         }
+
+
     }
 
     public bool CheckState()

@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1589694009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589694012}
+  - component: {fileID: 1589694011}
+  - component: {fileID: 1589694010}
+  m_Layer: 11
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1589694012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589694009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.122, z: 0}
+  m_LocalScale: {x: 0.30025, y: 0.30025, z: 0.30025}
+  m_Children: []
+  m_Father: {fileID: 2285651312232739339}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1589694011
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589694009}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1589694010
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589694009}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1093720324426747024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1205,7 @@ Transform:
   m_Children:
   - {fileID: 2285651312232739349}
   - {fileID: 2285651312232739337}
+  - {fileID: 1589694012}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1184,6 +1266,8 @@ MonoBehaviour:
     m_Bits: 263169
   _renderer: {fileID: 2285651312246694555}
   _seenByPlayerDistance: 20
+  _playerCamera: {fileID: 0}
+  debugCube: {fileID: 1589694009}
 --- !u!195 &2975819592450277804
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1194,7 +1278,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.4
-  m_Speed: 0
+  m_Speed: 1.25
   m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -1243,12 +1327,13 @@ MonoBehaviour:
     _enemyDetectsObj:
       serializedVersion: 2
       m_Bits: 263169
-    _defaultEnemyMoveSpeed: 1.5
+    _defaultEnemyMoveSpeed: 1.25
     _saturationValueFreeze: -80
     _colorFilterValueFreeze: {r: 0.27058825, g: 1, b: 0.9333334, a: 0}
     _frozenPlayerMoveSpeed: 2
     _freezingParticles: {fileID: 0}
     _changeDurationFreeze: 0.1
+    _energyGen: {fileID: 0}
     _includedLayersAtmosphere:
       serializedVersion: 2
       m_Bits: 1024
@@ -1256,7 +1341,10 @@ MonoBehaviour:
     _fogDensityValueTarget: 0.3
     _changeDurationBlind: 0.3
     _flashlightManager: {fileID: 0}
-    _flashlightEnemyMoveSpeed: 0
+    _flashlightEnemyMoveSpeedWeak: 0
+    _lampEnemyMoveSpeedWeak: 0.75
+    _flashlightEnemyMoveSpeedStrong: 1.5
+    _lampEnemyMoveSpeedStrong: 1.75
     _photoCamera: {fileID: 0}
     _seenByPlayerEnemyMoveSpeed: 2
     _unseenByPlayerEnemyMoveSpeed: 2
@@ -1266,17 +1354,7 @@ MonoBehaviour:
   _enemyContr: {fileID: 5614948020234357523}
   Behaviors:
   - _ChildState:
-    - {fileID: 11500000, guid: f62565304ee98094f8fb16b4d648c771, type: 3}
-    - {fileID: 11500000, guid: 27923b2dbbb65df4d81d1c806e394699, type: 3}
-  - _ChildState:
-    - {fileID: 11500000, guid: 02688bbd0a8de2441b3e7f93d00b7713, type: 3}
-  - _ChildState:
-    - {fileID: 11500000, guid: 0dcdd9bc7d7bc1e42bacfe076aaf9ab9, type: 3}
-    - {fileID: 11500000, guid: a81358edbf9663d4eb5897000d638d16, type: 3}
-    - {fileID: 11500000, guid: a65f2622aee065d448dd5a2b0b704ca2, type: 3}
-  - _ChildState:
     - {fileID: 11500000, guid: d4c145352f4e07f458f7c88ad2f3207a, type: 3}
-    - {fileID: 11500000, guid: 1aeba2f26680869419fcec8d6522c242, type: 3}
 --- !u!1 &2285651312233033323
 GameObject:
   m_ObjectHideFlags: 0

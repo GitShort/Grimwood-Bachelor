@@ -22,4 +22,10 @@ public class OutsideLampCollisionsWithEnemy : MonoBehaviour
             _enemyController.SetNearLightSource(false);
         }
     }
+
+    private void OnDisable()
+    {
+        if(_enemyController != null)
+            _enemyController.SetNearLightSource(false);
+    }
 }

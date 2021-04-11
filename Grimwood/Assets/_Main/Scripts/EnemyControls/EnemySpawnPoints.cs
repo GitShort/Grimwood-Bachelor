@@ -12,29 +12,33 @@ public class EnemySpawnPoints : MonoBehaviour
     bool _isTimerStarted;
     bool _isTimerFinished = false;
 
-    float _timerSpeed = 2f;
-
     // Spawn zones
-    [SerializeField] BoxCollider _SpawnPoints;
-    Vector3 _SpawnPointsSize;
-    Vector3 _SpawnPointsCenter;
+    [SerializeField] BoxCollider[] _SpawnPoints;
+    Vector3[] _SpawnPointsSize;
+    Vector3[] _SpawnPointsCenter;
+
+    static readonly System.Random rnd = new System.Random();
+    int _chosenSpawnPoint;
 
     private void Awake()
     {
-        _SpawnPointsCenter = _SpawnPoints.transform.position;
+        _SpawnPointsSize = new Vector3[_SpawnPoints.Length];
+        _SpawnPointsCenter = new Vector3[_SpawnPoints.Length];
 
-        _SpawnPointsSize.x = _SpawnPoints.transform.localScale.x * _SpawnPoints.size.x;
-        _SpawnPointsSize.z = _SpawnPoints.transform.localScale.z * _SpawnPoints.size.z;
+        for (int i = 0; i < _SpawnPoints.Length; i++)
+        {
+            _SpawnPointsCenter[i] = _SpawnPoints[i].transform.position;
+            _SpawnPointsSize[i].x = _SpawnPoints[i].transform.localScale.x * _SpawnPoints[i].size.x;
+            _SpawnPointsSize[i].z = _SpawnPoints[i].transform.localScale.z * _SpawnPoints[i].size.z;
+        }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         _isTimerStarted = false;
         _isTimerFinished = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_enemyController.GetShouldDisappear() && _enemyController.gameObject.activeInHierarchy && !_isDisappeared)
@@ -45,12 +49,13 @@ public class EnemySpawnPoints : MonoBehaviour
             _isDisappeared = true;
             Invoke("EnemyDisappear", 0.3f);
         }
-        if (!_enemyController.GetShouldDisappear() && !_enemyController.gameObject.activeInHierarchy)
+        if (!_enemyController.GetShouldDisappear() && !_enemyController.gameObject.activeInHierarchy && !_enemyController.IsSpawningEnemyVisible())
         {
             _enemyController.gameObject.SetActive(true);
             _isTimerStarted = false;
             _isTimerFinished = false;
             _isDisappeared = false;
+
         }
 
 
@@ -60,13 +65,16 @@ public class EnemySpawnPoints : MonoBehaviour
         }
 
         EnemyRespawnTimer(0);
+        //Debug.Log(_enemyController.IsSpawningEnemyVisible());
     }
 
     void EnemyDisappear()
     {
         _enemyController.gameObject.SetActive(false);
-        _enemyController.transform.position = GetRandomPosition();
-        Debug.Log(GetRandomPosition());
+        _chosenSpawnPoint = rnd.Next(_SpawnPoints.Length);
+        //Debug.Log(_chosenSpawnPoint);
+        _enemyController.transform.position = GetRandomPosition(_chosenSpawnPoint);
+
     }
 
     void EnemyRespawnTimer(int index)
@@ -91,13 +99,13 @@ public class EnemySpawnPoints : MonoBehaviour
         }
     }
 
-    Vector3 GetRandomPosition()
+    Vector3 GetRandomPosition(int index)
     {
         Vector3 randomPos = new Vector3(
-            Random.Range(-_SpawnPointsSize.x / 2, _SpawnPointsSize.x / 2),
-            _SpawnPointsCenter.y,
-            Random.Range(-_SpawnPointsSize.z / 2, _SpawnPointsSize.z / 2));
+            Random.Range(-_SpawnPointsSize[index].x / 2, _SpawnPointsSize[index].x / 2),
+            _SpawnPointsCenter[index].y,
+            Random.Range(-_SpawnPointsSize[index].z / 2, _SpawnPointsSize[index].z / 2));
 
-        return new Vector3(_SpawnPointsCenter.x + randomPos.x, randomPos.y, _SpawnPointsCenter.z + randomPos.z);
+        return new Vector3(_SpawnPointsCenter[index].x + randomPos.x, randomPos.y, _SpawnPointsCenter[index].z + randomPos.z);
     }
 }

@@ -6,19 +6,31 @@ using UnityEngine.AI;
 public class BehaviorLightStrong : IEnemyBehavior
 {
     // Called attributes
-    float _flashlightMoveSpeed = 3f;
+    float _flashlightMoveSpeed;
+    float _lampMoveSpeed;
     float _defaultMoveSpeed;
     Animator _anim;
     NavMeshAgent _agent;
     FlashlightManager _flashlight;
+    EnemyController _enemyController;
+ //   GeneratorManager _energyGen;
 
     // Local attributes
     bool _isLitUp = false;
-    bool _isNearGenerator = false;
+    bool _isLitUpLamp = false;
+
+    //bool _sentGeneratorSignal = false;
+
+    //static readonly System.Random rnd = new System.Random();
+    //float _chanceToFollowGenerator;
+    //int _followGeneratorValue = 10;
+    //bool _randomValueGenerated = false;
 
     public BehaviorLightStrong(AttributeStorage attributes)
     {
-        _flashlightMoveSpeed = attributes.GetFlashlightEnemyMoveSpeedWeak();
+        _enemyController = attributes.GetEnemyController();
+        _flashlightMoveSpeed = attributes.GetFlashlightEnemyMoveSpeedStrong();
+        _lampMoveSpeed = attributes.GetLampEnemyMoveSpeedStrong();
         _defaultMoveSpeed = attributes.GetDefaultEnemyMoveSpeed();
         _anim = attributes.GetEnemyController().GetComponent<Animator>();
         _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();
@@ -28,7 +40,7 @@ public class BehaviorLightStrong : IEnemyBehavior
     public void Behavior()
     {
         FlashlightBehavior();
-
+        LampBehavior();
     }
 
     public void CallBehavior()
@@ -69,4 +81,19 @@ public class BehaviorLightStrong : IEnemyBehavior
             _isLitUp = false;
         }
     }
+
+    void LampBehavior()
+    {
+        if (_enemyController.GetNearLightSource() && !_isLitUpLamp)
+        {
+            _agent.speed = _lampMoveSpeed;
+            _isLitUpLamp = true;
+        }
+        else if (!_enemyController.GetNearLightSource() && _isLitUpLamp)
+        {
+            _agent.speed = _defaultMoveSpeed;
+            _isLitUpLamp = false;
+        }
+    }
+
 }

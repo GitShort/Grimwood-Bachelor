@@ -1019,7 +1019,6 @@ GameObject:
   - component: {fileID: 4978900309089533562}
   - component: {fileID: 4978900309089533565}
   - component: {fileID: 4978900309089533564}
-  - component: {fileID: 5727363951586762626}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -1123,27 +1122,6 @@ MonoBehaviour:
     actionPath: /actions/default/in/TouchpadPosition
     needsReinit: 0
   _head: {fileID: 4978900308579248789}
---- !u!114 &5727363951586762626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4978900309089533567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef912fd1961ce84eb6fe2deaec223e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _defaultMoveSpeed: 3
-  _saturationValueFreeze: -80
-  _colorFilterValueFreeze: {r: 0.2688679, g: 1, b: 0.9333125, a: 0}
-  _frozenMoveSpeed: 2
-  _freezingParticles: {fileID: 6565107404578522755}
-  _changeDurationFreeze: 0.1
-  _fogDensityValueTarget: 0.3
-  _changeDurationFog: 0.3
-  _ppVolume: {fileID: 0}
 --- !u!1 &4978900309111956183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,7 +1564,7 @@ GameObject:
   - component: {fileID: 4978900309872516423}
   - component: {fileID: 4978900309872516422}
   - component: {fileID: 296841242}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VRCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2121,7 +2099,7 @@ GameObject:
   - component: {fileID: 4978900310559742575}
   - component: {fileID: 4978900310559742572}
   - component: {fileID: 1169422993}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FallbackObjects
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2296,11 +2274,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d2c2f739769e447a7345d7f175b5ee, type: 3}
---- !u!1 &6565107404578522755 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5610190811046116809, guid: 24d2c2f739769e447a7345d7f175b5ee, type: 3}
-  m_PrefabInstance: {fileID: 1639473778677316426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6565107404578522758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5610190811046116812, guid: 24d2c2f739769e447a7345d7f175b5ee, type: 3}

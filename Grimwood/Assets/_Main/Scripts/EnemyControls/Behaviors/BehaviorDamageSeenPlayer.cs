@@ -18,6 +18,8 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
     ColorAdjustments _colAdj;
     Vignette _vignette;
 
+    Transform _playerHead;
+
     Color _colorFilterValueSeenDmg;
     float _vignetteValueSeenDmg;
     // Local attributes
@@ -43,6 +45,7 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
 
     public BehaviorDamageSeenPlayer(AttributeStorage attributes)
     {
+        _playerHead = attributes.GetPlayerHead();
         _enemy = attributes.GetEnemyController();
         _changeDurationSeenDmg = attributes.GetChangeDurationSeenDmg();
         _colorFilterValueSeenDmg = attributes.GetColorFilterValueSeenDmg();
@@ -77,16 +80,24 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
         if (_isSeen)
         {
             SeenPostProcessingEffect(_colorFilterValueSeenDmg);
+            //AudioManager.instance.Play("Heartbeat", _playerHead.gameObject);
         }
 
         if (_isNotSeen)
         {
             SeenPostProcessingEffect(_colorFilterValueDefault);
+            //AudioManager.instance.Stop("Heartbeat", _playerHead.gameObject);
         }
 
         _vignetteValueCurrent = _vignette.intensity.value;
         _colorFilterValueCurrent = _colAdj.colorFilter.value;
-            
+
+        if (_colorFilterValueCurrent.r <= 0.47f) // ~makes the player lose for staring at the monster for about 40 seconds
+        {
+            Debug.Log("Died by looking at the monster for too long!");
+            GameManager.instance.SetIsPlayerAlive(false);
+        }
+        else Debug.Log(_colorFilterValueCurrent.r);
     }
 
     public void CallBehavior()
@@ -136,34 +147,40 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
             _tempTimer += Time.deltaTime;
 
             _colAdj.colorFilter.value = Color.Lerp(_colorFilterValueCurrent, colorFilterValue, _t / 5f);
+            AudioManager.instance.Play("Distortion", _playerHead.gameObject);
+            AudioManager.instance.SetVolume("Distortion", 1f - _colAdj.colorFilter.value.r);
 
             //Debug.Log(_tempTimer);
             if (!_vignettePulsed)
             {
                 if (!_vignetteFirstPulse)
                 {
-                    _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueSeenDmg, _t * 30f);
+                    _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueSeenDmg, _t * 40f);
                     if (_vignetteValueCurrent >= 0.85f)
+                    {
                         _vignetteFirstPulse = true;
+                        AudioManager.instance.Play("HeartbeatFirst", _playerHead.gameObject);
+                    }
                 }
                 else if (_vignetteFirstPulse)
                 {
-                    _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueDefault, _t * 10f);
+                    _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueDefault, _t * 15f);
                     if (_vignetteValueCurrent <= 0.6f)
                         _vignetteSecondPulse = true;
                 }
                 if (_vignetteSecondPulse)
                 {
-                    _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueSeenDmg, _t * 30f);
+                    _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueSeenDmg, _t * 40f);
                     if (_vignetteValueCurrent >= 0.85f)
                     {
                         _vignettePulsed = true;
+                        AudioManager.instance.Play("HeartbeatSecond", _playerHead.gameObject);
                     }
                 }
             }
             else if (_vignettePulsed)
             {
-                _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueDefault, _t * 10f);
+                _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueDefault, _t * 15f);
                 if (_vignetteValueCurrent <= 0.45f)
                 {
                     _vignetteFirstPulse = false;
