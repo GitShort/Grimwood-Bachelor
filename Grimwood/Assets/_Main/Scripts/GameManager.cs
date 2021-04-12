@@ -12,6 +12,15 @@ public class GameManager : MonoBehaviour
     bool _isPlayerAlive;
     int collectiblesCount; // think of a new name for collectibe hints
 
+    static readonly System.Random rnd = new System.Random();
+    bool _soundPlayed;
+    int _chosenSound = 0;
+    [SerializeField] float _intervalBetweenSounds = 5f;
+    [SerializeField] GameObject[] _SoundSpots;
+    int _chosenSpot;
+
+    [SerializeField] string[] _EnvironmentSounds;
+
     private void Awake()
     {
         if (instance == null)
@@ -25,12 +34,26 @@ public class GameManager : MonoBehaviour
         collectiblesCount = 0;
         _isGeneratorOn = false;
         _isPlayerAlive = false;
+        _soundPlayed = false;
         AudioManager.instance.Play("Environment", this.gameObject);
     }
 
     void Update()
     {
-        
+        if (!_soundPlayed)
+        {
+            _soundPlayed = true;
+            Invoke("PlayEnvironmentSound", _intervalBetweenSounds);
+        }
+    }
+
+    void PlayEnvironmentSound()
+    {
+        Debug.Log("SCREAM");
+        _chosenSound = rnd.Next(_EnvironmentSounds.Length);
+        _chosenSpot = rnd.Next(_SoundSpots.Length);
+        AudioManager.instance.Play(_EnvironmentSounds[_chosenSound], _SoundSpots[_chosenSpot]);
+        _soundPlayed = false;
     }
 
     public bool GetIsGeneratorOn()

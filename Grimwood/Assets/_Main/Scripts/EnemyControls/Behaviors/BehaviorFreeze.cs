@@ -51,6 +51,13 @@ public class BehaviorFreeze : IEnemyBehavior
 
     float _castsHeightOffset = 0.75f;
 
+    // audio management
+    bool _didBreath = false;
+    float _breathTimer = 0f;
+    bool _isbreathTimerStarted;
+    bool _isbreathTimerFinished = false;
+    float _breathSoundInterval = 5.5f;
+
     public BehaviorFreeze(AttributeStorage attributes)
     {
         _isFreezing = false;
@@ -133,9 +140,36 @@ public class BehaviorFreeze : IEnemyBehavior
         }
 
         if (_isFreezing)
+        {
             FreezingPostProcessingEffect(_saturationValueFreeze, _colorFilterValueFreeze);
+            if (!_isbreathTimerStarted && !_isbreathTimerFinished)
+            {
+                _breathTimer = 0f;
+                _isbreathTimerStarted = true;
+                _didBreath = true;
+            }
+            if (_isbreathTimerStarted && !_isbreathTimerFinished)
+            {
+                _breathTimer += Time.deltaTime;
+                if (_breathSoundInterval <= _breathTimer && !_didBreath)
+                {
+                    _didBreath = true;
+                    _isbreathTimerFinished = false;
+                    _isbreathTimerStarted = false;
+                }
+            }
+            if (_didBreath)
+            {
+                AudioManager.instance.Play("PlayerBreath", _playerHead.gameObject);
+                _didBreath = false;
+            }
+        }
         if (_isUnfreezing)
+        {
             FreezingPostProcessingEffect(_saturationValueDefault, _colorFilterValueDefault);
+            _isbreathTimerFinished = false;
+            _isbreathTimerStarted = false;
+        }
         _saturationValueCurrent = _colAdj.saturation.value;
         _colorFilterValueCurrent = _colAdj.colorFilter.value;
     }

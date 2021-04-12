@@ -73,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
         _speed += MoveValue.axis.magnitude * _sensitivity;
         _speed = Mathf.Clamp(_speed, -_maxSpeed, _maxSpeed);
 
+        if (_speed != 0)
+        {
+            AudioManager.instance.Play("PlayerFootsteps", this.gameObject);
+        }
+
         // Orientation
         _movement += _orientation * (_speed * Vector3.forward);
 
