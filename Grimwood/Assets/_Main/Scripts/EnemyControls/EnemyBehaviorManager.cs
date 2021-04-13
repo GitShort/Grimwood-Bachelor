@@ -10,16 +10,38 @@ public class EnemyBehaviorManager : MonoBehaviour
     public AttributeStorage attributes;
     [SerializeField] EnemyController _enemyContr;
     public EnemyBehavior[] Behaviors;
- 
+
+    Dictionary<string, IEnemyBehavior> enemyBehaviors;
+
+    private void Awake()
+    {
+        enemyBehaviors = new Dictionary<string, IEnemyBehavior>();
+    }
+
     void Start()
     {
         foreach (EnemyBehavior behavior in Behaviors)
         {
             //SelectBehaviors(behavior);
             behavior.GenerateBehaviorStates(attributes);
-            _enemyContr.AddBehavior(behavior.GetBehaviorReference(), behavior.GetKey());
+            AddBehavior(behavior.GetBehaviorReference(), behavior.GetKey());
         }
 
+    }
+
+    private void Update()
+    {
+        foreach (string key in enemyBehaviors.Keys)
+        {
+            enemyBehaviors[key].CallBehavior();
+            enemyBehaviors[key].Behavior();
+        }
+    }
+
+    public void AddBehavior(IEnemyBehavior behavior, string key)
+    {
+        enemyBehaviors.Add(key, behavior);
+        behavior.DebugFunction();
     }
 
 }

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _2130f6c5-d302-4f69-9290-ccc4b09e13d3
+  m_uniqueId: _c6685e88-e70f-4afd-99a3-012dee197aec
   m_searchTags: []
 --- !u!1 &1939145479853329008
 GameObject:
@@ -380,13 +380,13 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4185279815585676667}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.7863065, b: 0.6745283, a: 1}
-  m_Intensity: 25
-  m_Range: 11.34
+  m_Intensity: 20
+  m_Range: 7.156614
   m_SpotAngle: 100.08896
   m_InnerSpotAngle: 52.5568
   m_CookieSize: 10
@@ -427,10 +427,10 @@ Light:
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.47
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 1.38e-41, w: 1.04e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _6a1a3a93-52b2-457f-8cf1-20e58f0cd682
+  m_uniqueId: _fd4bd249-c93b-452d-b9d4-adbf1f3dbc74
   m_searchTags: []
 --- !u!1 &8759343545620275520
 GameObject:

@@ -22,11 +22,12 @@ public class EnemyController : MonoBehaviour
     RaycastHit hit;
 
     bool _isEnemyVisibleToPlayer = false;
+    bool _isAppearingEnemyVisibleToPlayer = false;
 
     bool _shouldDisappear = false;
     bool _didAttack = false;
 
-    Dictionary<string, IEnemyBehavior> enemyBehaviors;
+    //Dictionary<string, IEnemyBehavior> enemyBehaviors;
 
     bool _goToGenerator = false;
     // For detection if enemy has entered bounds of a light source
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        enemyBehaviors = new Dictionary<string, IEnemyBehavior>();
+        //enemyBehaviors = new Dictionary<string, IEnemyBehavior>();
     }
 
     void Start()
@@ -70,11 +71,11 @@ public class EnemyController : MonoBehaviour
         IsEnemyVisible();
 
 
-        foreach (string key in enemyBehaviors.Keys)
-        {
-            enemyBehaviors[key].CallBehavior();
-            enemyBehaviors[key].Behavior();
-        }
+        //foreach (string key in enemyBehaviors.Keys)
+        //{
+        //    enemyBehaviors[key].CallBehavior();
+        //    enemyBehaviors[key].Behavior();
+        //}
 
         // for light debugging
         if (_nearLightSource)
@@ -88,11 +89,11 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public void AddBehavior(IEnemyBehavior behavior, string key)
-    {
-        enemyBehaviors.Add(key, behavior);
-        behavior.DebugFunction();
-    }
+    //public void AddBehavior(IEnemyBehavior behavior, string key)
+    //{
+    //    enemyBehaviors.Add(key, behavior);
+    //    behavior.DebugFunction();
+    //}
 
     void PlayAnimations()
     {
@@ -125,7 +126,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // function that checks if enemy is 'seen' by the player's camera
-    public bool IsEnemyVisible()
+    bool IsEnemyVisible()
     {
         if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
         {
@@ -158,11 +159,11 @@ public class EnemyController : MonoBehaviour
             Vector3 screenPoint = _playerCamera.WorldToViewportPoint(this.gameObject.transform.position);
             if (screenPoint.z > -1f && screenPoint.x > -1f && screenPoint.x < 2.5f && screenPoint.y > -1f && screenPoint.y < 2.5f && hit.collider.gameObject.CompareTag("Player"))
             {
-                return true;
+                return _isAppearingEnemyVisibleToPlayer = true;
             }
             else
             {
-                return false;
+                return _isAppearingEnemyVisibleToPlayer = false;
             }
         }
         else
@@ -170,11 +171,11 @@ public class EnemyController : MonoBehaviour
             Vector3 screenPoint = _playerCamera.WorldToViewportPoint(this.gameObject.transform.position);
             if (screenPoint.z > -1f && screenPoint.x > -1f && screenPoint.x < 2.5f && screenPoint.y > -1f && screenPoint.y < 2.5f)
             {
-                return true;
+                return _isAppearingEnemyVisibleToPlayer = true;
             }
             else
             {
-                return false;
+                return _isAppearingEnemyVisibleToPlayer = false;
             }
         }
     }
@@ -205,6 +206,7 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         _nearLightSource = false;
+        _isEnemyVisibleToPlayer = false;
     }
 
     public bool GetIsEnemyVisibleToPlayer()

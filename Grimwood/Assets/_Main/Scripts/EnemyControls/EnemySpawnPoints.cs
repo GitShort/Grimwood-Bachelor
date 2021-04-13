@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySpawnPoints : MonoBehaviour
 {
     [SerializeField] EnemyController _enemyController;
-    [SerializeField] float[] _TimesBetweenRespawn;
+    [SerializeField] float[] _AppearedIntervals;
+    [SerializeField] float[] _DisappearedIntervals;
     bool _isDisappeared = false;
 
     float _timer = 0f;
@@ -41,7 +42,8 @@ public class EnemySpawnPoints : MonoBehaviour
 
     void Update()
     {
-        if (_enemyController.GetShouldDisappear() && _enemyController.gameObject.activeInHierarchy && !_isDisappeared)
+        Debug.Log(_enemyController.GetIsEnemyVisibleToPlayer());
+        if (_enemyController.GetShouldDisappear() && _enemyController.gameObject.activeInHierarchy && !_isDisappeared && !_enemyController.GetIsEnemyVisibleToPlayer())
         {
             Debug.Log("Poof!");
             _isTimerStarted = false;
@@ -55,16 +57,26 @@ public class EnemySpawnPoints : MonoBehaviour
             _isTimerStarted = false;
             _isTimerFinished = false;
             _isDisappeared = false;
-
         }
 
+        // if true - disappear, if false - appear
+        if (!_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
+        {
+            EnemyRespawnTimer(_DisappearedIntervals, false);
+            Debug.Log("Appearance timer started");
+        }
+        if (_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
+        {
+            EnemyRespawnTimer(_AppearedIntervals, true);
+            Debug.Log("Disappearance timer started");
+        }
 
+        // DEBUGGING
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _enemyController.SetShouldDisappear(true);
         }
 
-        EnemyRespawnTimer(0);
         //Debug.Log(_enemyController.IsSpawningEnemyVisible());
     }
 
@@ -74,27 +86,23 @@ public class EnemySpawnPoints : MonoBehaviour
         _chosenSpawnPoint = rnd.Next(_SpawnPoints.Length);
         //Debug.Log(_chosenSpawnPoint);
         _enemyController.transform.position = GetRandomPosition(_chosenSpawnPoint);
-
     }
 
-    void EnemyRespawnTimer(int index)
+    void EnemyRespawnTimer(float[] Interval, bool appearanceValue)
     {
-        if (!_enemyController.gameObject.activeInHierarchy)
+        if (!_isTimerStarted && !_isTimerFinished)
         {
-            if (!_isTimerStarted && !_isTimerFinished)
+            _timer = 0f;
+            _isTimerStarted = true;
+        }
+        if (_isTimerStarted && !_isTimerFinished)
+        {
+            //Debug.Log(_timer);
+            _timer += Time.deltaTime;
+            if (Interval[GameManager.instance.GetArtifactCollectedCount()] <= _timer)
             {
-                _timer = 0f;
-                _isTimerStarted = true;
-            }
-            if (_isTimerStarted && !_isTimerFinished)
-            {
-                //Debug.Log(_timer);
-                _timer += Time.deltaTime;
-                if (_TimesBetweenRespawn[index] <= _timer)
-                {
-                    _enemyController.SetShouldDisappear(false);
-                    _isTimerFinished = true;
-                }
+                _enemyController.SetShouldDisappear(appearanceValue);
+                _isTimerFinished = true;
             }
         }
     }

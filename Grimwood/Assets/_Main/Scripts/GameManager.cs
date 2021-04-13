@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     bool _isPlayerAlive;
-    int collectiblesCount; // think of a new name for collectibe hints
+    int _artifactCollectedCount;
 
     static readonly System.Random rnd = new System.Random();
     bool _soundPlayed;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        collectiblesCount = 0;
+        _artifactCollectedCount = 0;
         _isGeneratorOn = false;
         _isPlayerAlive = false;
         _soundPlayed = false;
@@ -44,6 +44,13 @@ public class GameManager : MonoBehaviour
         {
             _soundPlayed = true;
             Invoke("PlayEnvironmentSound", _intervalBetweenSounds);
+        }
+
+        // ARTIFACT COLLECTION DEBUGGING
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            _artifactCollectedCount++;
+            Debug.Log("Collected artifacts: " + _artifactCollectedCount);
         }
     }
 
@@ -74,5 +81,10 @@ public class GameManager : MonoBehaviour
     public void SetIsPlayerAlive(bool value)
     {
         _isPlayerAlive = value;
+    }
+
+    public int GetArtifactCollectedCount()
+    {
+        return _artifactCollectedCount;
     }
 }
