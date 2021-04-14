@@ -35,6 +35,7 @@ public class EnemyBehaviorManager : MonoBehaviour
         {
             enemyBehaviors[key].CallBehavior();
             enemyBehaviors[key].Behavior();
+            GameManager.instance.AddArtifactNames(enemyBehaviors[key].BehaviorMessage());
         }
     }
 

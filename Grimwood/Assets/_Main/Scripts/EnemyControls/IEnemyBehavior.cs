@@ -12,4 +12,6 @@ public interface IEnemyBehavior
     void DebugFunction();
 
     void CallBehavior();
+
+    string BehaviorMessage();
 }

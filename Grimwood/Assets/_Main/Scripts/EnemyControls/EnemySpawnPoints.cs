@@ -42,10 +42,10 @@ public class EnemySpawnPoints : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_enemyController.GetIsEnemyVisibleToPlayer());
+        //Debug.Log(_enemyController.GetIsEnemyVisibleToPlayer());
         if (_enemyController.GetShouldDisappear() && _enemyController.gameObject.activeInHierarchy && !_isDisappeared && !_enemyController.GetIsEnemyVisibleToPlayer())
         {
-            Debug.Log("Poof!");
+            //Debug.Log("Poof!");
             _isTimerStarted = false;
             _isTimerFinished = false;
             _isDisappeared = true;
@@ -63,12 +63,12 @@ public class EnemySpawnPoints : MonoBehaviour
         if (!_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
         {
             EnemyRespawnTimer(_DisappearedIntervals, false);
-            Debug.Log("Appearance timer started");
+            //Debug.Log("Appearance timer started");
         }
         if (_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
         {
             EnemyRespawnTimer(_AppearedIntervals, true);
-            Debug.Log("Disappearance timer started");
+            //Debug.Log("Disappearance timer started");
         }
 
         // DEBUGGING
@@ -99,6 +99,7 @@ public class EnemySpawnPoints : MonoBehaviour
         {
             //Debug.Log(_timer);
             _timer += Time.deltaTime;
+            Debug.Log(Interval[GameManager.instance.GetArtifactCollectedCount()].ToString());
             if (Interval[GameManager.instance.GetArtifactCollectedCount()] <= _timer)
             {
                 _enemyController.SetShouldDisappear(appearanceValue);

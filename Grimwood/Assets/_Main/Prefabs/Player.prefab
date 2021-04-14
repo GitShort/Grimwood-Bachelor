@@ -1108,10 +1108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a4e4040a6c7564981368e15fa16e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gravity: 120
+  _gravity: 180
   _rotateIncrement: 30
   _sensitivity: 0.1
-  _maxSpeed: 2
+  _maxSpeed: 2.5
   SnapLeftAction:
     actionPath: /actions/default/in/SnapTurnLeft
     needsReinit: 0

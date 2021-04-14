@@ -59,4 +59,9 @@ public class BehaviorSeenByPlayer : IEnemyBehavior
     {
          
     }
+
+    public string BehaviorMessage()
+    {
+        return "Moves faster if seen";
+    }
 }

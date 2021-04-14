@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LSS;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     bool _isPlayerAlive;
+
+    int _artifactsCount;
     int _artifactCollectedCount;
+    List<string> _ArtifactNames = new List<string>();
+    [SerializeField] Artifact[] _artifactObject;
+    bool _artifactNamesAssigned;
+
 
     static readonly System.Random rnd = new System.Random();
     bool _soundPlayed;
@@ -32,9 +39,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _artifactCollectedCount = 0;
+        _artifactsCount = _artifactObject.Length;
         _isGeneratorOn = false;
         _isPlayerAlive = false;
         _soundPlayed = false;
+        _artifactNamesAssigned = false;
         AudioManager.instance.Play("Environment", this.gameObject);
     }
 
@@ -49,18 +58,39 @@ public class GameManager : MonoBehaviour
         // ARTIFACT COLLECTION DEBUGGING
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            _artifactCollectedCount++;
-            Debug.Log("Collected artifacts: " + _artifactCollectedCount);
+            //_artifactCollectedCount++;
+            //Debug.Log("Collected artifacts: " + _artifactCollectedCount);
+            foreach (string item in _ArtifactNames)
+            {
+                Debug.Log(item);
+            }
         }
+
+        if (!_artifactNamesAssigned)
+        {
+            int _artifactNamesCount = 0;
+            _artifactNamesAssigned = true;
+            foreach (string item in _ArtifactNames)
+            {
+                if (_artifactObject != null)
+                {
+                    _artifactObject[_artifactNamesCount].GetComponentInChildren<TextMeshPro>().text = item;
+                }
+                _artifactNamesCount++;
+            }
+        }
+        Debug.Log("Collected artifacts: " + _artifactCollectedCount);
     }
 
     void PlayEnvironmentSound()
     {
-        Debug.Log("SCREAM");
-        _chosenSound = rnd.Next(_EnvironmentSounds.Length);
-        _chosenSpot = rnd.Next(_SoundSpots.Length);
-        AudioManager.instance.Play(_EnvironmentSounds[_chosenSound], _SoundSpots[_chosenSpot]);
-        _soundPlayed = false;
+        if (_EnvironmentSounds != null && _SoundSpots != null)
+        {
+            _chosenSound = rnd.Next(_EnvironmentSounds.Length);
+            _chosenSpot = rnd.Next(_SoundSpots.Length);
+            AudioManager.instance.Play(_EnvironmentSounds[_chosenSound], _SoundSpots[_chosenSpot]);
+            _soundPlayed = false;
+        }
     }
 
     public bool GetIsGeneratorOn()
@@ -83,8 +113,23 @@ public class GameManager : MonoBehaviour
         _isPlayerAlive = value;
     }
 
+    public int GetArtifactsCount()
+    {
+        return _artifactsCount;
+    }
+
     public int GetArtifactCollectedCount()
     {
         return _artifactCollectedCount;
+    }
+
+    public void AddArtifactCollectedCount()
+    {
+        _artifactCollectedCount++;
+    }
+
+    public void AddArtifactNames(string name)
+    {
+        _ArtifactNames.Add(name);
     }
 }

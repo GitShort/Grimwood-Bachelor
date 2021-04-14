@@ -52,7 +52,7 @@ public class BehaviorMoveWithSound : IEnemyBehavior
         if (_didBreath)
         {
             _generatedChoice = rnd.Next(10);
-            Debug.Log(_generatedChoice);
+            //Debug.Log(_generatedChoice);
 
 
             if (_generatedChoice >= 8)
@@ -92,5 +92,10 @@ public class BehaviorMoveWithSound : IEnemyBehavior
     public void SetState(bool value)
     {
         
+    }
+
+    public string BehaviorMessage()
+    {
+        return "Moves loudly";
     }
 }

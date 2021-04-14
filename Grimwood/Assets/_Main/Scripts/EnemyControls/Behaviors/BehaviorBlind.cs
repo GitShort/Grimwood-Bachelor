@@ -74,12 +74,12 @@ public class BehaviorBlind : IEnemyBehavior
             if (hit.distance <= _atmosphereDistance)
             {
                 _isBlinded = true;
-                Debug.Log("Player has entered BLIND atmosphere");
+                //Debug.Log("Player has entered BLIND atmosphere");
             }
             else
             {
                 _isBlinded = false;
-                Debug.Log("Player has left BLIND atmosphere");
+                //Debug.Log("Player has left BLIND atmosphere");
             }
         }
     }
@@ -129,6 +129,11 @@ public class BehaviorBlind : IEnemyBehavior
                 //Debug.Log("Stopped");
             }
         }
+    }
+
+    public string BehaviorMessage()
+    {
+        return "Takes away your sight";
     }
 
 

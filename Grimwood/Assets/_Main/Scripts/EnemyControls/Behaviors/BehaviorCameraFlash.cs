@@ -93,4 +93,9 @@ public class BehaviorCameraFlash : IEnemyBehavior
     {
         _isCollidingWithCamera = value;
     }
+
+    public string BehaviorMessage()
+    {
+        return "Runs from camera";
+    }
 }

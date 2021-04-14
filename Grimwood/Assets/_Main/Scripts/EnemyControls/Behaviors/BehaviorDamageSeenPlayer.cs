@@ -133,6 +133,11 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
 
     }
 
+    public string BehaviorMessage()
+    {
+        return "Dont look at it";
+    }
+
     void SeenPostProcessingEffect(Color colorFilterValue)
     {
         if (!_isTimerStarted && !_isTimerFinished)

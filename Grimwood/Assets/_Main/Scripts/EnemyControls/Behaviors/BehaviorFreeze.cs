@@ -107,12 +107,12 @@ public class BehaviorFreeze : IEnemyBehavior
             if (hit.distance <= _atmosphereDistance)
             {
                 _isFreezing = true;
-                Debug.Log("Player has entered FROST aura");
+                //Debug.Log("Player has entered FROST aura");
             }
             else
             {
                 _isFreezing = false;
-                Debug.Log("Player has left FROST aura");
+                //Debug.Log("Player has left FROST aura");
             }
         }
     }
@@ -172,6 +172,11 @@ public class BehaviorFreeze : IEnemyBehavior
         }
         _saturationValueCurrent = _colAdj.saturation.value;
         _colorFilterValueCurrent = _colAdj.colorFilter.value;
+    }
+
+    public string BehaviorMessage()
+    {
+        return "Will slow you down";
     }
 
     void FreezingPostProcessingEffect(float saturationValue, Color colorFilterValue)

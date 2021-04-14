@@ -63,6 +63,11 @@ public class BehaviorLightStrong : IEnemyBehavior
         _isLitUp = value;
     }
 
+    public string BehaviorMessage()
+    {
+        return "Light makes it stronger";
+    }
+
     void FlashlightBehavior()
     {
         if (_flashlight.GetIsCollidingWithEnemy() && !_isLitUp)

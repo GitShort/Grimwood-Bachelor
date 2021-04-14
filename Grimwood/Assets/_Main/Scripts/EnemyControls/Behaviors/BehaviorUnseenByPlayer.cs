@@ -56,4 +56,9 @@ public class BehaviorUnseenByPlayer : IEnemyBehavior
     {
 
     }
+
+    public string BehaviorMessage()
+    {
+        return "Moves slower if seen";
+    }
 }

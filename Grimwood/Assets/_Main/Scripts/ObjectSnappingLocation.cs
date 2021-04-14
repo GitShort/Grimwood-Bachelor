@@ -17,14 +17,14 @@ public class ObjectSnappingLocation : MonoBehaviour
         if (other.gameObject.CompareTag("Snappable") && !_isSnapped)
         {
             _interactable = other.gameObject.GetComponent<Interactable>();
-            Debug.Log("NEAR");
+            //Debug.Log("NEAR");
             if (!_interactable.attachedToHand && _objectNameEnter.Equals(""))
             {
                 _outline = other.gameObject.GetComponent<ApplyOutline>();
                 _rb = other.gameObject.GetComponent<Rigidbody>();
                 _rb.useGravity = false;
                 _rb.constraints = RigidbodyConstraints.FreezeAll;
-                Debug.Log("snapped");
+                //Debug.Log("snapped");
                 ChangeToParent(this.gameObject.transform, other.gameObject);
                 _objectNameEnter = other.gameObject.name;
                 _isSnapped = true;
@@ -44,7 +44,7 @@ public class ObjectSnappingLocation : MonoBehaviour
                 _rb = other.gameObject.GetComponent<Rigidbody>();
                 _rb.useGravity = true;
                 _rb.constraints = RigidbodyConstraints.None;
-                Debug.Log("removed");
+                //Debug.Log("removed");
                 _objectNameEnter = "";
                 _isSnapped = false;
                 _outline.SetIsObjectSnapped(false);
@@ -55,7 +55,7 @@ public class ObjectSnappingLocation : MonoBehaviour
     void ChangeToParent(Transform newParent, GameObject snappedObject)
     {
         snappedObject.transform.SetParent(newParent);
-        Debug.Log("Applied parent");
+        //Debug.Log("Applied parent");
         snappedObject.transform.localPosition = Vector3.zero;
         snappedObject.transform.localRotation = Quaternion.identity;
     }
@@ -64,6 +64,6 @@ public class ObjectSnappingLocation : MonoBehaviour
     {
         this.gameObject.transform.DetachChildren();
         //snappedObject.transform.parent = null;
-        Debug.Log("Removed from parent");
+        //Debug.Log("Removed from parent");
     }
 }

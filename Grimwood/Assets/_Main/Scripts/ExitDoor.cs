@@ -16,7 +16,8 @@ public class ExitDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.GetArtifactCollectedCount().Equals(1) && !_isOpen)
+        Debug.Log(GameManager.instance.GetArtifactsCount());
+        if (GameManager.instance.GetArtifactCollectedCount().Equals(GameManager.instance.GetArtifactsCount()) && !_isOpen)
         {
             AudioManager.instance.Play("ExitOpen", this.gameObject);
             _anim.SetBool("shouldOpen", true);

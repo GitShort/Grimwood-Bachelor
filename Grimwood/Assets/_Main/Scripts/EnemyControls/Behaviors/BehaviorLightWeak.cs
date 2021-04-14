@@ -92,6 +92,11 @@ public class BehaviorLightWeak : IEnemyBehavior
         _isLitUp = value;
     }
 
+    public string BehaviorMessage()
+    {
+        return "Afraid of light";
+    }
+
     void FlashlightBehavior()
     {
         if (_flashlight.GetIsCollidingWithEnemy() && !_isLitUp)
