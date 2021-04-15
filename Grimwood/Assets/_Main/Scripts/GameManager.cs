@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     bool _isPlayerAlive;
+    bool _playerLoseSoundPlayed;
 
     int _artifactsCount;
     int _artifactCollectedCount;
     List<string> _ArtifactNames = new List<string>();
     [SerializeField] Artifact[] _artifactObject;
     bool _artifactNamesAssigned;
-
 
     static readonly System.Random rnd = new System.Random();
     bool _soundPlayed;
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         _isPlayerAlive = true;
         _soundPlayed = false;
         _artifactNamesAssigned = false;
+        _playerLoseSoundPlayed = false;
         AudioManager.instance.Play("Environment", this.gameObject);
     }
 
@@ -92,6 +93,11 @@ public class GameManager : MonoBehaviour
         if (!_isPlayerAlive)
         {
             PlayerLose();
+            if (!_playerLoseSoundPlayed)
+            {
+                PlayEnvironmentSound();
+                _playerLoseSoundPlayed = true;
+            }
         }
     }
 

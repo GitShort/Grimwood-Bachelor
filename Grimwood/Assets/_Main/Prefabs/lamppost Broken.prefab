@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4171754737105779748}
   - component: {fileID: 4171754737087512972}
   - component: {fileID: 4171754737109979648}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: lamppost Broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,8 +118,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.32712057, z: 3.8810778}
-  m_Center: {x: 0, y: 0, z: 1.9369748}
+  m_Size: {x: 0.11108616, y: 0.10839565, z: 3.8810778}
+  m_Center: {x: 0.009402766, y: -0.0028631464, z: 1.9369748}
 --- !u!1 &4171754737103735368
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 4171754737103420476}
   - component: {fileID: 4171754737104746830}
   - component: {fileID: 4171754737105816300}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: lamppostLOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

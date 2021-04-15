@@ -87,12 +87,16 @@ public class EnemyController : MonoBehaviour
         if (_agent.remainingDistance < _attackDistance && !_agent.pathPending)
         {
             //Debug.Log("CloseEnoughToAttack");
-            _anim.SetBool("isAttacking", true);
-            if (!_didAttack && !_agent.isStopped)
+            if (!_didAttack && !_agent.isStopped && GameManager.instance.GetIsPlayerAlive())
             {
+                _anim.SetBool("isAttacking", true);
                 _didAttack = true;
                 AudioManager.instance.Play("EnemyAttack", this.gameObject);
                 Invoke("AttackSound", 1f);
+            }
+            else if (!_didAttack && !GameManager.instance.GetIsPlayerAlive())
+            {
+                _anim.SetBool("isAttacking", false);
             }
         }
         else
@@ -109,6 +113,7 @@ public class EnemyController : MonoBehaviour
     void AttackSound()
     {
         _didAttack = false;
+
     }
 
     void DamagePlayer()

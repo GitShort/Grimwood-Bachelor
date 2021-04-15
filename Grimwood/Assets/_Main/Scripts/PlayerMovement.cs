@@ -34,8 +34,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         HandleHeight();
-        CalculateMovement();
-        SnapRotation();
+        if (GameManager.instance.GetIsPlayerAlive())
+        {
+            CalculateMovement();
+            SnapRotation();
+        }
     }
 
     void HandleHeight()

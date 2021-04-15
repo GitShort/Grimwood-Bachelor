@@ -92,12 +92,12 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
         _vignetteValueCurrent = _vignette.intensity.value;
         _colorFilterValueCurrent = _colAdj.colorFilter.value;
 
-        if (_colorFilterValueCurrent.r <= 0.467f) // ~makes the player lose for staring at the monster for about 40 seconds :: FREEZING BEHAVIOR collides with these values!!! 
+        if (_colorFilterValueCurrent.g <= 0.5f) // ~makes the player lose for staring at the monster for about 40 seconds :: FREEZING BEHAVIOR collides with these values!!! 
         {
             Debug.Log("Died by looking at the monster for too long!");
             GameManager.instance.SetIsPlayerAlive(false);
         }
-        else Debug.Log(_colorFilterValueCurrent.r);
+        else Debug.Log(_colorFilterValueCurrent.g);
     }
 
     public void CallBehavior()
@@ -153,7 +153,7 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
 
             _colAdj.colorFilter.value = Color.Lerp(_colorFilterValueCurrent, colorFilterValue, _t / 5f);
             AudioManager.instance.Play("Distortion", _playerHead.gameObject);
-            AudioManager.instance.SetVolume("Distortion", 1f - _colAdj.colorFilter.value.r);
+            AudioManager.instance.SetVolume("Distortion", 1f - _colAdj.colorFilter.value.g);
 
             //Debug.Log(_tempTimer);
             if (!_vignettePulsed)
@@ -205,7 +205,7 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
             {
                 //Debug.Log(_colorFilterValueCurrent.r);
                 _vignette.intensity.value = Mathf.SmoothStep(_vignetteValueCurrent, _vignetteValueDefault, _t * 10f);
-                if (_vignetteValueCurrent <= 0.45f && _colorFilterValueCurrent.r >= _colorFilterValueDefault.r-0.015f)
+                if (_vignetteValueCurrent <= 0.45f && _colorFilterValueCurrent.g >= _colorFilterValueDefault.g -0.015f)
                 {
                     _isTimerFinished = true;
                     _vignette.intensity.value = _vignetteValueDefault;
