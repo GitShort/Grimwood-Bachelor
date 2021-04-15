@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using TMPro;
 
 public class Artifact : MonoBehaviour
 {
@@ -12,22 +13,29 @@ public class Artifact : MonoBehaviour
     [SerializeField] GameObject _artifactObject;
     [SerializeField] ParticleSystem _pickupParticles;
 
+    [SerializeField] TextMeshPro _pickupText;
+    [SerializeField] TextMeshPro _artifactText;
+
     void Start()
     {
         _interactable = GetComponentInChildren<Interactable>();
         _isPickedUp = false;
+        _pickupText.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (_interactable.attachedToHand && !_isPickedUp)
         {
+            _pickupText.gameObject.SetActive(true);
+            _pickupText.text = _artifactText.text;
             _isPickedUp = true;
             GameManager.instance.AddArtifactCollectedCount();
             _pickupParticles.Play();
             Destroy(_artifactObject);
-            Invoke("DestroyParent", 1f);
+            Invoke("DestroyParent", 3f);
         }
+
     }
 
     void DestroyParent()

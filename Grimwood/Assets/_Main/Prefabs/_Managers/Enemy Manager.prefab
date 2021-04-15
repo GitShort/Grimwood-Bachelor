@@ -84,7 +84,7 @@ MonoBehaviour:
     _enemyRenderer: {fileID: 1201098295114955781}
     _enemyDetectsObj:
       serializedVersion: 2
-      m_Bits: 1537
+      m_Bits: 263681
     _defaultEnemyMoveSpeed: 1
     _saturationValueFreeze: -80
     _colorFilterValueFreeze: {r: 0.27058825, g: 1, b: 0.9333334, a: 0}
@@ -101,11 +101,11 @@ MonoBehaviour:
     _flashlightManager: {fileID: 0}
     _flashlightEnemyMoveSpeedWeak: 0
     _lampEnemyMoveSpeedWeak: 0.75
-    _flashlightEnemyMoveSpeedStrong: 1.5
-    _lampEnemyMoveSpeedStrong: 1.75
+    _flashlightEnemyMoveSpeedStrong: 1.25
+    _lampEnemyMoveSpeedStrong: 1.5
     _photoCamera: {fileID: 0}
-    _seenByPlayerEnemyMoveSpeed: 2
-    _unseenByPlayerEnemyMoveSpeed: 2
+    _seenByPlayerEnemyMoveSpeed: 1.75
+    _unseenByPlayerEnemyMoveSpeed: 1.5
     _changeDurationSeenDmg: 150
     _vignetteValueSeenDmg: 1
     _colorFilterValueSeenDmg: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
     - {fileID: 11500000, guid: f62565304ee98094f8fb16b4d648c771, type: 3}
     - {fileID: 11500000, guid: 27923b2dbbb65df4d81d1c806e394699, type: 3}
   - _ChildState:
+    - {fileID: 11500000, guid: 125d5922df7aff34ab41bf9526c636d1, type: 3}
     - {fileID: 11500000, guid: 02688bbd0a8de2441b3e7f93d00b7713, type: 3}
   - _ChildState:
     - {fileID: 11500000, guid: a81358edbf9663d4eb5897000d638d16, type: 3}
@@ -133,25 +134,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1647453234279350770}
     m_Modifications:
+    - target: {fileID: 1589694009, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 339.538
+      value: 308.32263
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 200.512
+      value: 188.512
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 441.236
+      value: 387.31384
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000058114523
+      value: 0.00000041723246
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -159,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -171,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 2285651312232739339, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2336,6 +2341,14 @@ PrefabInstance:
     - target: {fileID: 5614948020234357523, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
       propertyPath: _seenByPlayerDistance
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614948020234357523, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
+      propertyPath: _includedLayers.m_Bits
+      value: 263681
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614948020234357523, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}
+      propertyPath: _doorIncludedLayers.m_Bits
+      value: 262144
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 545049a8805ff014ab5a0aaaca65c28f, type: 3}

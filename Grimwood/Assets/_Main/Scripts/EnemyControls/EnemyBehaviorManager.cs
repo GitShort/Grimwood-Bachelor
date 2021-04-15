@@ -31,12 +31,16 @@ public class EnemyBehaviorManager : MonoBehaviour
 
     private void Update()
     {
-        foreach (string key in enemyBehaviors.Keys)
+        if (GameManager.instance.GetIsPlayerAlive())
         {
-            enemyBehaviors[key].CallBehavior();
-            enemyBehaviors[key].Behavior();
-            GameManager.instance.AddArtifactNames(enemyBehaviors[key].BehaviorMessage());
+            foreach (string key in enemyBehaviors.Keys)
+            {
+                enemyBehaviors[key].CallBehavior();
+                enemyBehaviors[key].Behavior();
+                GameManager.instance.AddArtifactNames(enemyBehaviors[key].BehaviorMessage());
+            }
         }
+
     }
 
     public void AddBehavior(IEnemyBehavior behavior, string key)

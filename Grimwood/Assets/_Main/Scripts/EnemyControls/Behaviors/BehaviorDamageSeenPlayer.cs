@@ -92,7 +92,7 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
         _vignetteValueCurrent = _vignette.intensity.value;
         _colorFilterValueCurrent = _colAdj.colorFilter.value;
 
-        if (_colorFilterValueCurrent.r <= 0.47f) // ~makes the player lose for staring at the monster for about 40 seconds
+        if (_colorFilterValueCurrent.r <= 0.467f) // ~makes the player lose for staring at the monster for about 40 seconds :: FREEZING BEHAVIOR collides with these values!!! 
         {
             Debug.Log("Died by looking at the monster for too long!");
             GameManager.instance.SetIsPlayerAlive(false);

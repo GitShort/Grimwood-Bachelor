@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Valve.VR.InteractionSystem;
 
 public class EnemyController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] float _castsHeightOffset = 0.75f;
     [SerializeField] LayerMask _includedLayers;
+    [SerializeField] LayerMask _doorIncludedLayers;
     [SerializeField] Renderer _renderer;
     [SerializeField] float _seenByPlayerDistance = 15f;
     Vector3 castsPosition;
@@ -26,6 +28,7 @@ public class EnemyController : MonoBehaviour
 
     bool _shouldDisappear = false;
     bool _didAttack = false;
+    bool _isPlayerHit = false;
 
     //Dictionary<string, IEnemyBehavior> enemyBehaviors;
 
@@ -33,6 +36,7 @@ public class EnemyController : MonoBehaviour
     // For detection if enemy has entered bounds of a light source
     bool _nearLightSource = false;
 
+    bool _nearDoor = false;
 
     [SerializeField] Camera _playerCamera;
 
@@ -52,10 +56,15 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.GetIsPlayerAlive())
+            _agent.isStopped = true;
+
+        //Debug.Log(_agent.remainingDistance);
         //_agent.SetDestination(_playerHead.position);
         if (!_goToGenerator)
         {
             _agent.SetDestination(_playerHead.position); // move towards player
+            DamagePlayer();
         }
         else if (GameManager.instance.GetIsGeneratorOn() && _goToGenerator)
         {
@@ -63,45 +72,23 @@ public class EnemyController : MonoBehaviour
             EnergyGeneratorAction();
         }
 
+
         //_agent.SetDestination(_player.position);
         //Debug.DrawLine(_agent.destination, new Vector3(_agent.destination.x, _agent.destination.y + 1f, _agent.destination.z), Color.red);
         castsPosition = new Vector3(transform.position.x, transform.position.y + _castsHeightOffset, transform.position.z);
         //Debug.Log(_agent.remainingDistance);
         PlayAnimations();
         IsEnemyVisible();
-
-
-        //foreach (string key in enemyBehaviors.Keys)
-        //{
-        //    enemyBehaviors[key].CallBehavior();
-        //    enemyBehaviors[key].Behavior();
-        //}
-
-        // for light debugging
-        if (_nearLightSource)
-        {
-            debugCube.SetActive(true);
-        }
-        else if (!_nearLightSource)
-        {
-            debugCube.SetActive(false);
-        }
-
+        DetectClosedDoor();
     }
-
-    //public void AddBehavior(IEnemyBehavior behavior, string key)
-    //{
-    //    enemyBehaviors.Add(key, behavior);
-    //    behavior.DebugFunction();
-    //}
 
     void PlayAnimations()
     {
-        if (_agent.remainingDistance < _attackDistance)
+        if (_agent.remainingDistance < _attackDistance && !_agent.pathPending)
         {
             //Debug.Log("CloseEnoughToAttack");
             _anim.SetBool("isAttacking", true);
-            if (!_didAttack)
+            if (!_didAttack && !_agent.isStopped)
             {
                 _didAttack = true;
                 AudioManager.instance.Play("EnemyAttack", this.gameObject);
@@ -121,8 +108,17 @@ public class EnemyController : MonoBehaviour
 
     void AttackSound()
     {
-        
         _didAttack = false;
+    }
+
+    void DamagePlayer()
+    {
+        if (_agent.remainingDistance < _attackDistance && _didAttack && !_isPlayerHit)
+        {
+            Debug.Log("Player hit");
+            _isPlayerHit = true;
+            GameManager.instance.SetIsPlayerAlive(false);
+        }
     }
 
     // function that checks if enemy is 'seen' by the player's camera
@@ -151,7 +147,6 @@ public class EnemyController : MonoBehaviour
 
     public bool IsSpawningEnemyVisible()
     {
-        castsPosition = new Vector3(transform.position.x, transform.position.y + _castsHeightOffset, transform.position.z);
         if (Physics.Linecast(castsPosition, _playerHead.position, out hit, _includedLayers, QueryTriggerInteraction.Ignore))
         {
             //Debug.Log(hit.collider.name);
@@ -203,6 +198,27 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Monster has hit the generator!");
     }
 
+    void DetectClosedDoor()
+    {
+        if (Physics.Raycast(castsPosition, transform.TransformDirection(Vector3.forward), out hit, 1.25f, _doorIncludedLayers))
+        {
+            Debug.Log(Mathf.Abs(hit.collider.gameObject.transform.parent.rotation.y));
+            if (Mathf.Abs(hit.collider.gameObject.transform.parent.rotation.y) <= 0.05f || Mathf.Abs(hit.collider.gameObject.transform.parent.rotation.y) >= 0.67f)
+            {
+                _agent.isStopped = true;
+                _nearDoor = true;
+            }
+            Debug.DrawRay(castsPosition, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            Debug.Log(hit.collider.gameObject.name);
+        }
+        else
+        {
+            if(GameManager.instance.GetIsPlayerAlive())
+                _agent.isStopped = false;
+            _nearDoor = false;
+        }
+    }
+
     private void OnDisable()
     {
         _nearLightSource = false;
@@ -237,5 +253,10 @@ public class EnemyController : MonoBehaviour
     public void SetGoToGenerator(bool value)
     {
         _goToGenerator = value;
+    }
+
+    public bool GetNearDoor()
+    {
+        return _nearDoor;
     }
 }

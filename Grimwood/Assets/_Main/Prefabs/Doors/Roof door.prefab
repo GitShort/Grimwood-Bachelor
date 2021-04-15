@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2583567094980942800}
   - component: {fileID: 2550898036405447662}
   - component: {fileID: 9206074829562069990}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Door_Roof_LOD_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
