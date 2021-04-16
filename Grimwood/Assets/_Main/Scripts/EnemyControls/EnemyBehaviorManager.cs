@@ -31,7 +31,7 @@ public class EnemyBehaviorManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.GetIsPlayerAlive())
+        if (GameManager.instance.GetIsPlayerAlive() && !GameManager.instance.GetIsPaused())
         {
             foreach (string key in enemyBehaviors.Keys)
             {

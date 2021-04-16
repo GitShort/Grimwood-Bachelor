@@ -17,6 +17,7 @@ public class GeneratorManager : MonoBehaviour
     {
         _hoverButton.onButtonDown.AddListener(OnButtonDown);
         _localLevelLightmapData = FindObjectOfType<LSS_FrontEnd>();
+        _localLevelLightmapData.Load("Generator_Off");
     }
 
     private void Update()

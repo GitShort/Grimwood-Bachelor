@@ -56,8 +56,12 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.instance.GetIsPlayerAlive())
+        if (!GameManager.instance.GetIsPlayerAlive() || GameManager.instance.GetIsPaused())
+        {
+            //Debug.Log(" Getispaused " + GameManager.instance.GetIsPaused());
+
             _agent.isStopped = true;
+        }
 
         //Debug.Log(_agent.remainingDistance);
         //_agent.SetDestination(_playerHead.position);
@@ -80,6 +84,7 @@ public class EnemyController : MonoBehaviour
         PlayAnimations();
         IsEnemyVisible();
         DetectClosedDoor();
+
     }
 
     void PlayAnimations()
@@ -218,7 +223,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if(GameManager.instance.GetIsPlayerAlive())
+            if(GameManager.instance.GetIsPlayerAlive() && !GameManager.instance.GetIsPaused())
                 _agent.isStopped = false;
             _nearDoor = false;
         }

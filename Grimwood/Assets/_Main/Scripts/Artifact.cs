@@ -30,12 +30,11 @@ public class Artifact : MonoBehaviour
             _pickupText.gameObject.SetActive(true);
             _pickupText.text = _artifactText.text;
             _isPickedUp = true;
-            GameManager.instance.AddArtifactCollectedCount();
+            GameManager.instance.AddCollectedArtifact(_artifactText.text);
             _pickupParticles.Play();
             Destroy(_artifactObject);
             Invoke("DestroyParent", 3f);
         }
-
     }
 
     void DestroyParent()

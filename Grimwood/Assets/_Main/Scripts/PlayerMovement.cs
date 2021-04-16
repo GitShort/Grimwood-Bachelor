@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,11 +16,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] SteamVR_Action_Boolean SnapLeftAction = SteamVR_Input.GetBooleanAction("SnapTurnLeft");
     [SerializeField] SteamVR_Action_Boolean SnapRightAction = SteamVR_Input.GetBooleanAction("SnapTurnRight");
     [SerializeField] SteamVR_Action_Vector2 MoveValue = SteamVR_Input.GetVector2Action("TouchpadPosition");
+    [SerializeField] SteamVR_Action_Boolean PauseAction = SteamVR_Input.GetBooleanAction("PauseMenu");
+
+    [SerializeField] GameObject _pauseMenu;
 
     float _speed = 0f;
 
     CharacterController _charController = null;
     [SerializeField] Transform _head;
+
+    // for pause menu conflicts
+    bool _isPressed = false;
 
     private void Awake()
     {
@@ -34,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         HandleHeight();
-        if (GameManager.instance.GetIsPlayerAlive())
+        HandlePauseMenu();
+        if (GameManager.instance.GetIsPlayerAlive() && !GameManager.instance.GetIsPaused())
         {
             CalculateMovement();
             SnapRotation();
@@ -58,6 +66,29 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply
         _charController.center = _newCenter;
+    }
+
+    void HandlePauseMenu()
+    {
+        if (GameManager.instance.GetIsPlayerAlive() && !SceneManager.GetActiveScene().name.Equals("Main Menu"))
+        {
+            if (PauseAction.GetStateDown(SteamVR_Input_Sources.RightHand) || PauseAction.GetStateDown(SteamVR_Input_Sources.LeftHand))
+            {
+                if (!GameManager.instance.GetIsPaused())
+                {
+                    GameManager.instance.SetIsPaused(true);
+                    _pauseMenu.SetActive(true);
+                    Debug.Log("PAUSED");
+                }
+                else
+                {
+                    GameManager.instance.SetIsPaused(false);
+                    _pauseMenu.SetActive(false);
+                    Debug.Log("RESUMED");
+                }
+            }
+        }
+
     }
 
     void CalculateMovement()

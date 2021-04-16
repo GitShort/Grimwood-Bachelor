@@ -59,16 +59,19 @@ public class EnemySpawnPoints : MonoBehaviour
             _isDisappeared = false;
         }
 
-        // if true - disappear, if false - appear
-        if (!_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
+        if (GameManager.instance.GetIsPlayerAlive() && !GameManager.instance.GetIsPaused())
         {
-            EnemyRespawnTimer(_DisappearedIntervals, false);
-            //Debug.Log("Appearance timer started");
-        }
-        if (_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
-        {
-            EnemyRespawnTimer(_AppearedIntervals, true);
-            //Debug.Log("Disappearance timer started");
+            // if true - disappear, if false - appear
+            if (!_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
+            {
+                EnemyRespawnTimer(_DisappearedIntervals, false);
+                //Debug.Log("Appearance timer started");
+            }
+            if (_enemyController.gameObject.activeInHierarchy && !_isTimerFinished)
+            {
+                EnemyRespawnTimer(_AppearedIntervals, true);
+                //Debug.Log("Disappearance timer started");
+            }
         }
 
         // DEBUGGING
@@ -99,8 +102,8 @@ public class EnemySpawnPoints : MonoBehaviour
         {
             //Debug.Log(_timer);
             _timer += Time.deltaTime;
-            Debug.Log(Interval[GameManager.instance.GetArtifactCollectedCount()].ToString());
-            if (Interval[GameManager.instance.GetArtifactCollectedCount()] <= _timer)
+            Debug.Log(Interval[GameManager.instance.GetCollectedArtifactCount()].ToString());
+            if (Interval[GameManager.instance.GetCollectedArtifactCount()] <= _timer)
             {
                 _enemyController.SetShouldDisappear(appearanceValue);
                 _isTimerFinished = true;

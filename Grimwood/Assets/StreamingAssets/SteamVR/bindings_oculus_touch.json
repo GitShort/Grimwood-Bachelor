@@ -154,20 +154,6 @@
             },
             {
                "inputs" : {
-                  "click" : {
-                     "output" : "/actions/default/in/grabpinch"
-                  }
-               },
-               "mode" : "button",
-               "parameters" : {
-                  "click_activate_threshold" : "0.8",
-                  "click_deactivate_threshold" : "0.7",
-                  "force_input" : "value"
-               },
-               "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
                   "pull" : {
                      "output" : "/actions/default/in/squeeze"
                   }
@@ -231,8 +217,26 @@
             },
             {
                "inputs" : {
+                  "position" : {
+                     "output" : "/actions/default/in/touchpadposition"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/left/input/joystick"
+            },
+            {
+               "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/grabpinch"
+                     "output" : "/actions/default/in/triggertoggle"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/triggertoggle"
                   }
                },
                "mode" : "button",
@@ -240,12 +244,30 @@
             },
             {
                "inputs" : {
-                  "position" : {
-                     "output" : "/actions/default/in/touchpadposition"
+                  "click" : {
+                     "output" : "/actions/default/in/pausemenu"
                   }
                },
-               "mode" : "joystick",
-               "path" : "/user/hand/left/input/joystick"
+               "mode" : "button",
+               "path" : "/user/hand/left/input/x"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/pausemenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/x"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/pausemenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/a"
             }
          ]
       },

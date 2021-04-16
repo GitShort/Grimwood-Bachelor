@@ -56,7 +56,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 7277232220978159311, guid: 2ef032180bb62674b8db85f755513330, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: No free behavior left
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2ef032180bb62674b8db85f755513330, type: 2}
+  m_sharedMaterial: {fileID: 7277232220978159311, guid: 2ef032180bb62674b8db85f755513330, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.35
+  m_fontSize: 56.7
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -226,7 +226,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: b14d38eb2717dfc4790d098d0fefb597, type: 2}
+  - {fileID: 8231477580206680473, guid: 4f25ecca7006b624eb8cf48b87ac4e09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -270,8 +270,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: No free behavior left
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b14d38eb2717dfc4790d098d0fefb597, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: b14d38eb2717dfc4790d098d0fefb597, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4f25ecca7006b624eb8cf48b87ac4e09, type: 2}
+  m_sharedMaterial: {fileID: 8231477580206680473, guid: 4f25ecca7006b624eb8cf48b87ac4e09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.55
+  m_fontSize: 69.95
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1

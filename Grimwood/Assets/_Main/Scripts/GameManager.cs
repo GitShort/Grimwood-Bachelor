@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using LSS;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class GameManager : MonoBehaviour
     bool _playerLoseSoundPlayed;
 
     int _artifactsCount;
-    int _artifactCollectedCount;
     List<string> _ArtifactNames = new List<string>();
     [SerializeField] Artifact[] _artifactObject;
+    [SerializeField] List<string> _CollectedArtifacts = new List<string>(); // Used to check collected artifacts in-game through pause menu
     bool _artifactNamesAssigned;
 
     static readonly System.Random rnd = new System.Random();
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
     bool _isTimerFinished;
     float _timer;
 
+    bool _isPaused;
+
     private void Awake()
     {
         if (instance == null)
@@ -43,14 +46,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _artifactCollectedCount = 0;
         _artifactsCount = _artifactObject.Length;
         _isGeneratorOn = false;
         _isPlayerAlive = true;
         _soundPlayed = false;
         _artifactNamesAssigned = false;
         _playerLoseSoundPlayed = false;
-        AudioManager.instance.Play("Environment", this.gameObject);
+        _isPaused = false;
+        
+        if(!SceneManager.GetActiveScene().name.Equals("Main Menu"))
+            AudioManager.instance.Play("Environment", this.gameObject);
     }
 
     void Update()
@@ -63,15 +68,17 @@ public class GameManager : MonoBehaviour
                 Invoke("PlayEnvironmentSound", _intervalBetweenSounds);
             }
 
-            // ARTIFACT COLLECTION DEBUGGING
+            // Pause debugging
             if (Input.GetKeyDown(KeyCode.Alpha0))
             {
-                //_artifactCollectedCount++;
-                //Debug.Log("Collected artifacts: " + _artifactCollectedCount);
-                foreach (string item in _ArtifactNames)
-                {
-                    Debug.Log(item);
-                }
+                _isPaused = true;
+                //_isPlayerAlive = false;
+                Debug.Log("Paused");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                _isPaused = false;
+                Debug.Log("Unpaused");
             }
 
             if (!_artifactNamesAssigned)
@@ -87,12 +94,12 @@ public class GameManager : MonoBehaviour
                     _artifactNamesCount++;
                 }
             }
-            Debug.Log("Collected artifacts: " + _artifactCollectedCount);
+            Debug.Log("Collected artifacts: " + _CollectedArtifacts.Count);
         }
 
         if (!_isPlayerAlive)
         {
-            PlayerLose();
+            BlurBackground();
             if (!_playerLoseSoundPlayed)
             {
                 PlayEnvironmentSound();
@@ -112,7 +119,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void PlayerLose()
+    void BlurBackground()
     {
         if (!_isTimerStarted && !_isTimerFinished)
         {
@@ -157,18 +164,33 @@ public class GameManager : MonoBehaviour
         return _artifactsCount;
     }
 
-    public int GetArtifactCollectedCount()
+    public List<string> GetCollectedArtifacts()
     {
-        return _artifactCollectedCount;
+        return _CollectedArtifacts;
     }
 
-    public void AddArtifactCollectedCount()
+    public int GetCollectedArtifactCount()
     {
-        _artifactCollectedCount++;
+        return _CollectedArtifacts.Count;
+    }
+
+    public void AddCollectedArtifact(string name)
+    {
+        _CollectedArtifacts.Add(name);
     }
 
     public void AddArtifactNames(string name)
     {
         _ArtifactNames.Add(name);
+    }
+
+    public bool GetIsPaused()
+    {
+        return _isPaused;
+    }
+
+    public void SetIsPaused(bool value)
+    {
+        _isPaused = value;
     }
 }

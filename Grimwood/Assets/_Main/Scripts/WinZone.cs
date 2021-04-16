@@ -14,7 +14,7 @@ public class WinZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (GameManager.instance.GetArtifactCollectedCount().Equals(GameManager.instance.GetArtifactsCount()) && other.gameObject.CompareTag("Player"))
+        if (GameManager.instance.GetCollectedArtifactCount().Equals(GameManager.instance.GetArtifactsCount()) && other.gameObject.CompareTag("Player"))
         {
             _hasPassedWinZone = true;
             _textObj.SetActive(true);

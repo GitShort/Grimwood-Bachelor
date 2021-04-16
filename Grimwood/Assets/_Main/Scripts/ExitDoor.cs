@@ -17,7 +17,7 @@ public class ExitDoor : MonoBehaviour
     void Update()
     {
         Debug.Log(GameManager.instance.GetArtifactsCount());
-        if (GameManager.instance.GetArtifactCollectedCount().Equals(GameManager.instance.GetArtifactsCount()) && !_isOpen)
+        if (GameManager.instance.GetCollectedArtifactCount().Equals(GameManager.instance.GetArtifactsCount()) && !_isOpen)
         {
             AudioManager.instance.Play("ExitOpen", this.gameObject);
             _anim.SetBool("shouldOpen", true);

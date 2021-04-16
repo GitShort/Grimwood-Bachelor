@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_uniqueId: _8a4cda6f-a823-40f4-922c-7323fefd6b30
+  m_uniqueId: _49fb3868-da89-4413-bea3-50c5e5e85429
   m_searchTags: []
 --- !u!114 &284365920102672543
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_resourceStorageFolder: Generator_Off
   m_isVerbose: 0
-  loadOnAwake: 1
+  loadOnAwake: 0
 --- !u!114 &284365920102672541
 MonoBehaviour:
   m_ObjectHideFlags: 0
