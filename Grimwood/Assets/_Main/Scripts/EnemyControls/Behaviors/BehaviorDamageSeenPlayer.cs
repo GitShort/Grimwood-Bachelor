@@ -10,8 +10,6 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
     // Called attributes
     EnemyController _enemy;
     NavMeshAgent _agent;
-    float _defaultEnemyMoveSpeed;
-    float _unseenByPlayerEnemyMoveSpeed;
     float _changeDurationSeenDmg;
 
     Volume _ppVolume;
@@ -97,7 +95,7 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
             Debug.Log("Died by looking at the monster for too long!");
             GameManager.instance.SetIsPlayerAlive(false);
         }
-        else Debug.Log(_colorFilterValueCurrent.g);
+        //else Debug.Log(_colorFilterValueCurrent.g);
     }
 
     public void CallBehavior()
@@ -118,19 +116,9 @@ public class BehaviorDamageSeenPlayer : IEnemyBehavior
             _isSeen = false;
     }
 
-    public bool CheckState()
-    {
-        return true;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("DAMAGE SEEN BY PLAYER behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-
     }
 
     public string BehaviorMessage()

@@ -24,10 +24,6 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         if (index < _audioList.Count)
@@ -65,6 +61,7 @@ public class AudioManager : MonoBehaviour
             source.spatialBlend = s.GetSpatialBlend();
             source.maxDistance = s.GetMaxSoundDistance();
             source.rolloffMode = s.GetAudioRolloffMode();
+            source.outputAudioMixerGroup = s.GetAudioMixerGroup();
             source.Play();
         }
     }

@@ -6,9 +6,6 @@ public interface IEnemyBehavior
 {
     void Behavior();
 
-    bool CheckState();
-    void SetState(bool value);
-
     void DebugFunction();
 
     void CallBehavior();

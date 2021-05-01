@@ -7,7 +7,6 @@ public class BehaviorMoveWithoutSound : IEnemyBehavior
 {
     // Called attributes
     EnemyController _enemy;
-    NavMeshAgent _agent;
 
     // Local attributes
 
@@ -22,7 +21,6 @@ public class BehaviorMoveWithoutSound : IEnemyBehavior
 
     public BehaviorMoveWithoutSound(AttributeStorage attributes)
     {
-        _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();
         _enemy = attributes.GetEnemyController();
     }
 
@@ -65,19 +63,9 @@ public class BehaviorMoveWithoutSound : IEnemyBehavior
 
     }
 
-    public bool CheckState()
-    {
-        return true;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("BehaviorMoveWithoutSound");
-    }
-
-    public void SetState(bool value)
-    {
-
     }
 
     public string BehaviorMessage()

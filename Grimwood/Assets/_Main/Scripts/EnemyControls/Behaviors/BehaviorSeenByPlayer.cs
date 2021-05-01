@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/// <summary>
-/// 
-/// </summary>
 public class BehaviorSeenByPlayer : IEnemyBehavior
 {
     // Called attributes
@@ -45,19 +42,9 @@ public class BehaviorSeenByPlayer : IEnemyBehavior
         }
     }
 
-    public bool CheckState()
-    {
-        return true;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("SEEN BY PLAYER behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-         
     }
 
     public string BehaviorMessage()

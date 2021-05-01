@@ -25,19 +25,14 @@ public class EnemySpawnPoints : MonoBehaviour
     {
         _SpawnPointsSize = new Vector3[_SpawnPoints.Length];
         _SpawnPointsCenter = new Vector3[_SpawnPoints.Length];
-
-        for (int i = 0; i < _SpawnPoints.Length; i++)
-        {
-            _SpawnPointsCenter[i] = _SpawnPoints[i].transform.position;
-            _SpawnPointsSize[i].x = _SpawnPoints[i].transform.localScale.x * _SpawnPoints[i].size.x;
-            _SpawnPointsSize[i].z = _SpawnPoints[i].transform.localScale.z * _SpawnPoints[i].size.z;
-        }
+        CheckSpawnPositions();
     }
 
     void Start()
     {
         _isTimerStarted = false;
         _isTimerFinished = false;
+        _enemyController.SetShouldDisappear(true);
     }
 
     void Update()
@@ -83,6 +78,16 @@ public class EnemySpawnPoints : MonoBehaviour
         //Debug.Log(_enemyController.IsSpawningEnemyVisible());
     }
 
+    void CheckSpawnPositions()
+    {
+        for (int i = 0; i < _SpawnPoints.Length; i++)
+        {
+            _SpawnPointsCenter[i] = _SpawnPoints[i].transform.position;
+            _SpawnPointsSize[i].x = _SpawnPoints[i].transform.localScale.x * _SpawnPoints[i].size.x;
+            _SpawnPointsSize[i].z = _SpawnPoints[i].transform.localScale.z * _SpawnPoints[i].size.z;
+        }
+    }
+
     void EnemyDisappear()
     {
         _enemyController.gameObject.SetActive(false);
@@ -102,8 +107,8 @@ public class EnemySpawnPoints : MonoBehaviour
         {
             //Debug.Log(_timer);
             _timer += Time.deltaTime;
-            Debug.Log(Interval[GameManager.instance.GetCollectedArtifactCount()].ToString());
-            if (Interval[GameManager.instance.GetCollectedArtifactCount()] <= _timer)
+            Debug.Log((Interval[GameManager.instance.GetCollectedArtifactCount()]).ToString());
+            if ((Interval[GameManager.instance.GetCollectedArtifactCount()]) <= _timer && !_enemyController.GetGoToGenerator())
             {
                 _enemyController.SetShouldDisappear(appearanceValue);
                 _isTimerFinished = true;

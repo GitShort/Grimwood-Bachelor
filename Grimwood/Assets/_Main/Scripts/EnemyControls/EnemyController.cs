@@ -33,20 +33,13 @@ public class EnemyController : MonoBehaviour
     //Dictionary<string, IEnemyBehavior> enemyBehaviors;
 
     bool _goToGenerator = false;
+    bool _nearGenerator = false;
     // For detection if enemy has entered bounds of a light source
     bool _nearLightSource = false;
 
     bool _nearDoor = false;
 
     [SerializeField] Camera _playerCamera;
-
-    // for debugging lights
-    [SerializeField] GameObject debugCube;
-
-    private void Awake()
-    {
-        //enemyBehaviors = new Dictionary<string, IEnemyBehavior>();
-    }
 
     void Start()
     {
@@ -56,13 +49,13 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.instance.GetIsPlayerAlive() || GameManager.instance.GetIsPaused())
+        if (!GameManager.instance.GetIsPlayerAlive() || GameManager.instance.GetIsPaused() || GameManager.instance.GetIsFinished())
         {
             //Debug.Log(" Getispaused " + GameManager.instance.GetIsPaused());
 
             _agent.isStopped = true;
         }
-
+        //Debug.Log("Near door " + _nearDoor);
         //Debug.Log(_agent.remainingDistance);
         //_agent.SetDestination(_playerHead.position);
         if (!_goToGenerator)
@@ -75,8 +68,6 @@ public class EnemyController : MonoBehaviour
             _agent.SetDestination(_energyGenPos.position); // if the lights are on move towards generator
             EnergyGeneratorAction();
         }
-
-
         //_agent.SetDestination(_player.position);
         //Debug.DrawLine(_agent.destination, new Vector3(_agent.destination.x, _agent.destination.y + 1f, _agent.destination.z), Color.red);
         castsPosition = new Vector3(transform.position.x, transform.position.y + _castsHeightOffset, transform.position.z);
@@ -123,7 +114,8 @@ public class EnemyController : MonoBehaviour
 
     void DamagePlayer()
     {
-        if (_agent.remainingDistance < _attackDistance && _didAttack && !_isPlayerHit)
+        Debug.Log(_nearGenerator);
+        if (_agent.remainingDistance < _attackDistance && _didAttack && !_isPlayerHit && !_nearGenerator)
         {
             Debug.Log("Player hit");
             _isPlayerHit = true;
@@ -196,10 +188,15 @@ public class EnemyController : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Generator"))
             {
                 _energyGen = hit.collider.GetComponent<GeneratorManager>();
+                _nearGenerator = true;
                 //hit.collider.gameObject.GetComponent<GeneratorManager>();
                 Invoke("HitEnergyGenerator", 1.5f);
             }
+            else
+                _nearGenerator = false;
         }
+        else
+            _nearGenerator = false;
     }
 
     void HitEnergyGenerator()
@@ -212,7 +209,6 @@ public class EnemyController : MonoBehaviour
     {
         if (Physics.Raycast(castsPosition, transform.TransformDirection(Vector3.forward), out hit, 1.25f, _doorIncludedLayers))
         {
-            Debug.Log(Mathf.Abs(hit.collider.gameObject.transform.parent.rotation.y));
             if (Mathf.Abs(hit.collider.gameObject.transform.parent.rotation.y) <= 0.05f || Mathf.Abs(hit.collider.gameObject.transform.parent.rotation.y) >= 0.67f)
             {
                 _agent.isStopped = true;
@@ -233,6 +229,8 @@ public class EnemyController : MonoBehaviour
     {
         _nearLightSource = false;
         _isEnemyVisibleToPlayer = false;
+        _nearDoor = false;
+        _nearGenerator = false;
     }
 
     public bool GetIsEnemyVisibleToPlayer()
@@ -263,6 +261,11 @@ public class EnemyController : MonoBehaviour
     public void SetGoToGenerator(bool value)
     {
         _goToGenerator = value;
+    }
+
+    public bool GetGoToGenerator()
+    {
+        return _goToGenerator;
     }
 
     public bool GetNearDoor()

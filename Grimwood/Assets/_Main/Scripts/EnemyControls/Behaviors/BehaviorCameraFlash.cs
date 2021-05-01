@@ -79,19 +79,9 @@ public class BehaviorCameraFlash : IEnemyBehavior
         }
     }
 
-    public bool CheckState()
-    {
-        return _isCollidingWithCamera;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("CAMERA behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-        _isCollidingWithCamera = value;
     }
 
     public string BehaviorMessage()

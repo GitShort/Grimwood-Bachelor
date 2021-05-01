@@ -13,18 +13,10 @@ public class BehaviorLightStrong : IEnemyBehavior
     NavMeshAgent _agent;
     FlashlightManager _flashlight;
     EnemyController _enemyController;
- //   GeneratorManager _energyGen;
 
     // Local attributes
     bool _isLitUp = false;
     bool _isLitUpLamp = false;
-
-    //bool _sentGeneratorSignal = false;
-
-    //static readonly System.Random rnd = new System.Random();
-    //float _chanceToFollowGenerator;
-    //int _followGeneratorValue = 10;
-    //bool _randomValueGenerated = false;
 
     public BehaviorLightStrong(AttributeStorage attributes)
     {
@@ -48,19 +40,9 @@ public class BehaviorLightStrong : IEnemyBehavior
 
     }
 
-    public bool CheckState()
-    {
-        return _isLitUp;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("FLASHLIGHT strong behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-        _isLitUp = value;
     }
 
     public string BehaviorMessage()

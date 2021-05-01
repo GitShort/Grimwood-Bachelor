@@ -24,19 +24,9 @@ public class BehaviorDisappearDoor : IEnemyBehavior
 
     }
 
-    public bool CheckState()
-    {
-        return true;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("Disappear behind door behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-
     }
 
     public string BehaviorMessage()

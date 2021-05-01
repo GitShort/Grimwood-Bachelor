@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Sound
@@ -8,6 +9,7 @@ public class Sound
     [SerializeField] string _name;
 
     [SerializeField] AudioClip _clip;
+    [SerializeField] AudioMixerGroup _audioMixer;
 
     [Range(0f, 1f)]
     [SerializeField] float _volume = 1f;
@@ -21,6 +23,7 @@ public class Sound
 
     [SerializeField] float _maxSoundDistance = 150f;
     [SerializeField] AudioRolloffMode _rollOffMode = AudioRolloffMode.Custom;
+
 
     [HideInInspector]
     public AudioSource source;
@@ -64,5 +67,10 @@ public class Sound
     public AudioRolloffMode GetAudioRolloffMode()
     {
         return _rollOffMode;
+    }
+
+    public AudioMixerGroup GetAudioMixerGroup()
+    {
+        return _audioMixer;
     }
 }

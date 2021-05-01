@@ -42,19 +42,9 @@ public class BehaviorUnseenByPlayer : IEnemyBehavior
         }
     }
 
-    public bool CheckState()
-    {
-        return true;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("UNSEEN BY PLAYER behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-
     }
 
     public string BehaviorMessage()

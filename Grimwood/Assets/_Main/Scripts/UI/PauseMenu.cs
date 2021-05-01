@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Transform _playerHead;
     [SerializeField] GameObject _pauseMenu;
     [SerializeField] GameObject _loseMenu;
+    [SerializeField] GameObject _winMenu;
 
     [SerializeField] TextMeshProUGUI[] _collectiblesText;
 
@@ -21,11 +22,12 @@ public class PauseMenu : MonoBehaviour
     {
         _pauseMenu.gameObject.SetActive(false);
         _loseMenu.SetActive(false);
+        _winMenu.SetActive(false);
     }
 
     private void Update()
     {
-        if (!_pauseMenu.gameObject.activeInHierarchy)
+        if (!_pauseMenu.gameObject.activeInHierarchy && !_loseMenu.gameObject.activeInHierarchy && !_winMenu.gameObject.activeInHierarchy)
         {
             this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, _playerHead.transform.position.y, this.gameObject.transform.position.z);
         }
@@ -33,6 +35,8 @@ public class PauseMenu : MonoBehaviour
             _pauseMenuReset = false;
         if (!GameManager.instance.GetIsPlayerAlive())
             _loseMenu.SetActive(true);
+        if (GameManager.instance.GetIsFinished())
+            _winMenu.SetActive(true);
 
 
         Collection();
@@ -66,7 +70,6 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
         Debug.Log("EXIT");
-        // load scene
     }
 
     void Collection()

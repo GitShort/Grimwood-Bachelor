@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 6046538362772272941}
   - component: {fileID: 6020375284902230993}
   - component: {fileID: 6028643550267911793}
-  - component: {fileID: 6051194063122592504}
   - component: {fileID: 6051194063122592510}
   - component: {fileID: 6051194063122592505}
   m_Layer: 0
@@ -149,20 +148,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6051194063122592504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6051194063122592507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_uniqueId: _d9d6107d-83e6-4131-a060-b38dedb8992e
-  m_searchTags: []
 --- !u!208 &6051194063122592510
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -204,7 +189,6 @@ GameObject:
   - component: {fileID: 6021197750435356505}
   - component: {fileID: 6028772715039102835}
   - component: {fileID: 5988977402764847401}
-  - component: {fileID: 6051277317240405938}
   m_Layer: 0
   m_Name: glass_garage (1)
   m_TagString: Untagged
@@ -289,20 +273,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: faa049a453ba4414da053a79930b848e, type: 3}
---- !u!114 &6051277317240405938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6051277317240405965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_uniqueId: _825f88a0-326a-4f88-b722-d71d51f1166b
-  m_searchTags: []
 --- !u!1 &6052012915666113053
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +285,6 @@ GameObject:
   - component: {fileID: 6020843270831960311}
   - component: {fileID: 6028712581546792943}
   - component: {fileID: 5988820774815319877}
-  - component: {fileID: 6052012915666113026}
   m_Layer: 0
   m_Name: glass_garage
   m_TagString: Untagged
@@ -401,17 +370,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: faa049a453ba4414da053a79930b848e, type: 3}
---- !u!114 &6052012915666113026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6052012915666113053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768c4b48edf617a4588c77f5f65cf4fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_uniqueId: _3ee837f9-d7b5-4136-b59a-941b9de37709
-  m_searchTags: []

@@ -56,16 +56,6 @@ public class BehaviorBlind : IEnemyBehavior
         Debug.Log("BLIND behavior WORKS");
     }
 
-    public bool CheckState()
-    {
-        return _isBlinded;
-    }
-
-    public void SetState(bool value)
-    {
-        _isBlinded = value;
-    }
-
     public void CallBehavior()
     {
         castsPosition = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + _castsHeightOffset, _enemy.transform.position.z);

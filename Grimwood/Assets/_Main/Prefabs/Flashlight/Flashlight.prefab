@@ -326,7 +326,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 104449
-  _batteryConsumptionRate: 0.015
+  _batteryConsumptionRate: 0.025
   _BatteryIndicators:
   - {fileID: 5047559147041228817}
   - {fileID: 7637266907491375153}

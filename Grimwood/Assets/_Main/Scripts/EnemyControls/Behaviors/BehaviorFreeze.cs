@@ -89,16 +89,6 @@ public class BehaviorFreeze : IEnemyBehavior
         Debug.Log("Freeze behavior works");
     }
 
-    public bool CheckState()
-    {
-        return _isFreezing;
-    }
-
-    public void SetState(bool value)
-    {
-        _isFreezing = value;
-    }
-
     public void CallBehavior()
     {
         castsPosition = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + _castsHeightOffset, _enemy.transform.position.z);

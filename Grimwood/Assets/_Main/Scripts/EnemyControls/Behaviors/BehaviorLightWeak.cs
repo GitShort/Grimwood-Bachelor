@@ -13,7 +13,6 @@ public class BehaviorLightWeak : IEnemyBehavior
     NavMeshAgent _agent;
     FlashlightManager _flashlight;
     EnemyController _enemyController;
-    GeneratorManager _energyGen;
 
     // Local attributes
     bool _isLitUp = false;
@@ -26,8 +25,6 @@ public class BehaviorLightWeak : IEnemyBehavior
     int _followGeneratorValue = 10;
     bool _randomValueGenerated = false;
 
-    bool _check = false;
-
     public BehaviorLightWeak(AttributeStorage attributes)
     {
         _enemyController = attributes.GetEnemyController();
@@ -37,7 +34,6 @@ public class BehaviorLightWeak : IEnemyBehavior
         _anim = attributes.GetEnemyController().GetComponent<Animator>();
         _agent = attributes.GetEnemyController().GetComponent<NavMeshAgent>();
         _flashlight = attributes.GetFlashlightManager();
-        _energyGen = attributes.GetGeneratorManager();
     }
 
     public void Behavior()
@@ -77,19 +73,9 @@ public class BehaviorLightWeak : IEnemyBehavior
 
     }
 
-    public bool CheckState()
-    {
-        return _isLitUp;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("FLASHLIGHT weak behavior WORKS");
-    }
-
-    public void SetState(bool value)
-    {
-        _isLitUp = value;
     }
 
     public string BehaviorMessage()

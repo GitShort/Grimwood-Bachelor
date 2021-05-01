@@ -46,6 +46,7 @@ MonoBehaviour:
   _Sounds:
   - _name: EnemySteps
     _clip: {fileID: 8300000, guid: 90d987262184df44581bc468c8b654c7, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.8
     _pitch: 1
     _loop: 0
@@ -55,6 +56,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: HeartbeatFirst
     _clip: {fileID: 8300000, guid: 1d75656abea513640b74f9fdbc1af893, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.6
     _pitch: 1
     _loop: 0
@@ -64,6 +66,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: HeartbeatSecond
     _clip: {fileID: 8300000, guid: f0025f74330493146a501c6c1b829181, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.6
     _pitch: 1
     _loop: 0
@@ -73,7 +76,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: Environment
     _clip: {fileID: 8300000, guid: 12caa88b5408e2e48ab7ae3932f54c3f, type: 3}
-    _volume: 0.35
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
+    _volume: 0.5
     _pitch: 1
     _loop: 1
     _spatialBlend: 0
@@ -82,6 +86,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: Distortion
     _clip: {fileID: 8300000, guid: 1f70b8ca7ccba784ba67c2110f1c0db4, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0
     _pitch: 1
     _loop: 0
@@ -91,6 +96,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: ObjectFall
     _clip: {fileID: 8300000, guid: a5022558f7efd5e42979781639b627ae, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.25
     _pitch: 1
     _loop: 0
@@ -100,6 +106,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: ObjectPickup
     _clip: {fileID: 8300000, guid: 4ad0148b32c773a4390bc3a4d1c057ec, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 1
     _pitch: 1
     _loop: 0
@@ -109,6 +116,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: Generator
     _clip: {fileID: 8300000, guid: ea2e49fdbd7ddca4389247298d1951cf, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.5
     _pitch: 1
     _loop: 0
@@ -118,6 +126,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: GeneratorOffEnemy
     _clip: {fileID: 8300000, guid: 9de4e33d018389f4c9cf8463ef7f0766, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.8
     _pitch: 1
     _loop: 0
@@ -127,6 +136,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: EnemyAttack
     _clip: {fileID: 8300000, guid: 6fba113672114de4aad464892870c68b, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.5
     _pitch: 1
     _loop: 0
@@ -136,6 +146,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: EnemyHit
     _clip: {fileID: 8300000, guid: b9c0d150b63292b458e3b9cb6affb0ee, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.7
     _pitch: 1
     _loop: 0
@@ -145,6 +156,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: CameraFlash
     _clip: {fileID: 8300000, guid: af0060cd9aff87b43b5ace7ae51a2c52, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.7
     _pitch: 1
     _loop: 0
@@ -154,6 +166,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: FlashlightToggle
     _clip: {fileID: 8300000, guid: fc16485827d470f419d62c0beda49357, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.45
     _pitch: 1
     _loop: 0
@@ -163,6 +176,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: ButtonToggle
     _clip: {fileID: 8300000, guid: 3402916cd623dda44a48864fb50bc3af, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.45
     _pitch: 1
     _loop: 0
@@ -172,6 +186,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: PlayerFootsteps
     _clip: {fileID: 8300000, guid: 90d987262184df44581bc468c8b654c7, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.4
     _pitch: 1
     _loop: 0
@@ -181,6 +196,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: PlayerBreath
     _clip: {fileID: 8300000, guid: c8aff1bfd4e0552478460302305014b9, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.4
     _pitch: 1
     _loop: 0
@@ -190,6 +206,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: MonsterBreath
     _clip: {fileID: 8300000, guid: 8bbc93cabc863ef4994562d825b60ea6, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.8
     _pitch: 1
     _loop: 0
@@ -199,6 +216,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: MonsterGrowl
     _clip: {fileID: 8300000, guid: 53932cd96fe1cc443b0b852eca5b2e54, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.6
     _pitch: 1
     _loop: 0
@@ -208,6 +226,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: WomanScream
     _clip: {fileID: 8300000, guid: 24f5cab844c36464cbd357e12c09064b, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.4
     _pitch: 1
     _loop: 0
@@ -217,7 +236,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - _name: GhostScream
     _clip: {fileID: 8300000, guid: e79d7c0d56cff5644ba560aa00788310, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
     _volume: 0.4
+    _pitch: 1
+    _loop: 0
+    _spatialBlend: 1
+    _maxSoundDistance: 100
+    _rollOffMode: 2
+    source: {fileID: 0}
+  - _name: ExitOpen
+    _clip: {fileID: 8300000, guid: 1221c40fc31d8484c858dcab6d3e5919, type: 3}
+    _audioMixer: {fileID: 24300002, guid: 9e4bf7c49353fef4fbe82a8e7bab6a05, type: 2}
+    _volume: 0.8
     _pitch: 1
     _loop: 0
     _spatialBlend: 1

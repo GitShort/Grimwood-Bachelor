@@ -11,6 +11,7 @@ public class EnemyBehaviorManager : MonoBehaviour
     [SerializeField] EnemyController _enemyContr;
     public EnemyBehavior[] Behaviors;
 
+    // used to call chosen enemy behaviors during play-time
     Dictionary<string, IEnemyBehavior> enemyBehaviors;
 
     private void Awake()
@@ -31,7 +32,7 @@ public class EnemyBehaviorManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.GetIsPlayerAlive() && !GameManager.instance.GetIsPaused())
+        if (GameManager.instance.GetIsPlayerAlive() && !GameManager.instance.GetIsPaused() && !GameManager.instance.GetIsFinished())
         {
             foreach (string key in enemyBehaviors.Keys)
             {

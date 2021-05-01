@@ -79,19 +79,9 @@ public class BehaviorMoveWithSound : IEnemyBehavior
         }
     }
 
-    public bool CheckState()
-    {
-        return _isMoving;
-    }
-
     public void DebugFunction()
     {
         Debug.Log("BehaviorMoveWithSound");
-    }
-
-    public void SetState(bool value)
-    {
-        
     }
 
     public string BehaviorMessage()

@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 974842482}
   - component: {fileID: 974842483}
   - component: {fileID: 1305383295}
-  m_Layer: 18
+  m_Layer: 9
   m_Name: PhotoCamera
   m_TagString: Snappable
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentFlags: 45
-  attachmentOffset: {fileID: 0}
+  attachmentOffset: {fileID: 3530274492954028038}
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 3
   releaseVelocityTimeOffset: -0.011
@@ -514,7 +514,7 @@ MonoBehaviour:
   - {fileID: 7930908441237446572}
   - {fileID: 7864979323766224851}
   _flashDuration: 0.1
-  _useCooldown: 2
+  _useCooldown: 30
   _flashLampRend: {fileID: 2393336776401171170}
   _renderCamera: {fileID: 909291422432459320}
   _flashTriggerZone: {fileID: 7179767652690004959}
