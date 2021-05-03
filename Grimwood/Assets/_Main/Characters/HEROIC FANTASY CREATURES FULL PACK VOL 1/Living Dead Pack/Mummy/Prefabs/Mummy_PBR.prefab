@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1589694012
 Transform:
   m_ObjectHideFlags: 0
@@ -1263,10 +1263,12 @@ MonoBehaviour:
   _includedLayers:
     serializedVersion: 2
     m_Bits: 1537
+  _doorIncludedLayers:
+    serializedVersion: 2
+    m_Bits: 0
   _renderer: {fileID: 2285651312246694555}
   _seenByPlayerDistance: 35
   _playerCamera: {fileID: 0}
-  debugCube: {fileID: 1589694009}
 --- !u!195 &2975819592450277804
 NavMeshAgent:
   m_ObjectHideFlags: 0

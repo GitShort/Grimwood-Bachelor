@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>5/1/2021 - 8:41:30 PM</Generatedon>
+    <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
+    <Assemblies>4</Assemblies>
+    <Classes>20</Classes>
+    <Files>20</Files>
+    <Coveredlines>775</Coveredlines>
+    <Uncoveredlines>1768</Uncoveredlines>
+    <Coverablelines>2543</Coverablelines>
+    <Totallines>4215</Totallines>
+    <Linecoverage>30.4</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+  </Summary>
+  <Coverage>
+    <Assembly name="NavMeshComponents" classes="4" coverage="81.2" coveredlines="355" coverablelines="437" totallines="766" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="UnityEngine.AI.NavMeshLink" coverage="78.7" coveredlines="78" coverablelines="99" totallines="172" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEngine.AI.NavMeshModifier" coverage="90" coveredlines="18" coverablelines="20" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEngine.AI.NavMeshModifierVolume" coverage="90.9" coveredlines="20" coverablelines="22" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEngine.AI.NavMeshSurface" coverage="80.7" coveredlines="239" coverablelines="296" totallines="486" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+    <Assembly name="NavMeshComponentsEditor" classes="6" coverage="0" coveredlines="0" coverablelines="973" totallines="1466" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="UnityEditor.AI.NavMeshAssetManager" coverage="0" coveredlines="0" coverablelines="221" totallines="334" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEditor.AI.NavMeshComponentsGUIUtility" coverage="0" coveredlines="0" coverablelines="188" totallines="258" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEditor.AI.NavMeshLinkEditor" coverage="0" coveredlines="0" coverablelines="192" totallines="279" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEditor.AI.NavMeshModifierEditor" coverage="0" coveredlines="0" coverablelines="24" totallines="49" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEditor.AI.NavMeshModifierVolumeEditor" coverage="0" coveredlines="0" coverablelines="86" totallines="146" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="UnityEditor.AI.NavMeshSurfaceEditor" coverage="0" coveredlines="0" coverablelines="262" totallines="400" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+    <Assembly name="NavMeshComponentsTestsEditmode" classes="5" coverage="11.7" coveredlines="93" coverablelines="790" totallines="1351" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="NavMeshModifierVolumeInPrefabTests" coverage="18.1" coveredlines="23" coverablelines="127" totallines="233" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="NavMeshSurfaceInPrefabTests" coverage="4.6" coveredlines="23" coverablelines="498" totallines="824" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="NavMeshSurfaceInPrefabVariantTests" coverage="17.6" coveredlines="23" coverablelines="130" totallines="232" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="PrefabSavingUtil" coverage="0" coveredlines="0" coverablelines="8" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="PrefabStageAutoSavingUtil" coverage="88.8" coveredlines="24" coverablelines="27" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+    <Assembly name="NavMeshComponentsTestsPlaymode" classes="5" coverage="95.3" coveredlines="327" coverablelines="343" totallines="632" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="NavMeshSurfaceAgentTests" coverage="65.9" coveredlines="29" coverablelines="44" totallines="102" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="NavMeshSurfaceLinkTests" coverage="98.8" coveredlines="87" coverablelines="88" totallines="145" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="NavMeshSurfaceModifierTests" coverage="100" coveredlines="58" coverablelines="58" totallines="112" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="NavMeshSurfaceModifierVolumeTests" coverage="100" coveredlines="35" coverablelines="35" totallines="71" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="NavMeshSurfaceTests" coverage="100" coveredlines="118" coverablelines="118" totallines="202" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>

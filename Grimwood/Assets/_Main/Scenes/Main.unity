@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0.051886797, b: 0.103773594, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.1
@@ -5874,7 +5874,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 868448651436807046, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737788675405212682, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693586544647571763, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4582355016907103933, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890240909771726060, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -5926,9 +5942,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5762244341921840937, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7359339846507057177, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535214205836002320, guid: 808768aa081c5b541ae3520c30d04339, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808768aa081c5b541ae3520c30d04339, type: 3}

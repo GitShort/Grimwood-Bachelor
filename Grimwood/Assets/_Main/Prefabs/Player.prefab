@@ -2373,6 +2373,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4978900309089533563}
     m_Modifications:
+    - target: {fileID: 312243394350297630, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172566838849146258, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584883382218735785, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3002005575966291544, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
       propertyPath: m_Name
       value: Menu
@@ -2461,10 +2473,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4118850346379564839, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6024396597624992616, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
       propertyPath: _playerHead
       value: 
       objectReference: {fileID: 4978900308579248789}
+    - target: {fileID: 6034551451723637053, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887466262495593208, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939523761304012725, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_text
+      value: Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420296733419526660, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030789983054362146, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
+      propertyPath: m_Name
+      value: Controls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38ea9b6dccc6c8649bae61a2be187844, type: 3}
 --- !u!224 &3882619697286948943 stripped
