@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2021-05-04_00-27-33" tag="">
+  <assembly name="GameLogicAssembly">
+    <class name="ApplyOutline" coveredlines="0" coverablelines="28" totallines="50" coveredbranches="0" totalbranches="0" />
+    <class name="Artifact" coveredlines="8" coverablelines="20" totallines="44" coveredbranches="0" totalbranches="0" />
+    <class name="AttributeStorage" coveredlines="83" coverablelines="104" totallines="232" coveredbranches="0" totalbranches="0" />
+    <class name="AudioManager" coveredlines="50" coverablelines="71" totallines="97" coveredbranches="0" totalbranches="0" />
+    <class name="AudioSlider" coveredlines="0" coverablelines="37" totallines="67" coveredbranches="0" totalbranches="0" />
+    <class name="BatterylevelTrigger" coveredlines="0" coverablelines="14" totallines="28" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorBlind" coveredlines="38" coverablelines="79" totallines="130" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorCameraFlash" coveredlines="34" coverablelines="51" totallines="91" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorDamageSeenPlayer" coveredlines="0" coverablelines="140" totallines="205" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorDisappearDoor" coveredlines="0" coverablelines="18" totallines="36" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorFreeze" coveredlines="52" coverablelines="121" totallines="191" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorLightStrong" coveredlines="32" coverablelines="51" totallines="86" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorLightWeak" coveredlines="0" coverablelines="77" totallines="118" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorMoveWithoutSound" coveredlines="31" coverablelines="45" totallines="75" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorMoveWithSound" coveredlines="40" coverablelines="58" totallines="91" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorSeenByPlayer" coveredlines="0" coverablelines="29" totallines="54" coveredbranches="0" totalbranches="0" />
+    <class name="BehaviorUnseenByPlayer" coveredlines="22" coverablelines="29" totallines="54" coveredbranches="0" totalbranches="0" />
+    <class name="EnemyBehavior" coveredlines="17" coverablelines="17" totallines="46" coveredbranches="0" totalbranches="0" />
+    <class name="EnemyBehaviorManager" coveredlines="25" coverablelines="25" totallines="52" coveredbranches="0" totalbranches="0" />
+    <class name="EnemyController" coveredlines="24" coverablelines="162" totallines="275" coveredbranches="0" totalbranches="0" />
+    <class name="EnemySpawnPoints" coveredlines="48" coverablelines="79" totallines="128" coveredbranches="0" totalbranches="0" />
+    <class name="ExitDoor" coveredlines="7" coverablelines="12" totallines="25" coveredbranches="0" totalbranches="0" />
+    <class name="FlashlightManager" coveredlines="9" coverablelines="107" totallines="161" coveredbranches="0" totalbranches="0" />
+    <class name="FollowHeadPosition" coveredlines="2" coverablelines="10" totallines="29" coveredbranches="0" totalbranches="0" />
+    <class name="GameManager" coveredlines="68" coverablelines="119" totallines="196" coveredbranches="0" totalbranches="0" />
+    <class name="GeneratorManager" coveredlines="15" coverablelines="55" totallines="94" coveredbranches="0" totalbranches="0" />
+    <class name="InteractiveObjectSound" coveredlines="13" coverablelines="20" totallines="37" coveredbranches="0" totalbranches="0" />
+    <class name="LampCollisionsWithEnemy" coveredlines="17" coverablelines="81" totallines="116" coveredbranches="0" totalbranches="0" />
+    <class name="LightManager" coveredlines="21" coverablelines="56" totallines="94" coveredbranches="0" totalbranches="0" />
+    <class name="LightSwitch" coveredlines="0" coverablelines="6" totallines="21" coveredbranches="0" totalbranches="0" />
+    <class name="MainMenu" coveredlines="0" coverablelines="13" totallines="32" coveredbranches="0" totalbranches="0" />
+    <class name="ObjectSnappingLocation" coveredlines="2" coverablelines="43" totallines="69" coveredbranches="0" totalbranches="0" />
+    <class name="OutsideLampCollisionsWithEnemy" coveredlines="3" coverablelines="17" totallines="31" coveredbranches="0" totalbranches="0" />
+    <class name="PauseMenu" coveredlines="1" coverablelines="50" totallines="87" coveredbranches="0" totalbranches="0" />
+    <class name="PhotoCameraCollisions" coveredlines="0" coverablelines="24" totallines="40" coveredbranches="0" totalbranches="0" />
+    <class name="PhotoCameraManager" coveredlines="5" coverablelines="65" totallines="100" coveredbranches="0" totalbranches="0" />
+    <class name="PlayerMovement" coveredlines="10" coverablelines="87" totallines="144" coveredbranches="0" totalbranches="0" />
+    <class name="RotateToPlayer" coveredlines="0" coverablelines="6" totallines="21" coveredbranches="0" totalbranches="0" />
+    <class name="Sound" coveredlines="32" coverablelines="32" totallines="76" coveredbranches="0" totalbranches="0" />
+    <class name="WinZone" coveredlines="0" coverablelines="7" totallines="15" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

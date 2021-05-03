@@ -8,7 +8,6 @@ using UnityEngine.Serialization;
 public class EnemyBehaviorManager : MonoBehaviour
 {
     public AttributeStorage attributes;
-    [SerializeField] EnemyController _enemyContr;
     public EnemyBehavior[] Behaviors;
 
     // used to call chosen enemy behaviors during play-time
