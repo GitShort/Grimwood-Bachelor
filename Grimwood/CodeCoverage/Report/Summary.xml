@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>5/4/2021 - 12:33:41 AM</Generatedon>
+    <Generatedon>5/4/2021 - 12:38:14 AM</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>1</Assemblies>
     <Classes>40</Classes>
     <Files>40</Files>
-    <Coveredlines>547</Coveredlines>
-    <Uncoveredlines>1518</Uncoveredlines>
+    <Coveredlines>699</Coveredlines>
+    <Uncoveredlines>1366</Uncoveredlines>
     <Coverablelines>2065</Coverablelines>
     <Totallines>3538</Totallines>
-    <Linecoverage>26.4</Linecoverage>
+    <Linecoverage>33.8</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="GameLogicAssembly" classes="40" coverage="26.4" coveredlines="547" coverablelines="2065" totallines="3538" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="GameLogicAssembly" classes="40" coverage="33.8" coveredlines="699" coverablelines="2065" totallines="3538" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="ApplyOutline" coverage="0" coveredlines="0" coverablelines="28" totallines="50" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Artifact" coverage="40" coveredlines="8" coverablelines="20" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="AttributeStorage" coverage="48" coveredlines="50" coverablelines="104" totallines="232" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="AudioManager" coverage="52.1" coveredlines="37" coverablelines="71" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="AttributeStorage" coverage="82.6" coveredlines="86" coverablelines="104" totallines="232" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="AudioManager" coverage="64.7" coveredlines="46" coverablelines="71" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="AudioSlider" coverage="0" coveredlines="0" coverablelines="37" totallines="67" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="BatterylevelTrigger" coverage="0" coveredlines="0" coverablelines="14" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorBlind" coverage="48.1" coveredlines="38" coverablelines="79" totallines="130" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorCameraFlash" coverage="0" coveredlines="0" coverablelines="51" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorDamageSeenPlayer" coverage="0" coveredlines="0" coverablelines="140" totallines="205" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorBlind" coverage="0" coveredlines="0" coverablelines="79" totallines="130" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorCameraFlash" coverage="66.6" coveredlines="34" coverablelines="51" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorDamageSeenPlayer" coverage="30" coveredlines="42" coverablelines="140" totallines="205" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="BehaviorDisappearDoor" coverage="83.3" coveredlines="15" coverablelines="18" totallines="36" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorFreeze" coverage="0" coveredlines="0" coverablelines="121" totallines="191" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorLightStrong" coverage="0" coveredlines="0" coverablelines="51" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorLightWeak" coverage="51.9" coveredlines="40" coverablelines="77" totallines="118" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorMoveWithoutSound" coverage="68.8" coveredlines="31" coverablelines="45" totallines="75" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="BehaviorMoveWithSound" coverage="0" coveredlines="0" coverablelines="58" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorFreeze" coverage="42.9" coveredlines="52" coverablelines="121" totallines="191" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorLightStrong" coverage="62.7" coveredlines="32" coverablelines="51" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorLightWeak" coverage="0" coveredlines="0" coverablelines="77" totallines="118" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorMoveWithoutSound" coverage="0" coveredlines="0" coverablelines="45" totallines="75" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="BehaviorMoveWithSound" coverage="68.9" coveredlines="40" coverablelines="58" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="BehaviorSeenByPlayer" coverage="0" coveredlines="0" coverablelines="29" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="BehaviorUnseenByPlayer" coverage="75.8" coveredlines="22" coverablelines="29" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="EnemyBehavior" coverage="100" coveredlines="17" coverablelines="17" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -41,14 +41,14 @@
       <Class name="FlashlightManager" coverage="8.4" coveredlines="9" coverablelines="107" totallines="161" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="FollowHeadPosition" coverage="20" coveredlines="2" coverablelines="10" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="GameManager" coverage="57.1" coveredlines="68" coverablelines="119" totallines="196" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="GeneratorManager" coverage="3.6" coveredlines="2" coverablelines="55" totallines="94" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="GeneratorManager" coverage="27.2" coveredlines="15" coverablelines="55" totallines="94" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="InteractiveObjectSound" coverage="65" coveredlines="13" coverablelines="20" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="LampCollisionsWithEnemy" coverage="20.9" coveredlines="17" coverablelines="81" totallines="116" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="LightManager" coverage="37.5" coveredlines="21" coverablelines="56" totallines="94" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="LightSwitch" coverage="0" coveredlines="0" coverablelines="6" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="MainMenu" coverage="0" coveredlines="0" coverablelines="13" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="ObjectSnappingLocation" coverage="4.6" coveredlines="2" coverablelines="43" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="OutsideLampCollisionsWithEnemy" coverage="0" coveredlines="0" coverablelines="17" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="OutsideLampCollisionsWithEnemy" coverage="17.6" coveredlines="3" coverablelines="17" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="PauseMenu" coverage="2" coveredlines="1" coverablelines="50" totallines="87" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="PhotoCameraCollisions" coverage="0" coveredlines="0" coverablelines="24" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="PhotoCameraManager" coverage="7.6" coveredlines="5" coverablelines="65" totallines="100" branchcoverage="" coveredbranches="0" totalbranches="0" />

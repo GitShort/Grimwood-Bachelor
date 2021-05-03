@@ -13,7 +13,7 @@ namespace Tests
         public void Init()
         {
 #if UNITY_EDITOR
-            UnityEditor.SceneManagement.EditorSceneManager.LoadScene("MainTest", LoadSceneMode.Single);
+            UnityEditor.SceneManagement.EditorSceneManager.LoadScene("Main", LoadSceneMode.Single);
 #endif
         }
 
@@ -57,8 +57,6 @@ namespace Tests
             go.SetActive(true);
             // Act
             //enemyBehavior.GenerateBehaviorStates(attribute);
-
-
 
             yield return new WaitForFixedUpdate();
 
